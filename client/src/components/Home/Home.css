@@ -1,0 +1,173 @@
+body {
+    background-color: rgb(4, 2, 31);
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  #backer {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(278deg, #6ba1a7, #000000, #000000, #6ba1a7);
+    background-size: 800% 800%;
+    -webkit-animation: bgradient 11s ease infinite;
+    -moz-animation: bgradient 11s ease infinite;
+    animation: bgradient 11s ease infinite;
+    height: 650px;
+    width: 100%;
+  }
+
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  #topbar {
+    position: fixed;
+    width: 100%;
+    max-height: 20px;
+    background-color: rgba(0, 0, 0, 0.76);
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #topbar a {
+    float: right;
+    margin-right: 10px;
+    font-size: 13px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.658);
+  }
+
+  #footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    max-height: 20px;
+    background-color: rgba(0, 0, 0, 0.76);
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #footer a {
+    float: right;
+    margin-right: 70px;
+    font-size: 13px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.658);
+  }
+
+  #footer p {
+    position: relative;
+    bottom: 0px;
+    color: rgba(255, 255, 255, 0.699);
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+    margin-left: 40px;
+
+  }
+
+
+  /* Header */
+
+  #logo {
+    padding-top: 70px;
+    width: 350px;
+  }
+
+  #search {
+    background-color: rgba(73, 72, 72, 0.664);
+    padding: 10px;
+    width: 800px;
+    border-radius: 10px;
+  }
+
+  #search input {
+    border: none;
+    height: 35px;
+    width: 300px;
+  }
+
+  #search button {
+    height: 37.5px;
+    width: 80px;
+    border-radius: 0px 3px 3px 0px;
+    background-color: black;
+    color: white;
+    border: none;
+  }
+  #search button:hover{
+    background-color: #92dce5;
+    color: black;
+  }
+
+  #search select {
+    height: 37px;
+    width: 80px;
+  }
+
+
+  /* Animations */
+
+  .hoverturn {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    -webkit-perspective: 600px;
+    perspective: 600px;
+    -webkit-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+  }
+
+  .hoverturn:hover span {
+    background: black;
+    -webkit-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+    transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+  }
+
+  .hoverturn span {
+    display: block;
+    position: relative;
+    padding: 4px;
+    -webkit-transition: all 400ms ease;
+    transition: all 400ms ease;
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+  .hoverturn span:after {
+    content: attr(data-title);
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 4px;
+    color: #92dce5;
+    background-color: rgba(0, 0, 0, 0.76);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+    transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+  }
+
+  @-webkit-keyframes bgradient {
+    0%{background-position:0% 75%}
+    50%{background-position:100% 26%}
+    100%{background-position:0% 75%}
+}
+@-moz-keyframes bgradient {
+    0%{background-position:0% 75%}
+    50%{background-position:100% 26%}
+    100%{background-position:0% 75%}
+}
+@keyframes bgradient { 
+    0%{background-position:0% 75%}
+    50%{background-position:100% 26%}
+    100%{background-position:0% 75%}
+}

@@ -1,15 +1,9 @@
-#sbacker{
+#lbacker{
     width: 100%;
     height: 650px;
     background-color: #6ba1a7;
 }
-
-#overflow{
-    overflow: scroll;
-    width: 400px;
-    height: 190px;
-}
-#signup{
+#login{
     position: absolute;
     left: 700px;
     top: 150px;
@@ -21,47 +15,58 @@
     height: 350px;
     border-left: white solid 2px;
 }
-#signup h1{
-   margin: 1px;
-}
-#signup p{
+#login h1{
+    margin: 20px;
+ }
+ #login p{
     font-size: 13px;
     margin: 5px;
  }
-#signup input{
+#login input{
     height: 30px;
     width: 300px;
     border-radius: 5px;
     margin: 8px;
 }
 
-#signup input[type=submit]{
+#login input[type=submit]{
     height: 30px;
     width: 200px;
     border-radius: 8px;
-    margin: 6px;
+    margin: 8px;
     background-color: black;
     color:white;
     border: none;
 }
 
-#signup input[type=submit]:hover{
+#login input[type=submit]:hover{
     background-color: #92dce5;
     color:black;
 }
 
-#signup select{
+#login select{
     height: 30px;
     width: 305px;
     margin: 8px;
 }
 
-#signup a{
+#login a{
    text-decoration: none;
    color: white;
    font-size: 13px;
 }
 
-#signup a:hover{
+#login a:hover{
     color:black;
+}
+
+#logodiv{
+    position: absolute;
+    left: 170px;
+    top: 150px;
+    width: 550px;
+    text-align: center;
+}
+#loglogo{
+    width: 350px;
 }
