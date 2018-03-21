@@ -5,8 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+const session = require("express-session");
+const passport = require("passport");
+
 var index = require('./routes/index');
 var users = require('./routes/users');
+var businesses = require('./routes/businesses');
+var authUsers = require('./routes/auth/userAuth');
+var authBusiness = require('./routes/auth/businessAuth');
 
 var app = express();
 
@@ -20,10 +26,27 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+//sessions
+app.use(
+  session({
+    secret:
+      "\x02\xf3\xf7r\t\x9f\xee\xbbu\xb1\xe1\x90\xfe'\xab\xa6L6\xdd\x8d[\xccO\xfe",
+    resave: false,
+    saveUninitialized: true
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
+//routes 
 app.use('/', index);
 app.use('/users', users);
+app.use('/businesses', businesses)
+app.use('/auth/users', authUsers);
+app.use('/auth/businesses', authBusiness);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
