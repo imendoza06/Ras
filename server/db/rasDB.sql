@@ -64,9 +64,7 @@ CREATE TABLE rooms (
 
 INSERT INTO rooms (business_id, space_id, room_name, image_url, dimensions_summary, price, capacity, created_at)
   VALUES ('stephaniehou@ac.c4q.nyc', 'Stephanie', 'Hou', 'stephaniehou', now()),
-  ('angelarias@ac.c4q.nyc', 'Angel' ,'Arias', 'angelarias', now()),
-  ('susantan@ac.c4q.nyc', 'Susan' , 'Tan', 'susantan', now()), 
-  ('ivanmendoza@ac.c4q.nyc', 'Ivan', 'Mendoza', 'ivanmendoza', now()); 
+
 
 CREATE TABLE bookings (
   booking_id SERIAL PRIMARY KEY,
@@ -83,9 +81,7 @@ CREATE TABLE bookings (
 
 INSERT INTO bookings (room_id, user_id, start_date, end_date, start_time, end_time, price, total, created_at)
   VALUES ('stephaniehou@ac.c4q.nyc', 'Stephanie', 'Hou', 'stephaniehou', now()),
-  ('angelarias@ac.c4q.nyc', 'Angel' ,'Arias', 'angelarias', now()),
-  ('susantan@ac.c4q.nyc', 'Susan' , 'Tan', 'susantan', now()), 
-  ('ivanmendoza@ac.c4q.nyc', 'Ivan', 'Mendoza', 'ivanmendoza', now());
+
 
 CREATE TABLE reviews (
   review_id SERIAL PRIMARY KEY,
@@ -98,6 +94,4 @@ CREATE TABLE reviews (
 
 INSERT INTO reviews (customer_id, space_id, review_description, stars_number, created_at)
   VALUES ('stephaniehou@ac.c4q.nyc', 'Stephanie', 'Hou', 'stephaniehou', now()),
-  ('angelarias@ac.c4q.nyc', 'Angel' ,'Arias', 'angelarias', now()),
-  ('susantan@ac.c4q.nyc', 'Susan' , 'Tan', 'susantan', now()), 
-  ('ivanmendoza@ac.c4q.nyc', 'Ivan', 'Mendoza', 'ivanmendoza', now());
+
