@@ -1,12 +1,25 @@
-#cbacker{
+/* Body */
+
+#cbacker {
     width: 100%;
-    height: 650px;
+    height: 100vh;
     background-color: #6ba1a7;
 }
-#contact{
-    position: absolute;
-    left: 750px;
-    top: 130px;
+/* Content */
+
+#ccontent{
+    width: 1000px;
+    height: 100vh;
+    display: block;
+    padding: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contact Form */
+#contact {
+    float: left;
+    margin-top: 60px;
     background-color: #00000080;
     border-radius: 10px;
     padding: 10px;
@@ -14,48 +27,60 @@
     width: 400px;
 }
 
-#contact input[type=text]{
+#contact input[type=text] {
     height: 30px;
     width: 300px;
     border-radius: 5px;
     margin: 8px;
 }
 
-#contact input[type=submit]{
+#contact input[type=submit] {
     height: 30px;
     width: 200px;
     border-radius: 8px;
     margin: 8px;
     background-color: black;
-    color:white;
+    color: white;
     border: none;
 }
 
-#contact input[type=submit]:hover{
+#contact input[type=submit]:hover {
     background-color: #92dce5;
-    color:black;
+    color: black;
 }
 
-#contact textarea{
-  height: 80px;
-  width: 300px;
-  border-radius: 5px;
-  margin: 8px;
+#contact textarea {
+    height: 80px;
+    width: 300px;
+    border-radius: 5px;
+    margin: 8px;
 }
 
-#contact select{
+#contact select {
     height: 30px;
     width: 305px;
     margin: 8px;
 }
-#faq{
-    position: absolute;
-    left: 170px;
-    top: 150px;
+
+/* FAQ */
+#faq {
+    float: left;
     width: 550px;
     text-align: center;
+    margin-top: 60px;
 }
-#faq select{
+
+#faq h1{
+    font-family: 'Phosphate-Inline';
+    font-size: 30px;
+    color:black;
+}
+
+#faq h3{
+    font-size: 15px;
+}
+
+#faq select {
     height: 30px;
     width: 250px;
 }

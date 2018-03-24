@@ -1,48 +1,58 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Passion+One');
+
+/* Body */
+
+html,
 body {
-    background-color: rgb(4, 2, 31);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
     color: white;
-    margin: 0;
-    padding: 0;
-  }
+    overflow: hidden;
+}
 
-  #backer {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(278deg, #6ba1a7, #000000, #000000, #6ba1a7);
-    background-size: 800% 800%;
-    -webkit-animation: bgradient 11s ease infinite;
-    -moz-animation: bgradient 11s ease infinite;
-    animation: bgradient 11s ease infinite;
-    height: 650px;
-    width: 100%;
-  }
-
-
-  .center {
+.center {
     display: block;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-  }
+}
 
-  #topbar {
+select {
+    background-color: white;
+}
+
+
+/* Topbar */
+
+#topbar {
     position: fixed;
     width: 100%;
     max-height: 20px;
     background-color: rgba(0, 0, 0, 0.76);
     padding-top: 10px;
     padding-bottom: 10px;
-  }
+    z-index: 10;
+}
 
-  #topbar a {
+#topbar a {
     float: right;
     margin-right: 10px;
     font-size: 13px;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.658);
-  }
+}
 
-  #footer {
+
+/* Footer */
+
+#footer {
     position: fixed;
     bottom: 0px;
     width: 100%;
@@ -50,17 +60,17 @@ body {
     background-color: rgba(0, 0, 0, 0.76);
     padding-top: 10px;
     padding-bottom: 10px;
-  }
+}
 
-  #footer a {
+#footer a {
     float: right;
     margin-right: 70px;
     font-size: 13px;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.658);
-  }
+}
 
-  #footer p {
+#footer p {
     position: relative;
     bottom: 0px;
     color: rgba(255, 255, 255, 0.699);
@@ -68,52 +78,461 @@ body {
     padding: 0;
     margin: 0;
     margin-left: 40px;
+}
 
-  }
+
+/* Vertical Menu */
+
+#vermenu {
+    position: absolute;
+    top: 210px;
+    left: 0px;
+}
+
+#vermenu span {
+    margin-top: 25px;
+    margin-right: 2px;
+    margin-left: 35px;
+    display: block;
+}
+
+#vermenu ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.var_nav {
+    position: relative;
+    width: 145px;
+    height: 45px;
+    margin-bottom: 5px;
+    margin: 2px;
+}
+
+.link_bg {
+    width: 50px;
+    height: 35px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    border-radius: 5px;
+}
+
+.link_bg img {
+    position: relative;
+}
+
+.link_title {
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+}
+
+.link_title:hover .icon {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.var_nav:hover .link_bg {
+    width: 100%;
+    background: #92dce5;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.var_nav a {
+    display: block;
+    position: absolute;
+    float: left;
+    font-family: arial;
+    font-size: 14px;
+    color: transparent;
+    text-decoration: none;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+
+.var_nav:hover a {
+    font-weight: bold;
+    color: white;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.icon {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    float: left;
+    transition: all 0.5s ease-in-out;
+    float: left;
+}
+
+.icon img {
+    top: 22px;
+    position: relative;
+    width: 20px;
+}
 
 
-  /* Header */
+/* Sections */
 
-  #logo {
-    padding-top: 70px;
+.wrapper {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+}
+
+.section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    text-align: center;
+    /* color: white; */
+}
+
+.halfsection {
+    height: 76vh;
+}
+
+.msection {
+    height: 89vh;
+}
+
+.parallax::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(-1px) scale(1.5);
+    background-size: 100%;
+    z-index: -1;
+}
+
+.blackbg {
+    background: black;
+}
+
+.whitebg {
+    background: white;
+}
+
+.blueonebg {
+    background: #6ba1a7;
+}
+
+.bluetwobg {
+    background: #92dce5;
+}
+
+.bg1::after {
+    background-image: url('https://cdn-images-1.medium.com/max/1600/1*D8fWQO-TI66GV5sZJDiFZw.gif');
+    background-size: 100% 100%;
+}
+
+.bg2::after {
+    background-image: url('https://az616578.vo.msecnd.net/files/2016/08/13/636066525255255334-1002779405_dance%20header.jpg');
+}
+
+
+/* Header */
+
+#header {
+    height: 650px;
+}
+
+
+/* Home Header Subtitle */
+
+#homesub {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 405px;
+    margin-left: auto;
+    margin-right: auto;
     width: 350px;
-  }
+    font-family: 'Phosphate-Inline';
+    text-decoration: none;
+    font-size: 27px;
+    color: black;
+    text-shadow: none;
+}
 
-  #search {
+
+/* Searchbar */
+
+#search {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 480px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgba(73, 72, 72, 0.664);
     padding: 10px;
     width: 800px;
     border-radius: 10px;
-  }
+}
 
-  #search input {
+#search input {
     border: none;
-    height: 35px;
-    width: 300px;
-  }
+    height: 39px;
+    width: 290px;
+    padding-left: 10px;
+    outline: none;
+}
 
-  #search button {
-    height: 37.5px;
+#search button {
+    height: 42px;
     width: 80px;
     border-radius: 0px 3px 3px 0px;
     background-color: black;
     color: white;
     border: none;
-  }
-  #search button:hover{
+}
+
+#search button:hover {
     background-color: #92dce5;
     color: black;
-  }
+}
 
-  #search select {
-    height: 37px;
-    width: 80px;
-  }
+#search select {
+    margin: 0;
+    height: 41.5px;
+    width: 110px;
+    background-color: white;
+    border-radius: 0;
+    border: 0;
+    outline: 1px inset #fff;
+    outline-offset: -1px;
+}
 
 
-  /* Animations */
+/* Top Revieewd */
 
-  .hoverturn {
+#homereview h1 {
+    font-size: 35px;
+    font-family: 'Phosphate-Inline', cursive;
+    margin-top: 30px;
+    color: black;
+}
+
+#homereviewlist {
+    /* border: 1px solid black; */
+    width: 1280px;
+    height: 250px;
+    position: absolute;
+    top: 110px;
+}
+
+#reviewdiv:hover {
+    margin-top: 5px;
+}
+
+#reviewdiv:hover #reviewword {
+    background-color: #6ba1a7;
+    color: black;
+}
+
+#reviewdiv img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px 10px 0px 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#reviewdiv {
+    float: left;
+    height: 220px;
+    width: 300px;
+    /* border: black 1px solid; */
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#reviewword {
+    position: relative;
+    /* border: black 1px solid; */
+    margin: 0px;
+    height: 70px;
+    width: 300px;
+    top: -10px;
+    border-radius: 0px 0px 10px 10px;
+    background-color: black;
+}
+
+#reviewword h1 {
+    /* text-align:left; */
+    margin-top: 0px;
+    margin-bottom: 1px;
+    margin-left: 5px;
+    /* border: black 1px solid; */
+    color: white;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+#reviewword a {
+    text-decoration: none;
+    color: white;
+}
+
+#reviewword p {
+    /* border: black 1px solid; */
+    margin-top: 0px;
+    font-size: 14px;
+}
+
+
+/* Spotlight */
+
+#homespotlight h1 {
+    margin-top: 40px;
+    font-size: 35px;
+    font-family: 'Phosphate-Inline', cursive;
+}
+#slspace{
+    position: absolute;
+    top: 100px;
+   background-color: rgba(0, 0, 0, 0.486);
+   width: 800px;
+   height: 400px;
+   border-radius: 5px;
+   text-align: center justify;
+}
+
+#slword{
+    float: left;
+    padding: 10px;
+    margin: 20px;
+    margin-top: 30px;
+    width: 300px;
+
+}
+#slword h3{
+  font-size: 22px;
+}
+#slspace img{
+    float: left;
+    width: 400px;
+    height: 340px;
+    margin: 20px;
+    margin-top: 30px;
+}
+
+
+/* New */
+
+#homenew h1 {
+    color: #92dce5;
+    font-size: 35px;
+    font-family: 'Phosphate-Inline', cursive;
+    margin-top: 30px;
+}
+
+#homenewlist {
+    border: 8px double white;
+    width: 1160px;
+    height: 300px;
+    position: absolute;
+    top: 80px;
+}
+
+#newdiv:hover {
+    margin-top: 5px;
+}
+
+#newdiv:hover #newword {
+    background-color: white;
+    color: black;
+}
+
+#newdiv:hover a {
+    color: black;
+}
+
+#newdiv img {
+    width: 250px;
+    height: 200px;
+    border-radius: 0px 100px 0px 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#newdiv {
+    float: left;
+    height: 220px;
+    width: 250px;
+    /* border: black 1px solid; */
+    border-radius: 0px 0px 5px 100px;
+    margin: 20px;
+}
+
+#newword {
+    position: relative;
+    /* border: black 1px solid; */
+    margin: 0px;
+    height: 70px;
+    width: 250px;
+    top: -10px;
+    border-radius: 0px 0px 5px 100px;
+    background-color: #6ba1a7;
+}
+
+#newword h1 {
+    /* text-align:left; */
+    margin-top: 0px;
+    margin-bottom: 1px;
+    margin-left: 5px;
+    /* border: black 1px solid; */
+    font-size: 15px;
+    font-family: sans-serif;
+}
+
+#newword a {
+    text-decoration: none;
+    color: white;
+}
+
+#newword p {
+    /* border: black 1px solid; */
+    margin-top: 0px;
+    font-size: 14px;
+}
+
+
+/* Animations */
+
+
+/* Footer and Topbar Menu Buttons Animation */
+
+.hoverturn {
     display: inline-block;
     overflow: hidden;
     vertical-align: top;
@@ -121,15 +540,15 @@ body {
     perspective: 600px;
     -webkit-perspective-origin: 50% 50%;
     perspective-origin: 50% 50%;
-  }
+}
 
-  .hoverturn:hover span {
+.hoverturn:hover span {
     background: black;
     -webkit-transform: translate3d(0px, 0px, -30px) rotateX(90deg);
     transform: translate3d(0px, 0px, -30px) rotateX(90deg);
-  }
+}
 
-  .hoverturn span {
+.hoverturn span {
     display: block;
     position: relative;
     padding: 4px;
@@ -139,9 +558,9 @@ body {
     transform-origin: 50% 0%;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-  }
+}
 
-  .hoverturn span:after {
+.hoverturn span:after {
     content: attr(data-title);
     display: block;
     position: absolute;
@@ -154,20 +573,68 @@ body {
     transform-origin: 50% 0%;
     -webkit-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
     transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
-  }
+}
 
-  @-webkit-keyframes bgradient {
-    0%{background-position:0% 75%}
-    50%{background-position:100% 26%}
-    100%{background-position:0% 75%}
+
+/* Fade In For Logo */
+
+.fadeInwards {
+    opacity: 0;
+    animation: FadeIn 2s linear alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
-@-moz-keyframes bgradient {
-    0%{background-position:0% 75%}
-    50%{background-position:100% 26%}
-    100%{background-position:0% 75%}
+
+.fadeInwards2 {
+    opacity: 0;
+    animation: FadeIn 2s ease-in 0.3s forwards;
+    animation-iteration-count: 1;
 }
-@keyframes bgradient { 
-    0%{background-position:0% 75%}
-    50%{background-position:100% 26%}
-    100%{background-position:0% 75%}
+
+.fadeInwards3 {
+    opacity: 0;
+    animation: FadeIn 2s ease-in 0.6s forwards;
+    animation-iteration-count: 1;
+}
+
+.fadeInwards4 {
+    opacity: 0;
+    animation: FadeIn 2s ease-in 0.9s forwards;
+    animation-iteration-count: 1;
+}
+
+.fadeInwards5 {
+    opacity: 0;
+    animation: FadeIn 2s ease-in 1.2s forwards;
+    animation-iteration-count: 1;
+}
+
+.fadeInwards6 {
+    opacity: 0;
+    animation: FadeIn 2s ease-in 1.5s forwards;
+    animation-iteration-count: 1;
+}
+
+.fadeInwards7 {
+    opacity: 0;
+    animation: FadeIn 2s ease-in 1.8s forwards;
+    animation-iteration-count: 1;
+}
+
+.fadeInwards8 {
+    opacity: 0;
+    animation: FadeIn 2s ease-in 2.1s forwards;
+    animation-iteration-count: 1;
+}
+
+.fadeInwards9 {
+    opacity: 0;
+    animation: FadeIn 2s ease-in 2.4s forwards;
+    animation-iteration-count: 1;
+}
+
+.fadeInwards10 {
+    opacity: 0;
+    animation: FadeIn 2s ease-in 2.7s forwards;
+    animation-iteration-count: 1;
 }
