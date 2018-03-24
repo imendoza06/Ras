@@ -6,6 +6,7 @@ import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Login from './components/Sign/LogIn/LogIn';
 import Signup from './components/Sign/SignUp/SignUp';
+import Search from './components/Search/Search';
 
 class App extends React.Component {
 
@@ -17,6 +18,7 @@ class App extends React.Component {
         <Route exact path='/contact' component ={Contact} />
         <Route exact path='/login' component ={Login} />
         <Route exact path='/signup' component ={Signup} />
+        <Route path='/search' component ={Search} />
       </div>
     );
   }

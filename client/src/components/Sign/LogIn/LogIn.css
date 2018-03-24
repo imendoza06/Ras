@@ -1,72 +1,133 @@
-#lbacker{
+/* Body */
+
+#lsbacker {
     width: 100%;
-    height: 650px;
+    height: 100vh;
     background-color: #6ba1a7;
 }
-#login{
+
+/* Content */
+
+#lscontent{
+    width: 1000px;
+    height: 100vh;
+    display: block;
+    padding: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Logo */
+
+#logodiv {
+    width: 550px;
+    float: left;
+}
+
+#f1_container {
+    position: relative;
+    margin: 10px auto;
+    width: 500px;
+    height: 500px;
+    z-index: 1;
+    background-color: transparent;
+}
+
+#f1_container {
+    perspective: 1000;
+}
+
+#f1_card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 1.0s linear;
+}
+
+#f1_container:hover #f1_card {
+    transform: rotateY(180deg);
+}
+
+.face {
     position: absolute;
-    left: 700px;
-    top: 150px;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.face.back {
+    display: block;
+    transform: rotateY(180deg);
+    box-sizing: border-box;
     padding: 10px;
-    padding-left: 15px;
-    padding-top: 3px;
+    color: white;
     text-align: center;
+}
+
+#fliper img {
+    margin: 45px;
+    margin-top: 60px;
+    width: 430px;
+}
+
+
+/* Contact Form */
+
+#login {
+    text-align: center;
+    float:left;
+    margin-top: 90px;
     width: 400px;
     height: 350px;
     border-left: white solid 2px;
 }
-#login h1{
-    margin: 20px;
- }
- #login p{
+
+#login h1 {
+    margin: 10px;
+    font-size: 45px;
+    font-family: 'Phosphate-Inline';
+    color: black;
+}
+
+#login p {
     font-size: 13px;
     margin: 5px;
- }
-#login input{
+}
+
+#login input {
     height: 30px;
     width: 300px;
     border-radius: 5px;
     margin: 8px;
 }
 
-#login input[type=submit]{
+#login input[type=submit] {
     height: 30px;
     width: 200px;
     border-radius: 8px;
     margin: 8px;
     background-color: black;
-    color:white;
+    color: white;
     border: none;
 }
 
-#login input[type=submit]:hover{
+#login input[type=submit]:hover {
     background-color: #92dce5;
-    color:black;
+    color: black;
 }
 
-#login select{
+#login select {
     height: 30px;
     width: 305px;
     margin: 8px;
 }
 
-#login a{
-   text-decoration: none;
-   color: white;
-   font-size: 13px;
+#login a {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
 }
 
-#login a:hover{
-    color:black;
-}
-
-#logodiv{
-    position: absolute;
-    left: 170px;
-    top: 150px;
-    width: 550px;
-    text-align: center;
-}
-#loglogo{
-    width: 350px;
+#login a:hover {
+    color: black;
 }

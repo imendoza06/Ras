@@ -1,131 +1,443 @@
-#abacker{
+/* Body */
+
+#abacker {
     width: 100%;
     height: 650px;
     background-color: black;
 }
 
-.bg  {
+
+/* Vertical Menu */
+
+#vermenu {
+    position: absolute;
+    top: 210px;
+    left: 0px;
+}
+
+#vermenu span {
+    margin-top: 25px;
+    margin-right: 2px;
+    margin-left: 35px;
+    display: block;
+}
+
+#vermenu ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.var_nav {
+    position: relative;
+    width: 145px;
+    height: 45px;
+    margin-bottom: 5px;
+    margin: 2px;
+}
+
+.link_bg {
+    width: 50px;
+    height: 35px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    border-radius: 5px;
+}
+
+.link_bg img {
+    position: relative;
+}
+
+.link_title {
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+}
+
+.link_title:hover .icon {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.var_nav:hover .link_bg {
+    width: 100%;
+    background: #92dce5;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.var_nav a {
+    display: block;
+    position: absolute;
+    float: left;
+    font-family: arial;
+    font-size: 14px;
+    color: transparent;
+    text-decoration: none;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+
+.var_nav:hover a {
+    font-weight: bold;
+    color: white;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.icon {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    float: left;
+    transition: all 0.5s ease-in-out;
+    float: left;
+}
+
+.icon img {
+    top: 22px;
+    position: relative;
+    width: 20px;
+}
+
+
+/* Header */
+
+.aboutbg {
     position: absolute;
     width: 500px;
     height: 500px;
-    top: 310px;
+    top: 220px;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-  
-#R{
-    position: relative;
-    right: -215px;
-    top: 275px;
-    margin-left: -168px;
-    margin-top: -320px;
 }
 
-#A{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -190px;
-    margin-top: -280px;
-
-}
-#S{
-    position: relative;
-    right: -217px;
-    top: 62px;
-    margin-left: -168px;
-    margin-top: -320px;
-}
-#TL{
-    position: relative;
-    right: -217px;
-    top: -155px;
-    margin-left: -168px;
-    margin-top: -320px;
-}
-#TM{
-    position: relative;
-    right: -217px;
-    top: -370px;
-    margin-left: -168px;
-    margin-top: -320px;
-}
-#TR{
-    position: relative;
-    right: -217px;
-    top: -583px;
-    margin-left: -168px;
-    margin-top: -320px;
-}
-#DL{
-    position: relative;
-    right: -217px;
-    top: -790px;
-    margin-left: -168px;
-    margin-top: -320px;
-}
-#DM{
-    position: relative;
-    right: -217px;
-    top: -1003px;
-    margin-left: -168px;
-    margin-top: -320px;
-}
-#DR{
-    position: relative;
-    right: -217px;
-    top: -1217px;
-    margin-left: -168px;
-    margin-top: -320px;
+#bottom {
+    background-color: black;
+    background-size: 100% 100%;
+    height: 100vh;
+    width: 100%;
+    animation-name: FadeOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-duration: 5s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
 }
 
-.sub{
-    font-family:'Phosphate-Inline';
-    font-size:18px;
+
+/* Section Backgrounds */
+
+.bg3::after {
+    background-image: url('https://orig00.deviantart.net/4a5e/f/2015/089/3/1/amplitude_problem___ok_firetown_by_valenberg-d8nrvkr.gif');
+    background-size: 100% 100%;
 }
 
-#subabout{
+.bg4 {
+    background: linear-gradient(278deg, #6ba1a7, #000000, #000000, #6ba1a7);
+    background-size: 800% 800%;
+    -webkit-animation: bgradient 11s ease infinite;
+    -moz-animation: bgradient 11s ease infinite;
+    animation: bgradient 11s ease infinite;
+}
+
+.bg5::after {
+    background-image: url('http://www.psbrixton.com/wp-content/uploads/2017/05/PSBrixton_landscape.gif');
+    background-size: 100% 100%;
+}
+
+
+/* About Subheader */
+
+#subabout {
     position: absolute;
     right: -135px;
-    top: 370px;
+    top: 470px;
     height: 100px;
+    font-family: 'Phosphate-Inline';
+    font-size: 18px;
 }
 
-  .path {
+#subabout svg {
+    z-index: -1;
+}
+
+
+/* Purpose */
+
+#whoheader {
+    margin-top: 80px;
+    font-size: 40px;
+    padding: 15px;
+    height: 60px;
+    font-family: 'Phosphate-Inline', cursive;
+}
+
+#whop {
+    position: absolute;
+    font-size: 18px;
+    top: 150px;
+    width: 600px;
+}
+
+#purposelist {
+    position: absolute;
+    font-size: 18px;
+    top: 230px;
+    width: 1040px;
+    height: 310px;
+    /* border: 1px solid white; */
+}
+
+#purposelist div {
+    width: 300px;
+    /* border: 1px solid white; */
+    float: left;
+    height: 300px;
+    margin: 20px;
+}
+
+#purposelist h3 {
+    font-family: 'Phosphate-Inline', cursive;
+    font-size: 25px;
+}
+
+#purposelist img {
+    width: 100px;
+}
+
+
+/* Services */
+
+#aboutservices h1 {
+    margin-top: 80px;
+    font-size: 38px;
+    padding: 15px;
+    height: 60px;
+    font-family: 'Phosphate-Inline', cursive;
+}
+
+#services {
+    position: absolute;
+    font-size: 18px;
+    top: 160px;
+    width: 615px;
+    height: 310px;
+    /* border: 1px solid white; */
+}
+
+#services div {
+    width: 300px;
+    /* border: 1px solid white; */
+    float: left;
+    height: 300px;
+    margin: 3px;
+}
+
+#services h3 {
+    font-family: 'Phosphate-Inline', cursive;
+    font-size: 25px;
+    border: 5px double white;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.651);
+}
+
+
+/* Connect */
+
+#aboutconnect h1 {
+    margin-top: 80px;
+    font-size: 45px;
+    padding: 15px;
+    height: 60px;
+    font-family: 'Phosphate-Inline', cursive;
+    border: double 5px white;
+}
+
+#aboutconnect a {
+    color: white;
+    text-decoration: none;
+}
+
+#connecticons {
+    position: absolute;
+    top: 210px;
+    /* border: solid 1px white; */
+    width: 1200px;
+}
+
+#connecticons img {
+    width: 160px;
+    margin: 50px;
+}
+
+#connecticons img:hover {
+    width: 190px;
+}
+
+
+/* Animations */
+
+.path {
     animation: draw 5s linear alternate;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
-    transition: fill 1s ease-in-out; 
-    fill:black;
-  }
+    transition: fill 1s ease-in-out;
+    fill: transparent;
+}
 
-  .path:hover{
-    fill:white;
-  }
+.path:hover {
+    animation: drawColor 2s infinite;
+}
 
-  .pathword {
+.pathword {
     animation: drawWord 5s linear alternate;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
-    transition: fill 1s ease-in-out; 
-    fill:black;
-  }
-   
-   @keyframes draw {
-    from {
-        stroke-dashoffset: 250%;
-      }
-      to {
-        stroke-dashoffset: 0%;
-      }
-  }
-  @keyframes drawWord {
-    from {
-        stroke-dashoffset: 250%;
-      }
-      to {
-        stroke-dashoffset: 0%;
-        fill: rgba(245, 245, 245, 0.705);
-  }
+    transition: fill 1s ease-in-out;
+    fill: transparent;
 }
 
+.pathword:hover {
+    animation: drawWordColor 2s infinite;
+}
+
+.pathsub {
+    animation: drawWord 5s linear alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    fill: black;
+}
+
+@keyframes draw {
+    from {
+        stroke-dashoffset: 250%;
+    }
+    to {
+        stroke-dashoffset: 0%;
+        fill: rgba(0, 0, 0, 0.692);
+    }
+}
+
+@keyframes drawColor {
+    from {
+        stroke-dashoffset: 250%;
+        fill: rgba(0, 0, 0, 0.692);
+    }
+    to {
+        stroke-dashoffset: 0%;
+        fill: #92dce5;
+    }
+}
+
+@keyframes drawWord {
+    from {
+        stroke-dashoffset: 250%;
+    }
+    to {
+        stroke-dashoffset: 0%;
+        fill: rgba(245, 245, 245, 0.705);
+    }
+}
+
+@keyframes drawWordColor {
+    from {
+        stroke-dashoffset: 250%;
+        fill: rgba(245, 245, 245, 0.705);
+    }
+    to {
+        stroke-dashoffset: 0%;
+        fill: rgba(0, 0, 0, 0.692);
+    }
+}
+
+@keyframes FadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes FadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Animated Background Gradient */
+
+@-webkit-keyframes bgradient {
+    0% {
+        background-position: 0% 75%
+    }
+    50% {
+        background-position: 100% 26%
+    }
+    100% {
+        background-position: 0% 75%
+    }
+}
+
+@-moz-keyframes bgradient {
+    0% {
+        background-position: 0% 75%
+    }
+    50% {
+        background-position: 100% 26%
+    }
+    100% {
+        background-position: 0% 75%
+    }
+}
+
+@keyframes bgradient {
+    0% {
+        background-position: 0% 75%
+    }
+    50% {
+        background-position: 100% 26%
+    }
+    100% {
+        background-position: 0% 75%
+    }
+}
+
+a.effect-shine:hover {
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    from {
+        -webkit-mask-position: 150%;
+    }
+    to {
+        -webkit-mask-position: -50%;
+    }
+}
