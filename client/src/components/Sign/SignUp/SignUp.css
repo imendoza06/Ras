@@ -1,67 +1,67 @@
-#sbacker{
-    width: 100%;
-    height: 650px;
-    background-color: #6ba1a7;
-}
+/* Form */
 
-#overflow{
+#overflow {
     overflow: scroll;
     width: 400px;
     height: 190px;
 }
-#signup{
-    position: absolute;
-    left: 700px;
-    top: 150px;
-    padding: 10px;
-    padding-left: 15px;
-    padding-top: 3px;
+
+#signup {
     text-align: center;
+    float:left;
+    margin-top: 90px;
     width: 400px;
     height: 350px;
     border-left: white solid 2px;
 }
-#signup h1{
-   margin: 1px;
+
+#signup h1 {
+    margin: 10px;
+    font-size: 45px;
+    font-family: 'Phosphate-Inline';
+    color: black;
+    margin-top: 3px;
 }
-#signup p{
+
+#signup p {
     font-size: 13px;
     margin: 5px;
- }
-#signup input{
+}
+
+#signup input {
     height: 30px;
     width: 300px;
     border-radius: 5px;
     margin: 8px;
 }
 
-#signup input[type=submit]{
+#signup input[type=submit] {
     height: 30px;
     width: 200px;
     border-radius: 8px;
     margin: 6px;
     background-color: black;
-    color:white;
+    color: white;
     border: none;
 }
 
-#signup input[type=submit]:hover{
+#signup input[type=submit]:hover {
     background-color: #92dce5;
-    color:black;
+    color: black;
 }
 
-#signup select{
+#signup select {
     height: 30px;
     width: 305px;
     margin: 8px;
 }
 
-#signup a{
-   text-decoration: none;
-   color: white;
-   font-size: 13px;
+#signup a {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
 }
 
-#signup a:hover{
-    color:black;
+#signup a:hover {
+    color: black;
 }
