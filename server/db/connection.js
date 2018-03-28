@@ -2,7 +2,7 @@
 const pgp = require("pg-promise")({});
 
 // Preparing the connection details:
-const connectionString = "postgres://c4q:c4q@localhost:5432/rasDB";
+const connectionString = "postgres://c4q:c4q@localhost:5432/rasdb";
 
 // Creating a new database instance from the connection details:
 const db = pgp(connectionString);

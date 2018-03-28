@@ -1,16 +1,23 @@
 const db = require("./connection");
-//User Auth helpers and local 
-const authUserHelpers = require("../auth/authUser/helpers");
-const passportUser = require("../auth/authUser/local");
 
-//Business Auth helpers and local 
-const authBusinessHelpers = require("../auth/authBusiness/helpers");
-const passportBusiness = require("../auth/authBusiness/local");
-
+function getAll(req, res, next) {
+  db
+    .any("SELECT * FROM users")
+    .then(function(data) {
+      res.status(200).json({
+        status: "success",
+        data: data,
+        message: "Retrieved ALL users"
+      });
+    })
+    .catch(function(err) {
+      return next(err);
+    });
+}
 //Get all users
 function getAllUsers(req, res, next) {
   db
-    .any("SELECT * FROM users")
+    .any("SELECT * FROM users WHERE user_profile='User'")
     .then(function(data) {
       res.status(200).json({
         status: "success",
@@ -25,7 +32,7 @@ function getAllUsers(req, res, next) {
 // Get all businesses
 function getAllBusinesses(req, res, next) {
   db
-    .any("SELECT * FROM businesses")
+    .any("SELECT * FROM users WHERE user_profile='Business'")
     .then(function(data) {
       res.status(200).json({
         status: "success",
@@ -41,7 +48,7 @@ function getAllBusinesses(req, res, next) {
 //Get Single User
 function getSingleUser(req, res, next) {
   db
-    .any("SELECT * FROM users WHERE email = ${email}", req.user)
+    .any("SELECT * FROM users WHERE username = ${username}", req.user)
     .then(function(data) {
       res.status(200).json({
         status: "success",
@@ -54,18 +61,8 @@ function getSingleUser(req, res, next) {
     });
 }
 
-//Get Single Business
-function getSingleBusiness(req, res, next) {
-  db
-    .any("SELECT * FROM businesses WHERE email = ${email}", req.business)
-    .then(function(data) {
-      res.status(200).json({
-        status: "success",
-        data: data,
-        message: "Fetched one business"
-      });
-    })
-    .catch(function(err) {
-      return next(err);
-    });
-}
+module.exports = {
+  getAll: getAll,
+  getAllUsers: getAllUsers,
+  getAllBusinesses: getAllBusinesses
+};

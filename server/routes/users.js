@@ -1,15 +1,21 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 
-const authUserHelpers = require('../auth/authUser/helpers');
+const authHelpers = require("../auth/helpers");
+const passport = require("../auth/local");
+const db = require("../db/queries");
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  console.log(req.sessionID)
-  res.send('respond with a resource');
+router.get("/", function(req, res, next) {
+  console.log(req.sessionID);
+  res.send("respond with a resource");
 });
 
-router.get("/user", authUserHelpers.loginUserRequired, (req, res, next) => {
+router.get("/all", db.getAll);
+router.get("/allusers", db.getAllUsers);
+router.get("/allbusiness", db.getAllBusinesses);
+
+router.get("/login", authHelpers.loginRequired, (req, res, next) => {
   handleResponse(res, 200, "success");
 });
 
