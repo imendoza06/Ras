@@ -1,0 +1,114 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Passion One";
+  font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Passion+One");
+
+#header{
+  background-color: gray;
+  height: 10vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.App-header {
+  margin: 10px;
+  text-align: center;
+  font-size: 35px;
+  font-family: "Phosphate-Inline";
+  color: black;
+  font-family: "Passion One";
+  font-style: normal;
+}
+
+#wrapper {
+  /* border: 1px red solid; */
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+#topbox {
+  background-color: gray;
+  height: 30vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+#outerdiv {
+  background-color: black;
+  width: 90vw;
+}
+
+.sidebar {
+  list-style-type: none;
+  text-align: left;
+  width: 15vw;
+  height: 55vh;
+  display: block;
+  padding: 40px;
+  font-size: 20px;
+}
+
+#box1 a{
+  color:white;
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+
+.rightbox {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  color: white;
+  background: black;
+  margin-left: 250px;
+  height: 42vh;
+  width: 50vw;
+  margin-top: -260px;
+  font-size: 15px;
+}
+
+.infobox {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background: white;
+  color: black;
+  margin-left: -1px;
+  height: 32vh;
+  width: 50vw;
+  margin-top: -15px;
+  font-size: 23px;
+}
+
+/* Pictures */
+
+.picture {
+  width: 60vw;
+  /* border: 2px solid blue; */
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.picture img {
+  margin-top: 20px;
+  float: left;
+  width: 200px;
+  height: 150px;
+  /* border: 2px solid red; */
+}
