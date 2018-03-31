@@ -7,6 +7,8 @@ import Contact from './components/Contact/Contact';
 import Login from './components/Sign/LogIn/LogIn';
 import Signup from './components/Sign/SignUp/SignUp';
 import Search from './components/Search/Search';
+import UserProfile from './components/Users/UserProfile/UserProfile';
+import MapContainer from './components/Map/MapContainer'
 
 class App extends React.Component {
 
@@ -18,6 +20,8 @@ class App extends React.Component {
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         <Route path="/search" component={Search} />
+        <Route exact path='/UserProfile' component ={UserProfile}/>
+        <Route exact path='/MapContainer' component ={MapContainer}/>
       </div>;
   }
 }

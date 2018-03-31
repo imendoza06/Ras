@@ -1,0 +1,179 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Passion One";
+    font-style: normal;
+    background-color: black;
+    border-radius: 5px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Passion+One");
+#headerz {
+    margin: 8px;
+    text-align: center;
+    font-size: 35px;
+    font-family: "Phosphate-Inline";
+    color: black;
+    background-color: white;
+    font-family: "Passion One";
+    height: 20vh;
+    margin-top: -43px;
+}
+
+#wrapper {
+    /* border: 1px red solid; */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#topbox {
+    background-color: gray;
+    height: 30vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-top: -120px;
+}
+
+#outerdiv {
+    background-color: white;
+    width: 90vw;
+    /* height: 80vh; */
+    border-radius: 10px;
+}
+
+
+/* Side Bar Navigation */
+
+.sidebar {
+    width: 15vw;
+    height: 40vh;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: 50px;
+    float: left;
+}
+
+#sidebarinfo {
+    display: block;
+    padding: 50px;
+    font-size: 20px;
+    list-style-type: none;
+    text-align: left;
+    margin-top: -60px;
+    margin-left: -40px;
+}
+
+#box1 a {
+    color: black;
+    text-decoration: none;
+}
+
+#box1 a:hover {
+    color: green;
+}
+
+
+/* Right Info Box */
+
+.rightbox {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    color: white;
+    background: black;
+    margin-left: 220px;
+    height: 55vh;
+    width: 65vw;
+    margin-top: -305px;
+    font-size: 15px;
+}
+
+.infobox {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    background: white;
+    color: black;
+    margin-left: -1px;
+    height: 45vh;
+    width: 65vw;
+    margin-top: -15px;
+    font-size: 23px;                                                    
+}
+
+
+/* Pictures */
+
+.picturez {
+    width: 60vw;
+    /* border: 2px solid blue; */
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.picturez img {
+    margin-top: 10px;
+    margin-left: 30px;
+    float: left;
+    width: 240px;
+    height: 160px;
+    border-radius: 5px;
+}
+
+.uls {
+    list-style-type: none;
+}
+
+
+/* Top Navigation Bar */
+
+.topnav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    /* margin-top: -70px; */
+    background-color: none;
+    height: 8vh;
+}
+
+.topnav a {
+    display: inline-block;
+    padding: 10px;
+    color: black;
+    margin-top: -50px;
+}
+
+.topnav li {
+    display: inline;
+}
+
+.topnav a:hover {
+    color: green;
+}
+
+#search {
+    width: 40vw;
+    border-radius: 20px;
+    margin-top: -200px;
+}
+
+#inputz {
+   border-radius: 20px;
+   border-width: 1vw;
+   border-color: black;
+   
+}
