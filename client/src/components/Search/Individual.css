@@ -4,6 +4,9 @@
     background-color: white;
 }
 
+#barlogo{
+    z-index:10;
+}
 
 /* Search Bar */
 
@@ -107,4 +110,24 @@
     height: 50vh;
     border: 5px double black;
     border-radius: 5px;
+}
+
+#book select{
+    width: 200px;
+    height: 30px;
+}
+
+#book button[type=submit] {
+    height: 30px;
+    width: 200px;
+    border-radius: 8px;
+    margin: 8px;
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+#book button[type=submit]:hover {
+    background-color: #92dce5;
+    color: black;
 }

@@ -5,6 +5,7 @@ import Test from "../Images/Test.jpg";
 import Test2 from "../Images/Test2.jpg";
 import Test3 from "../Images/Test3.jpeg";
 import Searchicon from "../Images/Search.png";
+import Logowhite from "../Images/LogoWhite.png";
 
 const Individual = ({
     name, image, about, description, address, price, dimensions, amenities
@@ -12,6 +13,9 @@ const Individual = ({
 }) => (
         <div id="ibacker">
             <div id="topbar">
+                <div id="barlogo">
+                    <Link to={`/`}><img src={Logowhite} /></Link>
+                </div>
                 <div id="ibar">
                     <div id="ibarcard">
                         <input
@@ -63,8 +67,8 @@ const Individual = ({
                             <select></select>
                             <p> Rooms</p>
                             <select></select>
-                            <br/>
-                            <button>Book Now</button>
+                            <br />
+                            <button type="submit">Book Now</button>
                         </div>
                     </div>
                 </section>
@@ -73,7 +77,6 @@ const Individual = ({
             <div id="footer">
                 <Link to={`/contact`}><a class="hoverturn"><span data-title="Contact">Contact</span></a></Link>
                 <Link to={`/about`}><a class="hoverturn"><span data-title="About Us">About Us</span></a></Link>
-                <Link to={`/`}><a class="hoverturn"><span data-title="Home">Home</span></a></Link>
                 <p>RAS @ 2018</p>
             </div>
         </div>
