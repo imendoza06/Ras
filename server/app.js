@@ -12,6 +12,7 @@ const passport = require("passport");
 var index = require('./routes/index');
 var users = require('./routes/users');
 var authUsers = require("./routes/auth");
+var api = require("./routes/api/api")
 
 var app = express();
 
@@ -48,6 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/auth', authUsers);
+app.use('/api', api);
 
 app.get("/session", function(req, res) {
   console.log("Inside the session callback function");
