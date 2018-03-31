@@ -1,12 +1,19 @@
-const express = require("express");
-const router = express.Router();
+var express = require("express");
+var router = express.Router();
 
-const authUserHelpers = require("../../auth/authUser/helpers");
-const passport = require("../../auth/authUser/local");
+const authHelpers = require("../auth/helpers");
+const passport = require("../auth/local");
 
-router.post("/register", authUserHelpers.loginUserRedirect, (req, res, next) => {
+/* AUTH  */
+router.get("/", function(req, res, next) {
+  res.send("You are inside AUTH");
+});
+
+
+router.post("/new", authHelpers.loginRedirect, (req, res, next) => {
+  console.log("sign up request", req.body);
   return authHelpers
-    .createUser(req, res)
+    .createUser(req, res, next)
     .then(response => {
       passport.authenticate("local", (err, user, info) => {
         if (user) {
@@ -19,7 +26,8 @@ router.post("/register", authUserHelpers.loginUserRedirect, (req, res, next) => 
     });
 });
 
-router.post("/login", authUserHelpers.loginUserRedirect, (req, res, next) => {
+router.post("/login", authHelpers.loginRedirect, (req, res, next) => {
+  console.log("login request", req.body);
   passport.authenticate("local", (err, user, info) => {
     if (err) {
       handleResponse(res, 500, "error");
@@ -37,9 +45,10 @@ router.post("/login", authUserHelpers.loginUserRedirect, (req, res, next) => {
     }
   })(req, res, next);
 });
-
-router.get("/logout", authUserHelpers.loginUserRequired, (req, res, next) => {
+// Handle logout
+router.get("/logout", authHelpers.loginRequired, (req, res, next) => {
   req.logout();
+  req.session.destroy();
   handleResponse(res, 200, "success");
 });
 

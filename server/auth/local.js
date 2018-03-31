@@ -3,22 +3,22 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const init = require("./passport");
 
-const db = require("../../db/connection");
-const authUserHelpers = require("./helpers");
+const db = require("../db/connection");
+const authHelpers = require("./helpers");
 
 const options = {};
 
 init();
 
 passport.use(
-  new LocalStrategy(options, (email, password, done) => {
+  new LocalStrategy(options, (username, password, done) => {
     db
-      .one("SELECT email, password_digest FROM users WHERE email=$1", [email])
+      .one("SELECT * FROM users WHERE username=$1", [username])
       .then(user => {
         if (!user) {
           return done(null, false);
         }
-        if (!authUserHelpers.comparePass(password, user.password_digest)) {
+        if (!authHelpers.comparePass(password, user.password_digest)) {
           return done(null, false);
         } else {
           return done(null, user);

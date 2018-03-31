@@ -6,13 +6,13 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 const session = require("express-session");
+const pgSessionStore = require("connect-pg-simple")(session);
 const passport = require("passport");
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var businesses = require('./routes/businesses');
-var authUsers = require('./routes/auth/userAuth');
-var authBusiness = require('./routes/auth/businessAuth');
+var authUsers = require("./routes/auth");
+var api = require("./routes/api/api")
 
 var app = express();
 
@@ -27,13 +27,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-//sessions
+//Session Middleware
 app.use(
   session({
+    store: new pgSessionStore({
+      conString: "postgres://c4q:c4q@localhost:5432/rasdb"
+    }),
     secret:
       "\x02\xf3\xf7r\t\x9f\xee\xbbu\xb1\xe1\x90\xfe'\xab\xa6L6\xdd\x8d[\xccO\xfe",
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 } // 30 days
   })
 );
 app.use(passport.initialize());
@@ -44,9 +48,32 @@ app.use(express.static(path.join(__dirname, 'public')));
 //routes 
 app.use('/', index);
 app.use('/users', users);
-app.use('/businesses', businesses)
-app.use('/auth/users', authUsers);
-app.use('/auth/businesses', authBusiness);
+app.use('/auth', authUsers);
+app.use('/api', api);
+
+app.get("/session", function(req, res) {
+  console.log("Inside the session callback function");
+  console.log(req.sessionID);
+  if (!req.session.views) {
+    req.session.views = 1;
+  } else {
+    req.session.views += 1;
+  }
+  res.json({
+    status: "ok",
+    frequency: req.session.views,
+    session_id: req.sessionID
+  });
+});
+app.get("/authrequired", function(req, res) {
+  console.log("Inside GET /authrequired callback");
+  console.log(`User authenticated? ${req.isAuthenticated()}`);
+  if (req.isAuthenticated()) {
+    res.send("you hit the authentication endpoint\n");
+  } else {
+    res.redirect("/");
+  }
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
