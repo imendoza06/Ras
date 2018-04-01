@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css?family=Passion+One");
+#upbacker {
+    /* border: 1px red solid; */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: white;
+}
+/* Topbox */
+
+#topbox {
+    position: relative;
+    background-color: black;
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    /* border: red 1px solid; */
+}
+
+.picturez {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90vw;
+    height: 28vh;
+    /* border: 2px solid blue; */
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.picturez img {
+    margin: 10px;
+    float: left;
+    width: 240px;
+    height: 143px;
+    border-radius: 5px;
+}
+
+/* Usercontent */
+
+
+#usercontent {
+    position:absolute;
+    top: 43vh;
+    left:0px;
+    width: 100vw;
+    height: 57vh;
+    /* border: red 1px solid; */
+}
+
+
+/* Side Bar Navigation */
+
+.sidebar {
+    width: 18vw;
+    height: 36vh;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 30px;
+    float: left;
+    padding: 5px;
+    border: 3px black double;
+}
+
+#sidebarinfo {
+    display: block;
+    padding: 50px;
+    font-size: 20px;
+    list-style-type: none;
+    text-align: left;
+    margin-top: -60px;
+    margin-left: -40px;
+}
+
+#box1 a {
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#box1 a:hover {
+    color: #6ba1a7;
+} 
+
+/* Right Info Box */
+
+.rightbox {
+    border: black 2px solid;
+    border-radius: 5px;
+    color: white;
+    background: #6ba1a7;
+    position: absolute;
+    height: 45vh;
+    width: 70vw;
+    top: 0vh;
+    left: 25%;
+    font-size: 15px;
+}
+ .infobox {
+    border-style: solid;
+    border-width: 1px;
+    /* border-radius: 5px; */
+    background: white;
+    color: black;
+    margin-left: -1px;
+    height: 38.5vh;
+    width: 70vw;
+    margin-top: -15px;
+    font-size: 23px;                                                    
+}
+
+.uls {
+    list-style-type: none;
+}
+
+/* Search Bar */
+
+#ubar {
+    position: fixed;
+    top: 29%;
+    width: 100%;
+    text-align: center;
+    height: 11vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ubar input {
+    border: none;
+    height: 5vh;
+    width: 55vh;
+    padding-left: 10px;
+    outline: none;
+}
+
+#ubar input[placeholder="Name"] {
+    border-radius: 5px 0px 0px 5px;
+}
+
+#ubar button {
+    height: 5.6vh;
+    width: 10vh;
+    border-radius: 0px 3px 3px 0px;
+    background-color: black;
+    color: white;
+    border: white 1px solid;
+}
+
+#ubar button:hover {
+    background-color: #92dce5;
+}
+
+#ubarcard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#ubar img {
+    width: 15px;
+}

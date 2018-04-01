@@ -1,76 +1,81 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import "./Users.css";
+import "./UserProfile.css";
+import Logowhite from "../../Images/LogoWhite.png";
+import Searchicon from "../../Images/Search.png";
 
 const UserProfile = () => (
 
   <Router>
-    <div id="wrapper">
-    <div id ="search">
-          < Search />
-          </div>
-      <div id="outerdiv">
-        <div id="headerz">
-          <h3>User Profile</h3>
+    <div id="upbacker">
+      <div id="topbar">
+        <div id="barlogo">
+          <Link to={`/`}>
+            <img src={Logowhite} />
+          </Link>
         </div>
-        <div id="topbox">
-          <div className="picturez">
-            <div id="pic1">
-              <a href="http://www.houseofmovementny.com/">
-                <img
-                  border="0"
-                  alt="pic1"
-                  src="https://static1.squarespace.com/static/5999f051e6f2e19ff03f83ac/t/5999fb7dd2b857d71bea9ec2/1504039738772/Ballet+Class?format=500w"
-                />
-              </a>{" "}
-              <br />
-            </div>{" "}
-            <div id="pic2">
-              <a href="http://www.houseofmovementny.com/">
-                <img
-                  border="0"
-                  alt="pic2"
-                  src="https://media.timeout.com/images/103238690/image.jpg"
-                />
-              </a>
-            </div>
-            <br />{" "}
-            <div id="pic3">
-              <a href="http://www.houseofmovementny.com/">
-                <img
-                  border="0"
-                  alt="pic3"
-                  src="https://www.theaileyschool.edu/sites/default/files/styles/default_manual_crop/public/school_scholarship_5.jpg?itok=Kqa3iIQW"
-                />
-              </a>
-            </div>
+        <Link to={`/login`}>
+          <a class="hoverturn">
+            <span data-title="Log Out">Log Out</span>
+          </a>
+        </Link>
+      </div>
+      <div id="topbox">
+        <div className="picturez">
+          <div id="pic1">
+            <a href="http://www.houseofmovementny.com/">
+              <img
+                border="0"
+                alt="pic1"
+                src="https://static1.squarespace.com/static/5999f051e6f2e19ff03f83ac/t/5999fb7dd2b857d71bea9ec2/1504039738772/Ballet+Class?format=500w"
+              />
+            </a>{" "}
+            <br />
+          </div>{" "}
+          <div id="pic2">
+            <a href="http://www.houseofmovementny.com/">
+              <img
+                border="0"
+                alt="pic2"
+                src="https://media.timeout.com/images/103238690/image.jpg"
+              />
+            </a>
           </div>
-          <header className="topnav">
-            <ul className = "uls">
-              <li>
-                <Link to={`/Account`}>
-                  <a class="hoverturn">
-                    <span data-title="My Account">My Account</span>
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link to={`/Home`}>
-                  <a class="hoverturn">
-                    <span data-title="Home">Home</span>
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link to={`/Reviews`}>
-                  <a class="hoverturn">
-                    <span data-title="Logout">Logout</span>
-                  </a>
-                </Link>
-              </li>
-            </ul>
-          </header>
+          <br />{" "}
+          <div id="pic3">
+            <a href="http://www.houseofmovementny.com/">
+              <img
+                border="0"
+                alt="pic3"
+                src="https://www.theaileyschool.edu/sites/default/files/styles/default_manual_crop/public/school_scholarship_5.jpg?itok=Kqa3iIQW"
+              />
+            </a>
+          </div>
+          <div id="pic3">
+            <a href="http://www.houseofmovementny.com/">
+              <img
+                border="0"
+                alt="pic3"
+                src="https://www.theaileyschool.edu/sites/default/files/styles/default_manual_crop/public/school_scholarship_5.jpg?itok=Kqa3iIQW"
+              />
+            </a>
+          </div>
         </div>
+        <div id="ubar">
+          <div id="ubarcard">
+            <input
+              type="text"
+              placeholder="Name"
+              onChange={this.handleSearch} />
+            <input
+              type="text"
+              placeholder="Address"
+              onChange={this.handleAddressSearch} />
+            <Link to={`/search`}><button type="submit"><img src={Searchicon}></img></button></Link>
+          </div>
+        </div>
+      </div>
+      <div id="usercontent">
         <div className="sidebar">
           <div id="box1">
             <div id="sidebarinfo">
@@ -104,6 +109,11 @@ const UserProfile = () => (
             </div>
           </div>
         </div>
+      </div>
+      <div id="footer">
+        <Link to={`/contact`}><a class="hoverturn"><span data-title="Contact">Contact</span></a></Link>
+        <Link to={`/about`}><a class="hoverturn"><span data-title="About Us">About Us</span></a></Link>
+        <p>RAS @ 2018</p>
       </div>
     </div>
   </Router>
@@ -173,12 +183,12 @@ const Reviews = () => (
 
 const Search = () => (
   <div>
-    <input id ="inputz"
-        type ="text"
-        name="Search"
-        placeholder="Find A Studio"
-        // value={Search}
-        // onchange={this.handleSearch}
+    <input id="inputz"
+      type="text"
+      name="Search"
+      placeholder="Find A Studio"
+    // value={Search}
+    // onchange={this.handleSearch}
     />
   </div>
 )
