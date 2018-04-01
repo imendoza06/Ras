@@ -1,43 +1,45 @@
 /* Form */
 
 #overflow {
-    overflow: scroll;
-    width: 400px;
-    height: 190px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 30vw;
+    height: 31vh;
+    /* border: 1px solid black; */
 }
 
 #signup {
     text-align: center;
     float:left;
     margin-top: 90px;
-    width: 400px;
-    height: 350px;
+    width: 30vw;
+    height: 55vh;
     border-left: white solid 2px;
 }
 
 #signup h1 {
     margin: 10px;
-    font-size: 45px;
+    font-size: 7vh;
     font-family: 'Phosphate-Inline';
     color: black;
     margin-top: 3px;
 }
 
 #signup p {
-    font-size: 13px;
+    font-size: 2vh;
     margin: 5px;
 }
 
 #signup input {
-    height: 30px;
-    width: 300px;
+    height: 5vh;
+    width: 23vw;
     border-radius: 5px;
     margin: 8px;
 }
 
 #signup input[type=submit] {
-    height: 30px;
-    width: 200px;
+    height: 5vh;
+    width: 15vw;
     border-radius: 8px;
     margin: 6px;
     background-color: black;
@@ -51,15 +53,15 @@
 }
 
 #signup select {
-    height: 30px;
-    width: 305px;
+    height: 5vh;
+    width: 23vw;
     margin: 8px;
 }
 
 #signup a {
     text-decoration: none;
     color: white;
-    font-size: 13px;
+    font-size: 2vh;
 }
 
 #signup a:hover {

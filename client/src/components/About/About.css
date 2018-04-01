@@ -172,7 +172,7 @@
     position: absolute;
     right: -135px;
     top: 470px;
-    height: 100px;
+    height: 10vh;
     font-family: 'Phosphate-Inline';
     font-size: 18px;
 }
@@ -186,15 +186,15 @@
 
 #whoheader {
     margin-top: 80px;
-    font-size: 40px;
+    font-size: 7vh;
     padding: 15px;
-    height: 60px;
+    /* height: 60px; */
     font-family: 'Phosphate-Inline', cursive;
 }
 
 #whop {
     position: absolute;
-    font-size: 18px;
+    font-size: 2.8vh;
     top: 150px;
     width: 600px;
 }
@@ -203,16 +203,16 @@
     position: absolute;
     font-size: 18px;
     top: 230px;
-    width: 1040px;
-    height: 310px;
+    width: 80vw;
+    height: 50vh;
     /* border: 1px solid white; */
 }
 
 #purposelist div {
-    width: 300px;
+    width: 23vw;
     /* border: 1px solid white; */
     float: left;
-    height: 300px;
+    height: 50vh;
     margin: 20px;
 }
 
@@ -222,7 +222,7 @@
 }
 
 #purposelist img {
-    width: 100px;
+    width: 9vw;
 }
 
 
@@ -230,7 +230,7 @@
 
 #aboutservices h1 {
     margin-top: 80px;
-    font-size: 38px;
+    font-size: 6vh;
     padding: 15px;
     height: 60px;
     font-family: 'Phosphate-Inline', cursive;
@@ -240,22 +240,22 @@
     position: absolute;
     font-size: 18px;
     top: 160px;
-    width: 615px;
+    width: 46.3vw;
     height: 310px;
     /* border: 1px solid white; */
 }
 
 #services div {
-    width: 300px;
+    width: 22vw;
     /* border: 1px solid white; */
     float: left;
-    height: 300px;
+    height: 30vh;
     margin: 3px;
 }
 
 #services h3 {
     font-family: 'Phosphate-Inline', cursive;
-    font-size: 25px;
+    font-size: 4vh;
     border: 5px double white;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.651);
@@ -266,7 +266,7 @@
 
 #aboutconnect h1 {
     margin-top: 80px;
-    font-size: 45px;
+    font-size: 8vh;
     padding: 15px;
     height: 60px;
     font-family: 'Phosphate-Inline', cursive;
@@ -282,16 +282,16 @@
     position: absolute;
     top: 210px;
     /* border: solid 1px white; */
-    width: 1200px;
+    width: 85vw;
 }
 
 #connecticons img {
-    width: 160px;
+    width: 12vw;
     margin: 50px;
 }
 
 #connecticons img:hover {
-    width: 190px;
+    width: 13vw;
 }
 
 

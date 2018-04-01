@@ -1,6 +1,6 @@
 #sbacker {
     width: 100%;
-    height: 650px;
+    height: 100vh;
     background-color: white;
 }
 
@@ -9,7 +9,7 @@
 
 #sbar {
     position: fixed;
-    top: 40px;
+    top: 6.5%;
     width: 100%;
     text-align: center;
     background-color: #6ba1a7;
@@ -56,7 +56,7 @@
 
 #filters {
     position: fixed;
-    top: 105px;
+    top: 17.5%;
     width: 100%;
     text-align: center;
     background-color: #3a686dd3;
@@ -67,8 +67,8 @@
 }
 
 #catselect {
-    height: 30px;
-    width: 120px;
+    height: 4vh;
+    width: 9vw;
     background-color: transparent;
     border-radius: 0;
     border: none;
@@ -77,8 +77,8 @@
 }
 
 #sortselect {
-    height: 30px;
-    width: 80px;
+    height: 4vh;
+    width: 6vh;
     background-color: transparent;
     border-radius: 0;
     border: none;
@@ -91,7 +91,7 @@
 
 #listings {
     position: absolute;
-    border: 1px black solid;
+    /* border: 1px black solid; */
     width: 100vw;
     height: 80vh;
     top: 23vh;

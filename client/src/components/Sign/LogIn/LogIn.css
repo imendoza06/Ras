@@ -4,23 +4,26 @@
     width: 100%;
     height: 100vh;
     background-color: #6ba1a7;
+    display: flex;
+    align-content: center;
 }
 
 /* Content */
 
 #lscontent{
-    width: 1000px;
+    width: 80vw;
     height: 100vh;
     display: block;
     padding: 40px;
     margin-left: auto;
     margin-right: auto;
+    /* border: 1px black solid; */
 }
 
 /* Logo */
 
 #logodiv {
-    width: 550px;
+    width: 43vw;
     float: left;
 }
 
@@ -28,7 +31,7 @@
     position: relative;
     margin: 10px auto;
     width: 500px;
-    height: 500px;
+    height: 80vh;
     z-index: 1;
     background-color: transparent;
 }
@@ -67,7 +70,7 @@
 #fliper img {
     margin: 45px;
     margin-top: 60px;
-    width: 430px;
+    height: 55vh;
 }
 
 
@@ -77,33 +80,34 @@
     text-align: center;
     float:left;
     margin-top: 90px;
-    width: 400px;
-    height: 350px;
+    width: 30vw;
+    height: 55vh;
+    /* border: 1px solid black; */
     border-left: white solid 2px;
 }
 
 #login h1 {
     margin: 10px;
-    font-size: 45px;
+    font-size: 7vh;
     font-family: 'Phosphate-Inline';
     color: black;
 }
 
 #login p {
-    font-size: 13px;
+    font-size: 2vh;
     margin: 5px;
 }
 
 #login input {
-    height: 30px;
-    width: 300px;
+    height: 5vh;
+    width: 23vw;
     border-radius: 5px;
     margin: 8px;
 }
 
 #login input[type=submit] {
-    height: 30px;
-    width: 200px;
+    height: 5vh;
+    width: 15vw;
     border-radius: 8px;
     margin: 8px;
     background-color: black;
@@ -117,15 +121,15 @@
 }
 
 #login select {
-    height: 30px;
-    width: 305px;
+    height: 5vh;
+    width: 23vw;
     margin: 8px;
 }
 
 #login a {
     text-decoration: none;
     color: white;
-    font-size: 13px;
+    font-size: 2vh;
 }
 
 #login a:hover {

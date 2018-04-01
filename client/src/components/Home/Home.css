@@ -9,6 +9,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
 }
 
 body {
@@ -35,7 +36,7 @@ select {
 #topbar {
     position: fixed;
     width: 100%;
-    max-height: 20px;
+    min-height: 3vh;
     background-color: rgba(0, 0, 0, 0.76);
     padding-top: 10px;
     padding-bottom: 10px;
@@ -57,7 +58,7 @@ select {
 }
 
 #barlogo img {
-    width: 30px;
+    width: 5vh;
 }
 
 
@@ -67,7 +68,7 @@ select {
     position: fixed;
     bottom: 0px;
     width: 100%;
-    max-height: 20px;
+    min-height: 3vh;
     background-color: rgba(0, 0, 0, 0.76);
     padding-top: 10px;
     padding-bottom: 10px;
@@ -176,7 +177,7 @@ select {
     top: 62vh;
     margin-left: auto;
     margin-right: auto;
-    width: 80vh;
+    min-width: 80vh;
     font-family: 'Phosphate-Inline';
     text-decoration: none;
     font-size: 4vh;
@@ -240,13 +241,12 @@ select {
 }
 
 #homereviewlist {
-    border: 1px solid black;
-    width: 87.5vw;
+    /* border: 1px solid black; */
+    width: 1165px;
     height: 45vh;
     position: absolute;
     top: 18vh;
     overflow-x:scroll;
-    overflow-y:hidden;
     white-space: nowrap;
 }
 
@@ -361,7 +361,8 @@ select {
 
 #homenewlist {
     border: 8px double white;
-    width: 185vh;
+    width: 81vw;
+    overflow-x:scroll;
     height: 48vh;
     position: absolute;
     top: 13vh;
@@ -381,7 +382,7 @@ select {
 }
 
 #newdiv img {
-    width: 38.6vh;
+    width: 17.3vw;
     height: 31vh;
     border-radius: 0px 100px 0px 0px;
     margin: 0px;
@@ -402,7 +403,7 @@ select {
     /* border: black 1px solid; */
     margin: 0px;
     height: 11vh;
-    width: 38.6vh;
+    width: 17.3vw;
     top: -10px;
     border-radius: 0px 0px 5px 100px;
     background-color: #6ba1a7;
