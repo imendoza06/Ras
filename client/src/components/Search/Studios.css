@@ -17,10 +17,10 @@
 
 #studiodiv {
     float: left;
-    height: 246px;
+    height: 41vh;
     width: 38.6vh;
     /* border: red 3px solid; */
-    margin: .74vw;
+    margin: 7.5px;
     border-radius: 5px;
 }
 
