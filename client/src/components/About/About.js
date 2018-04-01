@@ -98,7 +98,7 @@ class About extends React.Component {
               <section class="section parallax bg3" id="aboutheader">
                 <div id="bottom" />
                 <div class="aboutbg">
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500px" viewBox="0 0 612 792">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="80vh" viewBox="0 0 612 792">
                     <g id="R">
                       <path class="pathword" x="10px" y="0px" stroke="#6ba1a7" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="1400" stroke-dashoffset="1410" d="M219.3,311.3c0,0-4.4-4.5-11.8-12c-35.5-36.3-138.9-142-138.9-142L65,634.7l63.7-61.3L124,396l68.7,110.7
 		                            l26-24.7l-45.3-86h45.3L219.3,311.3z M196,370l-84-13.3c0,0-0.3-21.7-0.6-43.7c-0.3-22.9-0.7-46.3-0.7-46.3L196,340V370z" />
@@ -131,7 +131,7 @@ class About extends React.Component {
                     </g>
                   </svg>
                   <div id="subabout">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="900px" height="200px" viewBox="0 0 400 150">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="900px" height="33vh" viewBox="0 0 400 150">
                       <text transform="matrix(1 0 0 1 75.2403 66.4661)" class="pathsub" stroke="#92dce5" stroke-width="0.5" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="500" stroke-dashoffset="500" fill="black">
                         Your One Stop Shop Studio Marketplace{" "}
                       </text>

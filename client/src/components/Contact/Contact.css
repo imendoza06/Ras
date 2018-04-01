@@ -10,12 +10,13 @@
 /* Content */
 
 #ccontent {
-    width: 1000px;
+    width: 80vw;
     height: 100vh;
     display: block;
     padding: 60px;
     margin-left: auto;
     margin-right: auto;
+    /* border: 1px solid black; */
 }
 
 
@@ -28,19 +29,19 @@
     border-radius: 10px;
     padding: 10px;
     text-align: center;
-    width: 400px;
+    width: 30vw;
 }
 
 #contact input[type=text] {
-    height: 30px;
-    width: 300px;
+    height: 4vh;
+    width: 23vw;
     border-radius: 5px;
     margin: 8px;
 }
 
 #contact input[type=submit] {
-    height: 30px;
-    width: 200px;
+    height: 5vh;
+    width: 15vw;
     border-radius: 8px;
     margin: 8px;
     background-color: black;
@@ -54,15 +55,15 @@
 }
 
 #contact textarea {
-    height: 80px;
-    width: 300px;
+    height: 13vh;
+    width: 23vw;
     border-radius: 5px;
     margin: 8px;
 }
 
 #contact select {
-    height: 30px;
-    width: 305px;
+    height: 5vh;
+    width: 23vw;
     margin: 8px;
 }
 
@@ -71,22 +72,23 @@
 
 #faq {
     float: left;
-    width: 550px;
+    width: 43vw;
     text-align: center;
     margin-top: 60px;
+
 }
 
 #faq h1 {
     font-family: 'Phosphate-Inline';
-    font-size: 30px;
+    font-size: 5vh;
     color: black;
 }
 
 #faq h3 {
-    font-size: 15px;
+    font-size: 2.4vh;
 }
 
 #faq select {
-    height: 30px;
-    width: 250px;
+    height: 5vh;
+    width: 25vw;
 }

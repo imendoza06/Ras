@@ -93,7 +93,7 @@ class Home extends React.Component {
                 </section>
                 <section class="section halfsection whitebg" id="homereview">
                   <h1>Most Popular</h1>
-                  <div id="homereviewlist">
+                  <div id="homereviewlist" >
                     <div>
                       <Listing image={Test} header="Broadway Dance Center" description="New York, NY" bigdiv="reviewdiv" worddiv="reviewword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
                       <Listing image={Test2} header="Broadway Dance Center" description="New York, NY" bigdiv="reviewdiv" worddiv="reviewword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
@@ -108,8 +108,12 @@ class Home extends React.Component {
                     <div id="slword">
                       <h3>Broadway Dance Center</h3>
                       <p>
-                        There are many great review for this place.
-                        Don't you think so?
+                          Broadway Dance Center, located on West 45th Street west of Times Square in New York City, 
+                          was founded in 1984 as one of the first "drop-in" dance training schools in the world, 
+                          offering over 200 classes a week in Jazz, Tap, Ballet, Contemporary, Hip Hop, Theater 
+                          and more (Yoga, Pilates, Flexibility, Belly Dancing, Vocal Performance, and Vocal Technique). 
+                          Dancers and performers such as Britney Spears, Madonna, and NSYNC have 
+                          taken class or rehearsed at the school.
                       </p>
                     </div>
                     <img src={Test} />

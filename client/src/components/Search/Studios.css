@@ -19,8 +19,8 @@
     float: left;
     height: 246px;
     width: 38.6vh;
-    /* border: red 3px solid; */
-    margin: 16.4px;
+    border: red 3px solid;
+    margin: .5vw;
     border-radius: 5px;
 }
 
