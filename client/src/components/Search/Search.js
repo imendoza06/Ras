@@ -8,7 +8,10 @@ import Studios from "./Studios"
 
 
 class Search extends React.Component {
-    state = { input: "", address: "", selected: "", sort: "" };
+    constructor(props) {
+        super(props);
+        this.state = { input: "", address: "", selected: "", sort: "" }
+    };
 
     handleSelect = e => {
         this.setState({
@@ -130,13 +133,65 @@ class Search extends React.Component {
             },];
         return (
             <div id="sbacker">
-                <div id="topbar">
-                    <div id="barlogo">
-                        <Link to={`/`}><img src={Logowhite} /></Link>
+                {this.props.isLogged ?
+                    [
+                        (this.props.protype === "User"
+                            ?
+                            <div id="topbar">
+                                <div id="barlogo">
+                                    <Link to={`/`}>
+                                        <img src={Logowhite} />
+                                    </Link>
+                                </div>
+                                <Link to={`/logout`}>
+                                    <a class="hoverturn">
+                                        <span data-title="Log Out">Log Out</span>
+                                    </a>
+                                </Link>
+                                <Link to={`/userprofile`}>
+                                    <a class="hoverturn">
+                                        <span data-title="My Account">My Account</span>
+                                    </a>
+                                </Link>
+                            </div>
+                            : <div id="topbar">
+                                <div id="barlogo">
+                                    <Link to={`/`}>
+                                        <img src={Logowhite} />
+                                    </Link>
+                                </div>
+                                <Link to={`/logout`}>
+                                    <a class="hoverturn">
+                                        <span data-title="Log Out">Log Out</span>
+                                    </a>
+                                </Link>
+                                <Link to={`/busprofile`}>
+                                    <a class="hoverturn">
+                                        <span data-title="My Account">My Account</span>
+                                    </a>
+                                </Link>
+                            </div>
+                        )
+                    ]
+                    :
+                    <div id="topbar">
+                        <div id="barlogo">
+                            <Link to={`/`}>
+                                <img src={Logowhite} />
+                            </Link>
+                        </div>
+                        <Link to={`/login`}>
+                            <a class="hoverturn">
+                                <span data-title="Log In">Log In</span>
+                            </a>
+                        </Link>
+                        <Link to={`/signup`}>
+                            <a class="hoverturn">
+                                <span data-title="Sign Up">Sign Up</span>
+                            </a>
+                        </Link>
                     </div>
-                    <Link to={`/login`}><a class="hoverturn"><span data-title="Log In">Log In</span></a></Link>
-                    <Link to={`/signup`}><a class="hoverturn"><span data-title="Sign up">Sign Up</span></a></Link>
-                </div>
+                }
                 <div>
                     <div id="sbar">
                         <div id="sbarcard">
@@ -187,7 +242,9 @@ class Search extends React.Component {
         return (
             <div>
                 <Individual
-                    name={name} />
+                    name={name} 
+                    isProfile={this.props.protype}
+                    isInside={this.props.isLogged}/>
             </div>
         );
     }

@@ -50,7 +50,10 @@
     left:0px;
     width: 100vw;
     height: 57vh;
-    /* border: red 1px solid; */
+}
+
+#usercontent p{
+    color:black;
 }
 
 

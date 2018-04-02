@@ -8,14 +8,18 @@ import Flip from "../../Images/FlipLogo.png";
 import axios from "axios";
 
 class Login extends React.Component {
-  state = {
-    username: "",
-    password: "",
-    profile: "Choose Account Type",
-    userData: [],
-    isLoggedIn: false,
-    message: ""
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: "",
+      username: "",
+      password: "",
+      profile: "Choose Account Type",
+      userData: [],
+      isLoggedIn: false,
+      message: ""
+    }
+  };  
 
   handleEmail = e => {
     this.setState({
@@ -53,6 +57,7 @@ class Login extends React.Component {
         .then(res => {
           console.log("logged in: ", res);
           console.log("data : ", res.data);
+          this.props.handleLogin(username);
           this.setState({
             userData: res.data,
             isLoggedIn: true,
@@ -60,15 +65,16 @@ class Login extends React.Component {
             password: "",
             message: "Logged In User"
           });
+          this.props.history.push("/userprofile");
         })
         .catch(err => {
           this.setState({
             username: "",
             password: "",
-            message: "eamil / password not found"
+            message: "Email / password not found"
           });
         });
-    } else if (profile === "Business") {
+    } else if (profile === "Host") {
       axios
         .post("/auth/login", {
           username: username,
@@ -79,20 +85,22 @@ class Login extends React.Component {
         .then(res => {
           console.log("logged in: ", res);
           console.log("data : ", res.data);
+          this.props.handleLogin(username,profile);
           this.setState({
             userData: res.data,
             username: "",
             password: "",
             isLoggedIn: true,
-            message: "Logged In Business"
+            message: "Logged In Host"
           });
+          this.props.history.push("/hostprofile");
         })
         .catch(err => {
           this.setState({
             username: "",
             password: "",
             isLoggedIn: false,
-            message: "eamil / password not found"
+            message: "Email / password not found"
           });
         });
     } else {
@@ -101,13 +109,14 @@ class Login extends React.Component {
   };
 
   render() {
-    const { username, password, profile, isLoggedIn, message } = this.state;
-    const types = ["Choose Account Type", "User", "Business"];
+    const { username, password, profile, isLoggedIn, message, userData } = this.state;
+    const types = ["Choose Account Type", "User", "Host"];
     console.log(`username: ${username},
         password: ${password},
         profile: ${profile},
         isLoggedIn: ${isLoggedIn},
         message: ${message}`);
+    console.log(userData)
     return <div id="lsbacker">
         <div id="topbar">
           <div id="barlogo">
@@ -185,7 +194,6 @@ class Login extends React.Component {
             </form>
             <Link to={`/signup`}>
               <a>New User? Sign Up Here</a>
-              <p>{message}</p>
             </Link>
           </div>
         </div>

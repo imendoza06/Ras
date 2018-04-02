@@ -16,7 +16,13 @@ import Paperplane from "../Images/Paperplane.png";
 
 
 class About extends React.Component {
-    state = { input: "", selected: null, };
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: "",
+      selected: null
+    }
+  };
 
     handleSearch = e => {
         this.setState({
@@ -26,24 +32,66 @@ class About extends React.Component {
 
     render() {
         const { input, selected } = this.state;
-        return <div id="abacker">
-            <div id="topbar">
-              <div id="barlogo">
-                <Link to={`/`}>
-                  <img src={Logowhite} />
+      return <div id="abacker">
+        {this.props.isLogged ?
+          [
+            (this.props.protype === "User"
+              ?
+              <div id="topbar">
+                <div id="barlogo">
+                  <Link to={`/`}>
+                    <img src={Logowhite} />
+                  </Link>
+                </div>
+                <Link to={`/logout`}>
+                  <a class="hoverturn">
+                    <span data-title="Log Out">Log Out</span>
+                  </a>
+                </Link>
+                <Link to={`/userprofile`}>
+                  <a class="hoverturn">
+                    <span data-title="My Account">My Account</span>
+                  </a>
                 </Link>
               </div>
-              <Link to={`/login`}>
-                <a class="hoverturn">
-                  <span data-title="Log In">Log In</span>
-                </a>
-              </Link>
-              <Link to={`/signup`}>
-                <a class="hoverturn">
-                  <span data-title="Sign Up">Sign Up</span>
-                </a>
+              : <div id="topbar">
+                <div id="barlogo">
+                  <Link to={`/`}>
+                    <img src={Logowhite} />
+                  </Link>
+                </div>
+                <Link to={`/logout`}>
+                  <a class="hoverturn">
+                    <span data-title="Log Out">Log Out</span>
+                  </a>
+                </Link>
+                <Link to={`/busprofile`}>
+                  <a class="hoverturn">
+                    <span data-title="My Account">My Account</span>
+                  </a>
+                </Link>
+              </div>
+            )
+          ]
+          :
+          <div id="topbar">
+            <div id="barlogo">
+              <Link to={`/`}>
+                <img src={Logowhite} />
               </Link>
             </div>
+            <Link to={`/login`}>
+              <a class="hoverturn">
+                <span data-title="Log In">Log In</span>
+              </a>
+            </Link>
+            <Link to={`/signup`}>
+              <a class="hoverturn">
+                <span data-title="Sign Up">Sign Up</span>
+              </a>
+            </Link>
+          </div>
+        }
             <div id="vermenu">
               <nav>
                 <ul>

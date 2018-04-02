@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Link, Switch, Redirect } from 'react-router-dom';
 import './Home.css';
 import Listing from "./Listing";
 import Logo from "../Images/Logo.png";
@@ -11,26 +11,62 @@ import MenuIcon from "../Images/MenuIcon.png";
 
 
 class Home extends React.Component {
-    state = { selected: "Select Category", input: "", address: "" };
+  constructor(props) {
+    super(props);
+    this.state={
+      selected: "Select Category", 
+      input: "", 
+      address: "" 
+    }
+  };
 
-    handleSearch = e => {
-        this.setState({
-            input: e.target.value
-        });
-    };
-    handleAddressSearch = e => {
-        this.setState({
-            address: e.target.value
-        });
-    };
-
-
+  handleSearch = e => {
+    this.setState({
+      input: e.target.value
+    });
+  };
+  handleAddressSearch = e => {
+    this.setState({
+      address: e.target.value
+    });
+  };
 
     render() {
         const { selected, input, address } = this.state;
+        console.log(this.props.isLogged)
+        console.log(this.props.protype)
 
         return <div>
             <div>
+            {this.props.isLogged ?
+                (this.props.protype === "User"
+                  ?
+                  <div id="topbar">
+                    <Link to={`/logout`}>
+                      <a class="hoverturn">
+                        <span data-title="Log In">Log Out</span>
+                      </a>
+                    </Link>
+                    <Link to={`/userprofile`}>
+                      <a class="hoverturn">
+                        <span data-title="My Account">My Account</span>
+                      </a>
+                    </Link>
+                  </div>
+                  : <div id="topbar">
+                    <Link to={`/logout`}>
+                      <a class="hoverturn">
+                        <span data-title="Log In">Log Out</span>
+                      </a>
+                    </Link>
+                    <Link to={`/busprofile`}>
+                      <a class="hoverturn">
+                        <span data-title="My Account">My Account</span>
+                      </a>
+                    </Link>
+                  </div>
+                )
+              :
               <div id="topbar">
                 <Link to={`/login`}>
                   <a class="hoverturn">
@@ -43,6 +79,8 @@ class Home extends React.Component {
                   </a>
                 </Link>
               </div>
+            }
+            
               <main class="wrapper">
                 <section class="section parallax bg1 msection" id="homeheader">
                   <div id="header">

@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link, Switch } from "react-router-dom";
+import { Route, Link, Switch, Redirect } from "react-router-dom";
 import "./SignUp.css";
 import Logowhite from "../../Images/LogoWhite.png";
 import Logo from "../../Images/Logo.png";
@@ -8,21 +8,25 @@ import Flip from "../../Images/FlipLogo.png";
 import axios from "axios";
 
 class Signup extends React.Component {
-  state = {
-    fname: "",
-    lname: "",
-    username: "",
-    password: "",
-    confirm: "",
-    profile: "Choose Account Type",
-    busname: "",
-    address: "",
-    zip: "",
-    stateName: "",
-    city: "",
-    isRegistered: false,
-    userData: [],
-    message: ""
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: "",
+      fname: "",
+      lname: "",
+      username: "",
+      password: "",
+      confirm: "",
+      profile: "Choose Account Type",
+      busname: "",
+      address: "",
+      zip: "",
+      stateName: "",
+      city: "",
+      isRegistered: false,
+      userData: [],
+      message: ""
+    }
   };
 
   handleFirstName = e => {
@@ -117,10 +121,10 @@ class Signup extends React.Component {
             username: "",
             password: "",
             confirm: "",
-            message: "email / password invalid "
+            message: "Email / password invalid "
           });
         });
-    } else if (profile === "Business") {
+    } else if (profile === "Host") {
       axios
         .post("/auth/new", {
           username: username,
@@ -141,7 +145,7 @@ class Signup extends React.Component {
             username: "",
             password: "",
             confirm: "",
-            message: "Registered a Business!"
+            message: "Registered a Host!"
           });
         })
         .catch(err => {
@@ -152,7 +156,7 @@ class Signup extends React.Component {
             username: "",
             password: "",
             confirm: "",
-            message: "email / password invalid "
+            message: "Email / password invalid "
           });
         });
     } else {
@@ -176,13 +180,15 @@ class Signup extends React.Component {
       isRegistered,
       message
     } = this.state;
-    const types = ["Choose Account Type", "User", "Business"];
+    const types = ["Choose Account Type", "User", "Host"];
       console.log(`username: ${username},
         password: ${password},
         profile: ${profile},
         isRegistered: ${isRegistered},
         message: ${message}`);  
-
+        if (isRegistered) {
+          <Redirect to="/login"/>
+        }
     return (
       <div id="lsbacker">
         <div id="topbar">
@@ -354,10 +360,15 @@ class Signup extends React.Component {
                   <br />
                   <input type="submit" value="Submit" />
                 </form>
-                <Link to={`/login`}>
-                  <a>Already Have An Account? Log In Here</a>
-                </Link>
-                <p>{message}</p>
+                {isRegistered ?
+                  <Link to={`/login`}>
+                    <a>You Have Successfully Registered! Log In Here</a>
+                  </Link>
+                  :
+                  <Link to={`/login`}>
+                    <a>Already Have An Account? Log In Here</a>
+                  </Link>
+                }
               </div>
             ) : (
               <div>

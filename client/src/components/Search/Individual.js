@@ -8,30 +8,108 @@ import Searchicon from "../Images/Search.png";
 import Logowhite from "../Images/LogoWhite.png";
 
 const Individual = ({
-    name, image, about, description, address, price, dimensions, amenities
+    name, image, about, description, address, price, dimensions, amenities, isInside, isProfile
 
 }) => (
         <div id="ibacker">
-            <div id="topbar">
-                <div id="barlogo">
-                    <Link to={`/`}><img src={Logowhite} /></Link>
-                </div>
-                <div id="ibar">
-                    <div id="ibarcard">
-                        <input
-                            type="text"
-                            placeholder="Name"
-                        />
-                        <input
-                            type="text"
-                            placeholder="Address"
-                        />
-                        <Link to={`/search`}><button type="submit"><img src={Searchicon}></img></button></Link>
+            {isInside?
+                [
+                    (isProfile === "User"
+                        ?
+                        <div id="topbar">
+                            <div id="barlogo">
+                                <Link to={`/`}>
+                                    <img src={Logowhite} />
+                                </Link>
+                            </div>
+                            <div id="ibar">
+                                <div id="ibarcard">
+                                    <input
+                                        type="text"
+                                        placeholder="Name"
+                                    />
+                                    <input
+                                        type="text"
+                                        placeholder="Address"
+                                    />
+                                    <Link to={`/search`}><button type="submit"><img src={Searchicon}></img></button></Link>
+                                </div>
+                            </div>
+                            <Link to={`/logout`}>
+                                <a class="hoverturn">
+                                    <span data-title="Log Out">Log Out</span>
+                                </a>
+                            </Link>
+                            <Link to={`/userprofile`}>
+                                <a class="hoverturn">
+                                    <span data-title="My Account">My Account</span>
+                                </a>
+                            </Link>
+                        </div>
+                        : <div id="topbar">
+                            <div id="barlogo">
+                                <Link to={`/`}>
+                                    <img src={Logowhite} />
+                                </Link>
+                            </div>
+                            <div id="ibar">
+                                <div id="ibarcard">
+                                    <input
+                                        type="text"
+                                        placeholder="Name"
+                                    />
+                                    <input
+                                        type="text"
+                                        placeholder="Address"
+                                    />
+                                    <Link to={`/search`}><button type="submit"><img src={Searchicon}></img></button></Link>
+                                </div>
+                            </div>
+                            <Link to={`/logout`}>
+                                <a class="hoverturn">
+                                    <span data-title="Log Out">Log Out</span>
+                                </a>
+                            </Link>
+                            <Link to={`/busprofile`}>
+                                <a class="hoverturn">
+                                    <span data-title="My Account">My Account</span>
+                                </a>
+                            </Link>
+                        </div>
+                    )
+                ]
+                :
+                <div id="topbar">
+                    <div id="barlogo">
+                        <Link to={`/`}>
+                            <img src={Logowhite} />
+                        </Link>
                     </div>
+                    <div id="ibar">
+                        <div id="ibarcard">
+                            <input
+                                type="text"
+                                placeholder="Name"
+                            />
+                            <input
+                                type="text"
+                                placeholder="Address"
+                            />
+                            <Link to={`/search`}><button type="submit"><img src={Searchicon}></img></button></Link>
+                        </div>
+                    </div>
+                    <Link to={`/login`}>
+                        <a class="hoverturn">
+                            <span data-title="Log In">Log In</span>
+                        </a>
+                    </Link>
+                    <Link to={`/signup`}>
+                        <a class="hoverturn">
+                            <span data-title="Sign Up">Sign Up</span>
+                        </a>
+                    </Link>
                 </div>
-                <Link to={`/login`}><a class="hoverturn"><span data-title="Log In">Log In</span></a></Link>
-                <Link to={`/signup`}><a class="hoverturn"><span data-title="Sign up">Sign Up</span></a></Link>
-            </div>
+            }
             <main class="wrapper">
                 <section class="section imgsection parallax">
                     <div id="indiv">
