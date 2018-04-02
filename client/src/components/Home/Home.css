@@ -1,7 +1,6 @@
 /* Fonts */
 
 @import url('https://fonts.googleapis.com/css?family=Passion+One');
-
 /* Body */
 
 html,
@@ -29,7 +28,6 @@ body {
 select {
     background-color: white;
 }
-
 
 /* Topbar */
 
@@ -61,7 +59,6 @@ select {
     width: 5vh;
 }
 
-
 /* Footer */
 
 #footer {
@@ -91,7 +88,6 @@ select {
     margin: 0;
     margin-left: 40px;
 }
-
 
 /* Sections */
 
@@ -156,7 +152,6 @@ select {
     background-image: url('https://az616578.vo.msecnd.net/files/2016/08/13/636066525255255334-1002779405_dance%20header.jpg');
 }
 
-
 /* Header */
 
 #header {
@@ -166,7 +161,6 @@ select {
 #header svg {
     width: 63vh;
 }
-
 
 /* Home Header Subtitle */
 
@@ -184,7 +178,6 @@ select {
     color: black;
     text-shadow: none;
 }
-
 
 /* Searchbar */
 
@@ -230,7 +223,6 @@ select {
     color: black;
 }
 
-
 /* Top Revieewd */
 
 #homereview h1 {
@@ -246,7 +238,7 @@ select {
     height: 45vh;
     position: absolute;
     top: 18vh;
-    overflow-x:scroll;
+    overflow-x: scroll;
     white-space: nowrap;
 }
 
@@ -310,7 +302,6 @@ select {
     font-size: 2vh;
 }
 
-
 /* Spotlight */
 
 #homespotlight h1 {
@@ -349,7 +340,6 @@ select {
     margin-top: 4vh;
 }
 
-
 /* New */
 
 #homenew h1 {
@@ -362,7 +352,7 @@ select {
 #homenewlist {
     border: 8px double white;
     width: 81vw;
-    overflow-x:scroll;
+    overflow-x: scroll;
     height: 48vh;
     position: absolute;
     top: 13vh;
@@ -430,9 +420,7 @@ select {
     font-size: 2vh;
 }
 
-
 /* Animations */
-
 
 /* Footer and Topbar Menu Buttons Animation */
 
@@ -478,7 +466,6 @@ select {
     -webkit-transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
     transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
 }
-
 
 /* Fade In For Logo */
 

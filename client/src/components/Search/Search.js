@@ -10,7 +10,93 @@ import Studios from "./Studios"
 class Search extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { input: "", address: "", selected: "", sort: "" }
+        this.state = {
+            input: this.props.name, address: this.props.address, selected: "", sort: "", studioSearch: [], studioarr: [
+                {
+                    id: "1",
+                    name: "The Realist Studio",
+                    description: "Best In LA",
+                    about: "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
+                    address: "Los Angelos, California",
+                    price: "$45",
+                    dimensions: "600 by 500",
+                    amenities: "elevator, wifi",
+                    image:
+                        "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg",
+                },
+                {
+                    id: "2",
+                    name: "Broadway Dance",
+                    description: "Best In NY",
+                    about: "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
+                    address: "New York, New York",
+                    price: "$50",
+                    dimensions: "700 by 500",
+                    amenities: "elevator, wifi",
+                    image:
+                        "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg",
+                },
+                {
+                    id: "3",
+                    name: "Pearl Studio",
+                    description: "Pearlss",
+                    about: "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
+                    address: "Brookyln",
+                    price: "$60",
+                    dimensions: "800 by 500",
+                    amenities: "elevator, wifi",
+                    image:
+                        "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg",
+                },
+                {
+                    id: "4",
+                    name: "Roman Studio",
+                    description: "Best In LA",
+                    about: "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
+                    address: "Los Angelos, California",
+                    price: "$45",
+                    dimensions: "600 by 500",
+                    amenities: "elevator, wifi",
+                    image:
+                        "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg",
+                },
+                {
+                    id: "5",
+                    name: "DNCY",
+                    description: "Best In LA",
+                    about: "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
+                    address: "Los Angelos, California",
+                    price: "$45",
+                    dimensions: "600 by 500",
+                    amenities: "elevator, wifi",
+                    image:
+                        "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg",
+                },
+                {
+                    id: "6",
+                    name: "Common Dance Studio",
+                    description: "Best In LA",
+                    about: "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
+                    address: "Los Angelos, California",
+                    price: "$45",
+                    dimensions: "600 by 500",
+                    amenities: "elevator, wifi",
+                    image:
+                        "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg",
+                },
+                {
+                    id: "7",
+                    name: "Mumba",
+                    description: "Best In LA",
+                    about: "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
+                    address: "Los Angelos, California",
+                    price: "$45",
+                    dimensions: "600 by 500",
+                    amenities: "elevator, wifi",
+                    image:
+                        "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg",
+                },]
+        }
     };
 
     handleSelect = e => {
@@ -39,98 +125,29 @@ class Search extends React.Component {
 
     submitForm = e => {
         e.preventDefault();
-
+        const { input, address, studioarr } = this.state;
+        this.props.handleSearchName(input);
+        this.props.handleSearchAddress(address);
+        var studios = studioarr.filter((studio) => studio.name.toLowerCase().includes(input.toLowerCase()));
+        this.setState({
+            studioSearch: studios
+        })
+        this.props.history.push("/search");
     };
 
     renderSearch = () => {
         const { input, selected, sort, address } = this.state;
+        console.log(input)
+        console.log(address)
+        var array = [];
+        if (this.state.studioSearch.join("") === "") {
+            array = this.state.studioarr
+        }
+        else {
+            array = this.state.studioSearch
+        }
         const categories = ["Select Category", "Dance", "Art", "Photography"];
-        const sortby = ["Sort By", "Highest Rated", "Most Revieweed", "$-$$$", "$$$-$"]
-        const studioarr = [
-            {
-                id: "1",
-                name: "The Realist Studio",
-                description: "Best In LA",
-                about: "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
-                address: "Los Angelos, California",
-                price: "$45",
-                dimensions: "600 by 500",
-                amenities: "elevator, wifi",
-                image:
-                    "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg",
-            },
-            {
-                id: "2",
-                name: "Broadway Dance",
-                description: "Best In NY",
-                about: "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
-                address: "New York, New York",
-                price: "$50",
-                dimensions: "700 by 500",
-                amenities: "elevator, wifi",
-                image:
-                    "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg",
-            },
-            {
-                id: "3",
-                name: "Pearl Studio",
-                description: "Pearlss",
-                about: "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
-                address: "Brookyln",
-                price: "$60",
-                dimensions: "800 by 500",
-                amenities: "elevator, wifi",
-                image:
-                    "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg",
-            },
-            {
-                id: "4",
-                name: "Roman Studio",
-                description: "Best In LA",
-                about: "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
-                address: "Los Angelos, California",
-                price: "$45",
-                dimensions: "600 by 500",
-                amenities: "elevator, wifi",
-                image:
-                    "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg",
-            },
-            {
-                id: "5",
-                name: "DNCY",
-                description: "Best In LA",
-                about: "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
-                address: "Los Angelos, California",
-                price: "$45",
-                dimensions: "600 by 500",
-                amenities: "elevator, wifi",
-                image:
-                    "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg",
-            },
-            {
-                id: "6",
-                name: "Common Dance Studio",
-                description: "Best In LA",
-                about: "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
-                address: "Los Angelos, California",
-                price: "$45",
-                dimensions: "600 by 500",
-                amenities: "elevator, wifi",
-                image:
-                    "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg",
-            },
-            {
-                id: "7",
-                name: "Mumba",
-                description: "Best In LA",
-                about: "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
-                address: "Los Angelos, California",
-                price: "$45",
-                dimensions: "600 by 500",
-                amenities: "elevator, wifi",
-                image:
-                    "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg",
-            },];
+        const sortby = ["Sort By", "Highest Rated", "Most Reviewed", "$-$$$", "$$$-$"]
         return (
             <div id="sbacker">
                 {this.props.isLogged ?
@@ -165,7 +182,7 @@ class Search extends React.Component {
                                         <span data-title="Log Out">Log Out</span>
                                     </a>
                                 </Link>
-                                <Link to={`/busprofile`}>
+                                <Link to={`/hostprofile`}>
                                     <a class="hoverturn">
                                         <span data-title="My Account">My Account</span>
                                     </a>
@@ -205,7 +222,7 @@ class Search extends React.Component {
                                 placeholder="Address"
                                 value={address}
                                 onChange={this.handleAddressSearch} />
-                            <Link to={`/search`}><button type="submit"><img src={Searchicon}></img></button></Link>
+                            <Link to={`/search`}><button type="submit" onClick={this.submitForm} ><img src={Searchicon}></img></button></Link>
                         </div>
                     </div>
                     <div id="filters">
@@ -224,7 +241,7 @@ class Search extends React.Component {
                         <Studios
                             bigdiv={"studiodiv"}
                             worddiv={"studioword"}
-                            studioarr={studioarr}
+                            studioarr={array}
                         />
                     </div>
                 </div>
@@ -239,12 +256,19 @@ class Search extends React.Component {
 
     renderIndividual = props => {
         const { name } = props.match.params;
+        const { input, address } = this.state;
         return (
             <div>
                 <Individual
-                    name={name} 
+                    name={name}
                     isProfile={this.props.protype}
-                    isInside={this.props.isLogged}/>
+                    isInside={this.props.isLogged}
+                    submitForm={this.state.submitForm}
+                    input={input}
+                    inputaddress={address}
+                    handleAddressSearch={this.handleAddressSearch}
+                    handleSearch={this.handleSearch}
+                />
             </div>
         );
     }

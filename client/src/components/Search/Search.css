@@ -4,7 +4,6 @@
     background-color: white;
 }
 
-
 /* Search Bar */
 
 #sbar {
@@ -86,16 +85,15 @@
     color: white;
 }
 
-
 /* Listings */
 
 #listings {
     position: absolute;
     /* border: 1px black solid; */
     width: 100vw;
-    height: 80vh;
-    top: 23vh;
+    height: 68vh;
+    top: 24vh;
     float: left;
     overflow-y: scroll;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }

@@ -10,7 +10,7 @@
 
 /* Content */
 
-#lscontent{
+#lscontent {
     width: 80vw;
     height: 100vh;
     display: block;
@@ -73,12 +73,11 @@
     height: 55vh;
 }
 
-
 /* Contact Form */
 
 #login {
     text-align: center;
-    float:left;
+    float: left;
     margin-top: 90px;
     width: 30vw;
     height: 55vh;

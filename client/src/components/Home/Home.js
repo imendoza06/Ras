@@ -13,10 +13,10 @@ import MenuIcon from "../Images/MenuIcon.png";
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state={
-      selected: "Select Category", 
-      input: "", 
-      address: "" 
+    this.state = {
+      selected: "Select Category",
+      input: "",
+      address: ""
     }
   };
 
@@ -31,59 +31,69 @@ class Home extends React.Component {
     });
   };
 
-    render() {
-        const { selected, input, address } = this.state;
-        console.log(this.props.isLogged)
-        console.log(this.props.protype)
+  handleSubmit = e => {
+    e.preventDefault();
+    const { input, address } = this.state;
+    this.props.handleSearchName(input);
+    this.props.handleSearchAddress(address);
+    this.props.history.push("/search");
+  };
 
-        return <div>
-            <div>
-            {this.props.isLogged ?
-                (this.props.protype === "User"
-                  ?
-                  <div id="topbar">
-                    <Link to={`/logout`}>
-                      <a class="hoverturn">
-                        <span data-title="Log In">Log Out</span>
-                      </a>
-                    </Link>
-                    <Link to={`/userprofile`}>
-                      <a class="hoverturn">
-                        <span data-title="My Account">My Account</span>
-                      </a>
-                    </Link>
-                  </div>
-                  : <div id="topbar">
-                    <Link to={`/logout`}>
-                      <a class="hoverturn">
-                        <span data-title="Log In">Log Out</span>
-                      </a>
-                    </Link>
-                    <Link to={`/busprofile`}>
-                      <a class="hoverturn">
-                        <span data-title="My Account">My Account</span>
-                      </a>
-                    </Link>
-                  </div>
-                )
-              :
-              <div id="topbar">
-                <Link to={`/login`}>
-                  <a class="hoverturn">
-                    <span data-title="Log In">Log In</span>
-                  </a>
-                </Link>
-                <Link to={`/signup`}>
-                  <a class="hoverturn">
-                    <span data-title="Sign Up">Sign Up</span>
-                  </a>
-                </Link>
-              </div>
-            }
-            
-              <main class="wrapper">
-                <section class="section parallax bg1 msection" id="homeheader">
-                  <div id="header">
+  render() {
+    const { selected, input, address } = this.state;
+    // console.log(this.props.isLogged)
+    // console.log(this.props.protype)
+    console.log(input);
+    console.log(address)
+
+    return <div>
+      <div>
+        {this.props.isLogged ?
+          (this.props.protype === "User"
+            ?
+            <div id="topbar">
+              <Link to={`/logout`}>
+                <a class="hoverturn">
+                  <span data-title="Log In">Log Out</span>
+                </a>
+              </Link>
+              <Link to={`/userprofile`}>
+                <a class="hoverturn">
+                  <span data-title="My Account">My Account</span>
+                </a>
+              </Link>
+            </div>
+            : <div id="topbar">
+              <Link to={`/logout`}>
+                <a class="hoverturn">
+                  <span data-title="Log In">Log Out</span>
+                </a>
+              </Link>
+              <Link to={`/hostprofile`}>
+                <a class="hoverturn">
+                  <span data-title="My Account">My Account</span>
+                </a>
+              </Link>
+            </div>
+          )
+          :
+          <div id="topbar">
+            <Link to={`/login`}>
+              <a class="hoverturn">
+                <span data-title="Log In">Log In</span>
+              </a>
+            </Link>
+            <Link to={`/signup`}>
+              <a class="hoverturn">
+                <span data-title="Sign Up">Sign Up</span>
+              </a>
+            </Link>
+          </div>
+        }
+
+        <main class="wrapper">
+          <section class="section parallax bg1 msection" id="homeheader">
+            <div id="header">
                     <svg class="center" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 612 792" width="400px">
                       <g id="R">
                         <path class="fadeInwards" d="M219.3,311.3c0,0-4.4-4.5-11.8-12c-35.5-36.3-138.9-142-138.9-142L65,634.7l63.7-61.3L124,396l68.7,110.7
@@ -116,73 +126,73 @@ class Home extends React.Component {
                         <path class="fadeInwards9" d="M475.8,635.3c19.2,0,33.9,0,33.9,0L376.4,498l12,137.3C388.4,635.3,439.9,635.3,475.8,635.3z" />
                       </g>
                     </svg>
-                    <h3 class="center fadeInwards10" id="homesub">
-                      Rent A Studio Efficiently
+              <h3 class="center fadeInwards10" id="homesub">
+                Rent A Studio Efficiently
                     </h3>
-                    <div class="center" id="search">
-                      <input type="text" placeholder="Name" value={input} onChange={this.handleSearch} />
-                      <input type="text" placeholder="Address" value={address} onChange={this.handleAddressSearch} />
-                      <Link to={`/search`}>
-                        <button type="submit">Search</button>
-                      </Link>
-                    </div>
-                    <br />
-                  </div>
-                </section>
-                <section class="section halfsection whitebg" id="homereview">
-                  <h1>Most Popular</h1>
-                  <div id="homereviewlist" >
-                    <div>
-                      <Listing image={Test} header="Broadway Dance Center" description="New York, NY" bigdiv="reviewdiv" worddiv="reviewword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
-                      <Listing image={Test2} header="Broadway Dance Center" description="New York, NY" bigdiv="reviewdiv" worddiv="reviewword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
-                      <Listing image={Test} header="Broadway Dance Center" description="New York, NY" bigdiv="reviewdiv" worddiv="reviewword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
-                      <Listing image={Test3} header="Broadway Dance Center" description="New York, NY" bigdiv="reviewdiv" worddiv="reviewword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
-                    </div>
-                  </div>
-                </section>
-                <section class="section msection parallax bg2" id="homespotlight">
-                  <h1>Spotlight</h1>
-                  <div id="slspace">
-                    <div id="slword">
-                      <h3>Broadway Dance Center</h3>
-                      <p>
-                          Broadway Dance Center, located on West 45th Street west of Times Square in New York City, 
-                          was founded in 1984 as one of the first "drop-in" dance training schools in the world, 
-                          offering over 200 classes a week in Jazz, Tap, Ballet, Contemporary, Hip Hop, Theater 
-                          and more (Yoga, Pilates, Flexibility, Belly Dancing, Vocal Performance, and Vocal Technique). 
-                          Dancers and performers such as Britney Spears, Madonna, and NSYNC have 
-                          taken class or rehearsed at the school.
-                      </p>
-                    </div>
-                    <img src={Test} />
-                  </div>
-                </section>
-                <section class="section halfsection blackbg" id="homenew">
-                  <h1> Newly Added Studios </h1>
-                  <div id="homenewlist">
-                    <Listing image={Test3} header="Broadway Dance Center" description="New York, NY" bigdiv="newdiv" worddiv="newword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
-                    <Listing image={Test} header="Broadway Dance Center" description="New York, NY" bigdiv="newdiv" worddiv="newword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
-                    <Listing image={Test2} header="Broadway Dance Center" description="New York, NY" bigdiv="newdiv" worddiv="newword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
-                    <Listing image={Test} header="Broadway Dance Center" description="New York, NY" bigdiv="newdiv" worddiv="newword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
-                  </div>
-                </section>
-              </main>
-              <div id="footer">
-                <Link to={`/contact`}>
-                  <a class="hoverturn">
-                    <span data-title="Contact">Contact</span>
-                  </a>
+              <div class="center" id="search">
+                <input type="text" placeholder="Name" value={input} onChange={this.handleSearch} />
+                <input type="text" placeholder="Address" value={address} onChange={this.handleAddressSearch} />
+                <Link to={`/search`}>
+                  <button type="submit" onClick={this.handleSubmit}>Search</button>
                 </Link>
-                <Link to={`/about`}>
-                  <a class="hoverturn">
-                    <span data-title="About Us">About Us</span>
-                  </a>
-                </Link>
-                <p>RAS @ 2018</p>
+              </div>
+              <br />
+            </div>
+          </section>
+          <section class="section halfsection whitebg" id="homereview">
+            <h1>Most Popular</h1>
+            <div id="homereviewlist" >
+              <div>
+                <Listing image={Test} header="Broadway Dance Center" description="New York, NY" bigdiv="reviewdiv" worddiv="reviewword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
+                <Listing image={Test2} header="Broadway Dance Center" description="New York, NY" bigdiv="reviewdiv" worddiv="reviewword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
+                <Listing image={Test} header="Broadway Dance Center" description="New York, NY" bigdiv="reviewdiv" worddiv="reviewword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
+                <Listing image={Test3} header="Broadway Dance Center" description="New York, NY" bigdiv="reviewdiv" worddiv="reviewword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
               </div>
             </div>
-          </div>;
-    }
+          </section>
+          <section class="section msection parallax bg2" id="homespotlight">
+            <h1>Spotlight</h1>
+            <div id="slspace">
+              <div id="slword">
+                <h3>Broadway Dance Center</h3>
+                <p>
+                  Broadway Dance Center, located on West 45th Street west of Times Square in New York City,
+                  was founded in 1984 as one of the first "drop-in" dance training schools in the world,
+                  offering over 200 classes a week in Jazz, Tap, Ballet, Contemporary, Hip Hop, Theater
+                  and more (Yoga, Pilates, Flexibility, Belly Dancing, Vocal Performance, and Vocal Technique).
+                  Dancers and performers such as Britney Spears, Madonna, and NSYNC have
+                  taken class or rehearsed at the school.
+                      </p>
+              </div>
+              <img src={Test} />
+            </div>
+          </section>
+          <section class="section halfsection blackbg" id="homenew">
+            <h1> Newly Added Studios </h1>
+            <div id="homenewlist">
+              <Listing image={Test3} header="Broadway Dance Center" description="New York, NY" bigdiv="newdiv" worddiv="newword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
+              <Listing image={Test} header="Broadway Dance Center" description="New York, NY" bigdiv="newdiv" worddiv="newword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
+              <Listing image={Test2} header="Broadway Dance Center" description="New York, NY" bigdiv="newdiv" worddiv="newword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
+              <Listing image={Test} header="Broadway Dance Center" description="New York, NY" bigdiv="newdiv" worddiv="newword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
+            </div>
+          </section>
+        </main>
+        <div id="footer">
+          <Link to={`/contact`}>
+            <a class="hoverturn">
+              <span data-title="Contact">Contact</span>
+            </a>
+          </Link>
+          <Link to={`/about`}>
+            <a class="hoverturn">
+              <span data-title="About Us">About Us</span>
+            </a>
+          </Link>
+          <p>RAS @ 2018</p>
+        </div>
+      </div>
+    </div>;
+  }
 }
 
 export default Home;

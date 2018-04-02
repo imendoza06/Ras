@@ -37,7 +37,7 @@ class MapContainer extends React.Component {
   submitSearch = () => {
     fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${
       this.state.searchInput
-    }&key=AIzaSyAVXkGZkcfklOfknHuvt2-dOaAxKWccm0w
+      }&key=AIzaSyAVXkGZkcfklOfknHuvt2-dOaAxKWccm0w
       `)
       .then(res => res.json())
       .then(data => {
@@ -79,8 +79,8 @@ class MapContainer extends React.Component {
               lattittude: {searchLocation.lat}, longitude: {searchLocation.lng}
             </div>
           ) : (
-            <div> Enter an address </div>
-          )}
+              <div> Enter an address </div>
+            )}
         </div>
         {sortedPlaces ? (
           <div>
@@ -89,8 +89,8 @@ class MapContainer extends React.Component {
             <ol>{sortedPlaces.map(place => <li>{place.name}</li>)}</ol>
           </div>
         ) : (
-          ""
-        )}
+            ""
+          )}
       </div>
     );
   }

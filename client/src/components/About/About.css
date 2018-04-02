@@ -6,7 +6,6 @@
     background-color: black;
 }
 
-
 /* Vertical Menu */
 
 #vermenu {
@@ -119,7 +118,6 @@
     width: 20px;
 }
 
-
 /* Header */
 
 .aboutbg {
@@ -144,7 +142,6 @@
     animation-fill-mode: forwards;
 }
 
-
 /* Section Backgrounds */
 
 .bg3::after {
@@ -165,7 +162,6 @@
     background-size: 100% 100%;
 }
 
-
 /* About Subheader */
 
 #subabout {
@@ -180,7 +176,6 @@
 #subabout svg {
     z-index: -1;
 }
-
 
 /* Purpose */
 
@@ -225,7 +220,6 @@
     width: 9vw;
 }
 
-
 /* Services */
 
 #aboutservices h1 {
@@ -261,7 +255,6 @@
     background-color: rgba(0, 0, 0, 0.651);
 }
 
-
 /* Connect */
 
 #aboutconnect h1 {
@@ -293,7 +286,6 @@
 #connecticons img:hover {
     width: 13vw;
 }
-
 
 /* Animations */
 
@@ -387,7 +379,6 @@
         opacity: 1;
     }
 }
-
 
 /* Animated Background Gradient */
 

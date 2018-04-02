@@ -8,12 +8,28 @@
     justify-content: center;
     background-color: white;
 }
+
+#upbacker #topbar {
+    background-color: transparent;
+}
+
+#upbacker #userlogout {
+    color: white;
+    font-weight: 900;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.623);
+    border: black 1px solid;
+    border-radius: 5px;
+    padding: 1px;
+}
+
 /* Topbox */
 
 #topbox {
     position: relative;
-    background-color: black;
-    height: 40vh;
+    background: url(../../Images/Test.jpg);
+    background-size: 100% 200%;
+    height: 30vh;
     width: 100%;
     display: flex;
     align-content: center;
@@ -21,53 +37,27 @@
     /* border: red 1px solid; */
 }
 
-.picturez {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%,-50%);
-    width: 90vw;
-    height: 28vh;
-    /* border: 2px solid blue; */
-    display: flex;
-    align-content: center;
-    justify-content: center;
-}
-
-.picturez img {
-    margin: 10px;
-    float: left;
-    width: 240px;
-    height: 143px;
-    border-radius: 5px;
-}
-
 /* Usercontent */
 
-
 #usercontent {
-    position:absolute;
+    position: absolute;
     top: 43vh;
-    left:0px;
+    left: 0px;
     width: 100vw;
     height: 57vh;
 }
 
-#usercontent p{
-    color:black;
-}
-
-
 /* Side Bar Navigation */
 
 .sidebar {
-    width: 18vw;
-    height: 36vh;
+    width: 20vw;
+    height: 40vh;
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: -40px;
     margin-left: 30px;
     float: left;
     padding: 5px;
-    border: 3px black double;
+    border: 5px black double;
 }
 
 #sidebarinfo {
@@ -88,7 +78,7 @@
 
 #box1 a:hover {
     color: #6ba1a7;
-} 
+}
 
 /* Right Info Box */
 
@@ -104,7 +94,8 @@
     left: 25%;
     font-size: 15px;
 }
- .infobox {
+
+.infobox {
     border-style: solid;
     border-width: 1px;
     /* border-radius: 5px; */
@@ -114,7 +105,7 @@
     height: 38.5vh;
     width: 70vw;
     margin-top: -15px;
-    font-size: 23px;                                                    
+    font-size: 23px;
 }
 
 .uls {
@@ -125,34 +116,20 @@
 
 #ubar {
     position: fixed;
-    top: 29%;
+    top: 23%;
     width: 100%;
     text-align: center;
-    height: 11vh;
+    height: 9vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-#ubar input {
-    border: none;
-    height: 5vh;
-    width: 55vh;
-    padding-left: 10px;
-    outline: none;
-}
-
-#ubar input[placeholder="Name"] {
-    border-radius: 5px 0px 0px 5px;
+    background-color: black;
 }
 
 #ubar button {
     height: 5.6vh;
-    width: 10vh;
-    border-radius: 0px 3px 3px 0px;
+    width: 7vh;
     background-color: black;
-    color: white;
-    border: white 1px solid;
+    border: none;
 }
 
 #ubar button:hover {
@@ -163,6 +140,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    right: 2vw;
+}
+
+#ubar h3 {
+    margin-left: 2vw;
 }
 
 #ubar img {

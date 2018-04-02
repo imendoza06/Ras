@@ -4,8 +4,8 @@
     background-color: white;
 }
 
-#barlogo{
-    z-index:10;
+#barlogo {
+    z-index: 10;
 }
 
 /* Search Bar */
@@ -55,7 +55,6 @@
     width: 15px;
 }
 
-
 /* Section */
 
 .imgsection {
@@ -67,14 +66,12 @@
     color: black;
 }
 
-
 /* Image */
 
 #indiv img {
     height: 100%;
     width: 100vw;
 }
-
 
 /* Content */
 
@@ -93,11 +90,11 @@
     float: left;
     margin-right: 5vw;
     text-align: left;
-    overflow:scroll;
+    overflow: scroll;
     /* border: 1px solid black; */
 }
 
-#studioinfo div{
+#studioinfo div {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
@@ -112,7 +109,7 @@
     border-radius: 5px;
 }
 
-#book select{
+#book select {
     width: 200px;
     height: 30px;
 }

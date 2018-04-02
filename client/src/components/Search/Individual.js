@@ -8,11 +8,11 @@ import Searchicon from "../Images/Search.png";
 import Logowhite from "../Images/LogoWhite.png";
 
 const Individual = ({
-    name, image, about, description, address, price, dimensions, amenities, isInside, isProfile
+    name, image, about, description, address, price, dimensions, amenities, isInside, isProfile, submitForm, input, inputaddress, handleAddressSearch, handleSearch
 
 }) => (
         <div id="ibacker">
-            {isInside?
+            {isInside ?
                 [
                     (isProfile === "User"
                         ?
@@ -27,12 +27,16 @@ const Individual = ({
                                     <input
                                         type="text"
                                         placeholder="Name"
+                                        value={input}
+                                        onChange={handleSearch}
                                     />
                                     <input
                                         type="text"
                                         placeholder="Address"
+                                        value={inputaddress}
+                                        onChange={handleAddressSearch}
                                     />
-                                    <Link to={`/search`}><button type="submit"><img src={Searchicon}></img></button></Link>
+                                    <Link to={`/search`}><button type="submit" onClick={submitForm}><img src={Searchicon}></img></button></Link>
                                 </div>
                             </div>
                             <Link to={`/logout`}>
@@ -57,12 +61,16 @@ const Individual = ({
                                     <input
                                         type="text"
                                         placeholder="Name"
+                                        value={input}
+                                        onChange={handleSearch}
                                     />
                                     <input
                                         type="text"
                                         placeholder="Address"
+                                        value={inputaddress}
+                                        onChange={handleAddressSearch}
                                     />
-                                    <Link to={`/search`}><button type="submit"><img src={Searchicon}></img></button></Link>
+                                    <Link to={`/search`}><button type="submit" onClick={submitForm}><img src={Searchicon}></img></button></Link>
                                 </div>
                             </div>
                             <Link to={`/logout`}>
@@ -70,7 +78,7 @@ const Individual = ({
                                     <span data-title="Log Out">Log Out</span>
                                 </a>
                             </Link>
-                            <Link to={`/busprofile`}>
+                            <Link to={`/hostprofile`}>
                                 <a class="hoverturn">
                                     <span data-title="My Account">My Account</span>
                                 </a>
@@ -90,12 +98,16 @@ const Individual = ({
                             <input
                                 type="text"
                                 placeholder="Name"
+                                value={input}
+                                onChange={handleSearch}
                             />
                             <input
                                 type="text"
                                 placeholder="Address"
+                                value={inputaddress}
+                                onChange={handleAddressSearch}
                             />
-                            <Link to={`/search`}><button type="submit"><img src={Searchicon}></img></button></Link>
+                            <Link to={`/search`}><button type="submit" onClick={submitForm}><img src={Searchicon}></img></button></Link>
                         </div>
                     </div>
                     <Link to={`/login`}>

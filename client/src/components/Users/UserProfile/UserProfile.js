@@ -1,8 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./UserProfile.css";
 import Logowhite from "../../Images/LogoWhite.png";
+import Logo from "../../Images/Logo.png";
 import Searchicon from "../../Images/Search.png";
+import Test from "../../Images/Test.jpg"
+import Account from './Account';
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -13,73 +16,26 @@ class UserProfile extends React.Component {
   };
 
 
-  render() {
+  renderUserProfile = () => {
     console.log(this.props.isLogged)
     return (
       <div id="upbacker">
         <div id="topbar">
           <div id="barlogo">
             <Link to={`/`}>
-              <img src={Logowhite} />
+              <img src={Logo} />
             </Link>
           </div>
           <Link to={`/login`}>
-            <a class="hoverturn">
+            <a class="hoverturn" id="userlogout">
               <span data-title="Log Out">Log Out</span>
             </a>
           </Link>
         </div>
         <div id="topbox">
-          <div className="picturez">
-            <div id="pic1">
-              <a href="http://www.houseofmovementny.com/">
-                <img
-                  border="0"
-                  alt="pic1"
-                  src="https://static1.squarespace.com/static/5999f051e6f2e19ff03f83ac/t/5999fb7dd2b857d71bea9ec2/1504039738772/Ballet+Class?format=500w"
-                />
-              </a>{" "}
-              <br />
-            </div>{" "}
-            <div id="pic2">
-              <a href="http://www.houseofmovementny.com/">
-                <img
-                  border="0"
-                  alt="pic2"
-                  src="https://media.timeout.com/images/103238690/image.jpg"
-                />
-              </a>
-            </div>
-            <br />{" "}
-            <div id="pic3">
-              <a href="http://www.houseofmovementny.com/">
-                <img
-                  border="0"
-                  alt="pic3"
-                  src="https://www.theaileyschool.edu/sites/default/files/styles/default_manual_crop/public/school_scholarship_5.jpg?itok=Kqa3iIQW"
-                />
-              </a>
-            </div>
-            <div id="pic3">
-              <a href="http://www.houseofmovementny.com/">
-                <img
-                  border="0"
-                  alt="pic3"
-                  src="https://www.theaileyschool.edu/sites/default/files/styles/default_manual_crop/public/school_scholarship_5.jpg?itok=Kqa3iIQW"
-                />
-              </a>
-            </div>
-          </div>
           <div id="ubar">
+            <h3>Welcome To Your Profile {this.props.isLogged} !</h3>
             <div id="ubarcard">
-              <input
-                type="text"
-                placeholder="Name"
-                onChange={this.handleSearch} />
-              <input
-                type="text"
-                placeholder="Address"
-                onChange={this.handleAddressSearch} />
               <Link to={`/search`}><button type="submit"><img src={Searchicon}></img></button></Link>
             </div>
           </div>
@@ -90,23 +46,23 @@ class UserProfile extends React.Component {
               <div id="sidebarinfo">
                 <ul id="ul">
                   <li>
-                    <Link to="/Account">Account Summary</Link>
+                    <Link to="/userprofile/account">Account Summary</Link>
                   </li>
                   <br />
                   <li>
-                    <Link to="/Security">Security</Link>
+                    <Link to="/userprofile/security">Security</Link>
                   </li>
                   <br />
                   <li>
-                    <Link to="/Booking">Booking History</Link>
+                    <Link to="/userprofile/booking">Booking History</Link>
                   </li>
                   <li>
                     <br />
-                    <Link to="/Favorites">Favorites</Link>
+                    <Link to="/userprofile/favorites">Favorites</Link>
                   </li>
                   <br />
                   <li>
-                    <Link to="/Reviews">Reviews</Link>
+                    <Link to="/userprofile/reviews">Reviews</Link>
                   </li>
                   <br />
                 </ul>
@@ -122,6 +78,25 @@ class UserProfile extends React.Component {
       </div>
     );
   }
+
+  renderAccount = props => {
+    return (
+      <div>
+        <Account />
+      </div>
+    );
+  }
+  render() {
+    return (
+      <div>
+        <Switch>
+          <Route path="/userprofile" render={this.renderUserProfile} />
+          <Route path="/userprofile/account" render={this.renderAccount} />
+        </Switch>
+      </div>
+    );
+  }
+
 }
 
 export default UserProfile;

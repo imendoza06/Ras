@@ -19,7 +19,7 @@ class Login extends React.Component {
       isLoggedIn: false,
       message: ""
     }
-  };  
+  };
 
   handleEmail = e => {
     this.setState({
@@ -85,7 +85,7 @@ class Login extends React.Component {
         .then(res => {
           console.log("logged in: ", res);
           console.log("data : ", res.data);
-          this.props.handleLogin(username,profile);
+          this.props.handleLogin(username, profile);
           this.setState({
             userData: res.data,
             username: "",
@@ -116,25 +116,24 @@ class Login extends React.Component {
         profile: ${profile},
         isLoggedIn: ${isLoggedIn},
         message: ${message}`);
-    console.log(userData)
     return <div id="lsbacker">
-        <div id="topbar">
-          <div id="barlogo">
-            <Link to={`/`}>
-              <img src={Logowhite} />
-            </Link>
-          </div>
-          <Link to={`/search`}>
-            <a class="hoverturn">
-              <span data-title="Find A Studio">Find A Studio</span>
-            </a>
+      <div id="topbar">
+        <div id="barlogo">
+          <Link to={`/`}>
+            <img src={Logowhite} />
           </Link>
         </div>
-        <div id="lscontent">
-          <div id="logodiv">
-            <div id="f1_container">
-              <div id="f1_card" class="shadow">
-                <div>
+        <Link to={`/search`}>
+          <a class="hoverturn">
+            <span data-title="Find A Studio">Find A Studio</span>
+          </a>
+        </Link>
+      </div>
+      <div id="lscontent">
+        <div id="logodiv">
+          <div id="f1_container">
+            <div id="f1_card" class="shadow">
+              <div>
                   <svg class="front face center" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500px" viewBox="0 0 612 792" width="500px">
                     <g id="R">
                       <path d="M219.3,311.3c0,0-4.4-4.5-11.8-12c-35.5-36.3-138.9-142-138.9-142L65,634.7l63.7-61.3L124,396l68.7,110.7
@@ -167,50 +166,50 @@ class Login extends React.Component {
                       <path d="M475.8,635.3c19.2,0,33.9,0,33.9,0L376.4,498l12,137.3C388.4,635.3,439.9,635.3,475.8,635.3z" />
                     </g>
                   </svg>
-                </div>
-                <div id="fliper" class="back face center">
-                  <img src={Flip} />
-                </div>
+              </div>
+              <div id="fliper" class="back face center">
+                <img src={Flip} />
               </div>
             </div>
           </div>
-          <div id="login">
-            <h1> Log In </h1>
-            <p>Please Fill Out All Information</p>
-            <form onSubmit={this.submitForm}>
-              <select onChange={this.handleTypeChange}>
-                {types.map(type => <option value={type}>{type}</option>)}
-              </select>
-              <br />
-              <label>
-                <input type="text" name="username" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Please give a valid username" value={username} onChange={this.handleEmail} />
-              </label>
-              <br />
-              <label>
-                <input type="password" name="password" placeholder="Password" pattern=".{8,}" title="Eight or more characters" value={password} onChange={this.handlePassword} />
-              </label>
-              <br />
-              <input type="submit" value="Submit" />
-            </form>
-            <Link to={`/signup`}>
-              <a>New User? Sign Up Here</a>
-            </Link>
-          </div>
         </div>
-        <div id="footer">
-          <Link to={`/contact`}>
-            <a class="hoverturn">
-              <span data-title="Contact">Contact</span>
-            </a>
+        <div id="login">
+          <h1> Log In </h1>
+          <p>Please Fill Out All Information</p>
+          <form onSubmit={this.submitForm}>
+            <select onChange={this.handleTypeChange}>
+              {types.map(type => <option value={type}>{type}</option>)}
+            </select>
+            <br />
+            <label>
+              <input type="text" name="username" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Please give a valid username" value={username} onChange={this.handleEmail} />
+            </label>
+            <br />
+            <label>
+              <input type="password" name="password" placeholder="Password" pattern=".{8,}" title="Eight or more characters" value={password} onChange={this.handlePassword} />
+            </label>
+            <br />
+            <input type="submit" value="Submit" />
+          </form>
+          <Link to={`/signup`}>
+            <a>New User? Sign Up Here</a>
           </Link>
-          <Link to={`/about`}>
-            <a class="hoverturn">
-              <span data-title="About Us">About Us</span>
-            </a>
-          </Link>
-          <p>RAS @ 2018</p>
         </div>
-      </div>;
+      </div>
+      <div id="footer">
+        <Link to={`/contact`}>
+          <a class="hoverturn">
+            <span data-title="Contact">Contact</span>
+          </a>
+        </Link>
+        <Link to={`/about`}>
+          <a class="hoverturn">
+            <span data-title="About Us">About Us</span>
+          </a>
+        </Link>
+        <p>RAS @ 2018</p>
+      </div>
+    </div>;
   }
 }
 

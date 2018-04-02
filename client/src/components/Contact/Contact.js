@@ -81,7 +81,7 @@ class Contact extends React.Component {
                   <span data-title="Log Out">Log Out</span>
                 </a>
               </Link>
-              <Link to={`/busprofile`}>
+              <Link to={`/hostprofile`}>
                 <a class="hoverturn">
                   <span data-title="My Account">My Account</span>
                 </a>
