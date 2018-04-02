@@ -2,13 +2,9 @@ import React from "react";
 import { Route, Link, Switch, Redirect } from 'react-router-dom';
 import './Home.css';
 import Listing from "./Listing";
-import Logo from "../Images/Logo.png";
-import Logowhite from "../Images/LogoWhite.png";
 import Test from "../Images/Test.jpg";
 import Test2 from "../Images/Test2.jpg";
 import Test3 from "../Images/Test3.jpeg";
-import MenuIcon from "../Images/MenuIcon.png";
-
 
 class Home extends React.Component {
   constructor(props) {
@@ -164,7 +160,7 @@ class Home extends React.Component {
                   taken class or rehearsed at the school.
                       </p>
               </div>
-              <img src={Test} />
+              <img src={Test} alt="photo" />
             </div>
           </section>
           <section class="section halfsection blackbg" id="homenew">

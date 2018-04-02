@@ -2,7 +2,6 @@ import React from "react";
 import { Route, Link, Switch, Redirect } from "react-router-dom";
 import "./SignUp.css";
 import Logowhite from "../../Images/LogoWhite.png";
-import Logo from "../../Images/Logo.png";
 import Flip from "../../Images/FlipLogo.png";
 
 import axios from "axios";
@@ -186,9 +185,6 @@ class Signup extends React.Component {
         profile: ${profile},
         isRegistered: ${isRegistered},
         message: ${message}`);  
-        if (isRegistered) {
-          <Redirect to="/login"/>
-        }
     return (
       <div id="lsbacker">
         <div id="topbar">
@@ -287,7 +283,7 @@ class Signup extends React.Component {
                   </svg>
                 </div>
                 <div id="fliper" class="back face center">
-                  <img src={Flip} />
+                  <img src={Flip} alt="logo" />
                 </div>
               </div>
             </div>

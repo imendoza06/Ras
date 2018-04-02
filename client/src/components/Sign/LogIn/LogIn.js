@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import "./LogIn.css";
-import Logo from "../../Images/Logo.png";
 import Logowhite from "../../Images/LogoWhite.png";
 import Flip from "../../Images/FlipLogo.png";
 
@@ -11,7 +10,6 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: "",
       username: "",
       password: "",
       profile: "Choose Account Type",
@@ -120,7 +118,7 @@ class Login extends React.Component {
       <div id="topbar">
         <div id="barlogo">
           <Link to={`/`}>
-            <img src={Logowhite} />
+            <img src={Logowhite} alt="logo" />
           </Link>
         </div>
         <Link to={`/search`}>
@@ -168,7 +166,7 @@ class Login extends React.Component {
                   </svg>
               </div>
               <div id="fliper" class="back face center">
-                <img src={Flip} />
+                <img src={Flip} alt="logo" />
               </div>
             </div>
           </div>

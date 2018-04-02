@@ -157,7 +157,7 @@ class Search extends React.Component {
                             <div id="topbar">
                                 <div id="barlogo">
                                     <Link to={`/`}>
-                                        <img src={Logowhite} />
+                                        <img src={Logowhite} alt="logo" />
                                     </Link>
                                 </div>
                                 <Link to={`/logout`}>
@@ -174,7 +174,7 @@ class Search extends React.Component {
                             : <div id="topbar">
                                 <div id="barlogo">
                                     <Link to={`/`}>
-                                        <img src={Logowhite} />
+                                        <img src={Logowhite} alt="logo" />
                                     </Link>
                                 </div>
                                 <Link to={`/logout`}>
@@ -194,7 +194,7 @@ class Search extends React.Component {
                     <div id="topbar">
                         <div id="barlogo">
                             <Link to={`/`}>
-                                <img src={Logowhite} />
+                                <img src={Logowhite} alt="logo" />
                             </Link>
                         </div>
                         <Link to={`/login`}>
@@ -222,7 +222,7 @@ class Search extends React.Component {
                                 placeholder="Address"
                                 value={address}
                                 onChange={this.handleAddressSearch} />
-                            <Link to={`/search`}><button type="submit" onClick={this.submitForm} ><img src={Searchicon}></img></button></Link>
+                            <Link to={`/search`}><button type="submit" onClick={this.submitForm} ><img src={Searchicon} alt="icon" ></img></button></Link>
                         </div>
                     </div>
                     <div id="filters">
