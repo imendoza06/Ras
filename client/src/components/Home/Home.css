@@ -35,6 +35,7 @@ select {
     position: fixed;
     width: 100%;
     min-height: 3vh;
+    height: 3vh;
     background-color: rgba(0, 0, 0, 0.76);
     padding-top: 10px;
     padding-bottom: 10px;
@@ -56,7 +57,7 @@ select {
 }
 
 #barlogo img {
-    width: 5vh;
+    width: 4vh;
 }
 
 /* Footer */
@@ -352,14 +353,10 @@ select {
 #homenewlist {
     border: 8px double white;
     width: 81vw;
-    overflow-x: scroll;
+    overflow-x: hidden;
     height: 48vh;
     position: absolute;
     top: 13vh;
-}
-
-#newdiv:hover {
-    margin-top: 5px;
 }
 
 #newdiv:hover #newword {
@@ -372,30 +369,35 @@ select {
 }
 
 #newdiv img {
-    width: 17.3vw;
+    width: 17.21vw;
     height: 31vh;
-    border-radius: 0px 100px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
     margin: 0px;
     padding: 0px;
+    /* border: 1px blue solid; */
 }
 
 #newdiv {
     float: left;
-    height: 220px;
+    height: 42vh;
     width: 38.6vh;
-    /* border: black 1px solid; */
-    border-radius: 0px 0px 5px 100px;
-    margin: 20px;
+    /* border: white 1px solid; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 1vw;
+    margin-left: 1.5vw;
+    display:flex;
+    align-content: center;
+    justify-content: center;
 }
 
 #newword {
-    position: relative;
+    position: absolute;
     /* border: black 1px solid; */
-    margin: 0px;
     height: 11vh;
-    width: 17.3vw;
-    top: -10px;
-    border-radius: 0px 0px 5px 100px;
+    width: 17.21vw;
+    top: 33vh;
+    border-radius: 0px 0px 5px 5px;
     background-color: #6ba1a7;
 }
 

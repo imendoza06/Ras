@@ -48,7 +48,7 @@ class About extends React.Component {
                   <span data-title="Log Out">Log Out</span>
                 </a>
               </Link>
-              <Link to={`/userprofile`}>
+              <Link to={`/userprofile/account`}>
                 <a class="hoverturn">
                   <span data-title="My Account">My Account</span>
                 </a>
@@ -65,7 +65,7 @@ class About extends React.Component {
                   <span data-title="Log Out">Log Out</span>
                 </a>
               </Link>
-              <Link to={`/hostprofile`}>
+              <Link to={`/hostprofile/account`}>
                 <a class="hoverturn">
                   <span data-title="My Account">My Account</span>
                 </a>

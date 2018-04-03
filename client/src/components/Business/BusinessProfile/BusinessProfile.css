@@ -52,17 +52,35 @@
     list-style-type: none;
 }
 
-.rightdiv{
+/* Component Setup */
+
+.rightdiv {
     position: absolute;
-    top:-7vh;
-    left: 30vw;
+    top: -8vh;
+    left: 26vw;
     color: black;
-    border: 1px solid black;
-    height: 50vh;
-    width: 65vw;
-    border-radius:5px;
+    border: 2px solid black;
+    height: 55vh;
+    width: 72vw;
+    border-radius: 5px;
+    padding: 0px;
 }
 
+.profileheads {
+    position: absolute;
+    height: 7vh;
+    background-color: #6ba1a7;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.profileheads h3 {
+    /* border: 1px black solid; */
+    margin: 0;
+    padding: 9px;
+    font-family: 'Phosphate-Inline';
+    font-size: 23px;
+}
 
 /* Search Bar */
 

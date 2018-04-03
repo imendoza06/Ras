@@ -1,10 +1,10 @@
 import React from "react";
-import { Route, Link, Switch } from 'react-router-dom';
-import './Search.css';
+import { Route, Link, Switch } from "react-router-dom";
+import "./Search.css";
 import Logowhite from "../Images/LogoWhite.png";
 import Searchicon from "../Images/Search.png";
-import Individual from "./Individual"
-import Studios from "./Studios"
+import Individual from "./Individual";
+import Studios from "./Studios";
 
 import Api from "../Api/Api";
 
@@ -16,100 +16,15 @@ class Search extends React.Component {
       address: this.props.address,
       selected: "",
       sort: "",
-      studioSearch: [],
-      studioarr: [
-        {
-          id: "1",
-          name: "The Realist Studio",
-          description: "Best In LA",
-          about:
-            "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
-          address: "Los Angelos, California",
-          price: "$45",
-          dimensions: "600 by 500",
-          amenities: "elevator, wifi",
-          image:
-            "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg"
-        },
-        {
-          id: "2",
-          name: "Broadway Dance",
-          description: "Best In NY",
-          about:
-            "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
-          address: "New York, New York",
-          price: "$50",
-          dimensions: "700 by 500",
-          amenities: "elevator, wifi",
-          image:
-            "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg"
-        },
-        {
-          id: "3",
-          name: "Pearl Studio",
-          description: "Pearlss",
-          about:
-            "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
-          address: "Brookyln",
-          price: "$60",
-          dimensions: "800 by 500",
-          amenities: "elevator, wifi",
-          image:
-            "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg"
-        },
-        {
-          id: "4",
-          name: "Roman Studio",
-          description: "Best In LA",
-          about:
-            "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
-          address: "Los Angelos, California",
-          price: "$45",
-          dimensions: "600 by 500",
-          amenities: "elevator, wifi",
-          image:
-            "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg"
-        },
-        {
-          id: "5",
-          name: "DNCY",
-          description: "Best In LA",
-          about:
-            "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
-          address: "Los Angelos, California",
-          price: "$45",
-          dimensions: "600 by 500",
-          amenities: "elevator, wifi",
-          image:
-            "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg"
-        },
-        {
-          id: "6",
-          name: "Common Dance Studio",
-          description: "Best In LA",
-          about:
-            "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
-          address: "Los Angelos, California",
-          price: "$45",
-          dimensions: "600 by 500",
-          amenities: "elevator, wifi",
-          image:
-            "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg"
-        },
-        {
-          id: "7",
-          name: "Mumba",
-          description: "Best In LA",
-          about:
-            "wadawdawdawdaawdawdawdawdiuwbfiuanefiuaenfiuaenfaiuenfiuaeaiuenfiueanfiauenfiauesnfiuenfsaiunefise",
-          address: "Los Angelos, California",
-          price: "$45",
-          dimensions: "600 by 500",
-          amenities: "elevator, wifi",
-          image:
-            "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL_.jpg"
-        }
-      ]
+      date: "",
+      room: "",
+      time: "",
+      comments: "",
+      datechose: "",
+      roomchose: "",
+      commentswritten: "",
+      studioSearch: this.props.studioSearch,
+      studioarr: this.props.studioarr
     };
   }
 
@@ -135,9 +50,63 @@ class Search extends React.Component {
       address: e.target.value
     });
   };
+
+  handleDateChange = e => {
+    this.setState({
+      datechose: e.target.value
+    });
+  };
+
+  handleRoomChange = e => {
+    this.setState({
+      roomchose: e.target.value
+    });
+  };
+
+  handleComments = e => {
+    this.setState({
+      commentswritten: e.target.value
+    });
+  };
+
   handleLogout = () => {
     Api.getLogout();
-    console.log("You have logout!");
+    console.log("You have login!");
+  };
+
+  submitAvailiable = e => {
+    const { roomchose, datechose } = this.state;
+    e.preventDefault();
+    this.setState({
+      room: roomchose,
+      date: datechose
+    });
+  };
+
+  submitBooking = e => {
+    const { room, date, time } = this.state;
+    e.preventDefault();
+    this.setState({
+      time: e.target.name
+    });
+  };
+
+  submitBookAgain = e => {
+    e.preventDefault();
+    this.setState({
+      time: "",
+      room: "",
+      date: "",
+      comments: ""
+    });
+  };
+
+  submitComments = e => {
+    const { commentswritten } = this.state;
+    e.preventDefault();
+    this.setState({
+      comments: commentswritten
+    });
   };
 
   submitForm = e => {
@@ -145,12 +114,10 @@ class Search extends React.Component {
     const { input, address, studioarr } = this.state;
     this.props.handleSearchName(input);
     this.props.handleSearchAddress(address);
-    var studios = studioarr.filter(studio =>
+    var studios = this.props.studioarr.filter(studio =>
       studio.name.toLowerCase().includes(input.toLowerCase())
     );
-    this.setState({
-      studioSearch: studios
-    });
+    this.props.handleStudioSearch(studios);
     this.props.history.push("/search");
   };
 
@@ -159,10 +126,10 @@ class Search extends React.Component {
     console.log(input);
     console.log(address);
     var array = [];
-    if (this.state.studioSearch.join("") === "") {
+    if (this.props.studioSearch.join("") === "") {
       array = this.state.studioarr;
     } else {
-      array = this.state.studioSearch;
+      array = this.props.studioSearch;
     }
     const categories = ["Select Category", "Dance", "Art", "Photography"];
     const sortby = [
@@ -184,7 +151,7 @@ class Search extends React.Component {
                     <span data-title="Log Out">Log Out</span>
                   </a>
                 </Link>
-                <Link to={`/userprofile`}>
+                <Link to={`/userprofile/account`}>
                   <a class="hoverturn">
                     <span data-title="My Account">My Account</span>
                   </a>
@@ -195,12 +162,12 @@ class Search extends React.Component {
                     <img src={Logowhite} alt="logo" />
                   </Link>
                 </div>
-                <Link to={`/logout`}>
-                  <a class="hoverturn">
+                <Link to={`/login`}>
+                  <a class="hoverturn" onClick={this.handleLogout}>
                     <span data-title="Log Out">Log Out</span>
                   </a>
                 </Link>
-                <Link to={`/hostprofile`}>
+                <Link to={`/hostprofile/account`}>
                   <a class="hoverturn">
                     <span data-title="My Account">My Account</span>
                   </a>
@@ -266,7 +233,26 @@ class Search extends React.Component {
 
   renderIndividual = props => {
     const { name } = props.match.params;
-    const { input, address } = this.state;
+    const {
+      input,
+      address,
+      date,
+      room,
+      studioarr,
+      studioSearch,
+      time,
+      comments
+    } = this.state;
+    const dates = [
+      "Choose A Date",
+      "April 11",
+      "April 12",
+      "April 13",
+      "April 14"
+    ];
+    const rooms = ["Choose A Room", "Small", "Medium", "Large"];
+    const times = ["9:00-10:00", "10:00-11:00", "1:00-2:00", "3:00-4:00"];
+    console.log(this.state.datechose, this.state.roomchose);
     return (
       <div>
         <Individual
@@ -278,7 +264,22 @@ class Search extends React.Component {
           inputaddress={address}
           handleAddressSearch={this.handleAddressSearch}
           handleSearch={this.handleSearch}
-          handleLogout={this.handleLogout}
+          rooms={rooms}
+          dates={dates}
+          times={times}
+          handleDateChange={this.handleDateChange}
+          handleRoomChange={this.handleRoomChange}
+          handleComments={this.handleComments}
+          date={date}
+          room={room}
+          time={time}
+          comments={comments}
+          submitAvailiable={this.submitAvailiable}
+          submitBooking={this.submitBooking}
+          submitBookAgain={this.submitBookAgain}
+          submitComments={this.submitComments}
+          studioarr={studioarr}
+          studioSearch={studioSearch}
         />
       </div>
     );
@@ -294,6 +295,5 @@ class Search extends React.Component {
     );
   }
 }
-
 
 export default Search;
