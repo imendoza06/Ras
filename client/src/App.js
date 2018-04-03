@@ -9,6 +9,7 @@ import Signup from './components/Sign/SignUp/SignUp';
 import Search from './components/Search/Search';
 import UserProfile from './components/Users/UserProfile/UserProfile';
 import BusProfile from './components/Business/BusinessProfile/BusinessProfile';
+import BusProfileAdd from './components/Business/BusinessProfile/AddBusiness';
 import MapContainer from './components/Map/MapContainer'
 
 class App extends React.Component {
@@ -56,6 +57,7 @@ class App extends React.Component {
       <Route path='/userprofile' render={(props) => <UserProfile isLogged={this.state.isLoggedIn} {...props} />} />
       <Route path='/hostprofile' render={(props) => <BusProfile isLogged={this.state.isLoggedIn} {...props} />} />
       <Route exact path='/MapContainer' component={MapContainer} />
+      <Route exact path='/add' component={BusProfileAdd} />
     </div>;
   }
 }

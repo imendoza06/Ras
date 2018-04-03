@@ -7,11 +7,56 @@ import Searchicon from "../../Images/Search.png";
 import Test from "../../Images/Test.jpg"
 import Account from './Account';
 
+const studios = e => {
+  return (
+    <div class="studios_table">
+      <table>
+        <tr>
+          <th>Studio Name</th>
+          <th>Price</th>
+          <th>Locations</th>
+        </tr>
+        <tr>
+          <td><Link to={`studio/profile`}>Salsa Salsa Dance Studio</Link></td>
+          <td>$100</td>
+          <td>Williamburg,Brooklyn</td>
+        </tr>
+      </table>
+    </div>
+  )
+}
+
+const manageStudio = e => {
+  return (
+    <div>
+      <h1>Manage Studio</h1>
+    </div>
+  )
+}
+
+const bookings = e => {
+  return (
+    <div>
+      <h1>Bookings</h1>
+    </div>
+  )
+}
+
+const account = e => {
+  return (
+    <div>
+      <h1>Account</h1>
+    </div>
+  )
+}
+
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: ""
+      isLoggedIn: "",
+      name:"",
+      profile:""
     }
   };
 
@@ -67,6 +112,7 @@ class UserProfile extends React.Component {
                   <br />
                 </ul>
               </div>
+              <Route exact path="/hostprofile/account" component={account} />
             </div>
           </div>
         </div>

@@ -63,7 +63,7 @@ class Login extends React.Component {
             password: "",
             message: "Logged In User"
           });
-          this.props.history.push("/userprofile");
+          this.props.history.push("/userprofile/account");
         })
         .catch(err => {
           this.setState({
@@ -91,7 +91,7 @@ class Login extends React.Component {
             isLoggedIn: true,
             message: "Logged In Host"
           });
-          this.props.history.push("/hostprofile");
+          this.props.history.push("/hostprofile/account");
         })
         .catch(err => {
           this.setState({

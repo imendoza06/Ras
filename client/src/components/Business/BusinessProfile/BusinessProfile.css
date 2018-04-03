@@ -52,6 +52,18 @@
     list-style-type: none;
 }
 
+.rightdiv{
+    position: absolute;
+    top:-7vh;
+    left: 30vw;
+    color: black;
+    border: 1px solid black;
+    height: 50vh;
+    width: 65vw;
+    border-radius:5px;
+}
+
+
 /* Search Bar */
 
 #hbar {

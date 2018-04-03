@@ -5,7 +5,59 @@ import Logowhite from "../../Images/LogoWhite.png";
 import Logo from "../../Images/Logo.png";
 import Searchicon from "../../Images/Search.png";
 import Test from "../../Images/Test3.jpeg"
+import AddBusiness from "./AddBusiness"
 
+
+const studios = e => {
+  return (
+    <div class="rightdiv">
+      <table>
+        <tr>
+          <th>Studio Name</th>
+          <th>Price</th>
+          <th>Locations</th>
+        </tr>
+        <tr>
+          <td><Link to={`studio/profile`}>Salsa Salsa Dance Studio</Link></td>
+          <td>$100</td>
+          <td>Williamburg,Brooklyn</td>
+        </tr>
+      </table>
+    </div>
+  )
+}
+
+const security = e => {
+  return (
+    <div class="rightdiv">
+      <h1>Security</h1>
+    </div>
+  )
+}
+
+const booking = e => {
+  return (
+    <div class="rightdiv">
+      <h1>Bookings</h1>
+    </div>
+  )
+}
+
+const account = e => {
+  return (
+    <div class="rightdiv">
+      <h1>Account</h1>
+    </div>
+  )
+}
+
+const reviews = e => {
+  return (
+    <div class="rightdiv">
+      <h1>Reviews</h1>
+    </div>
+  )
+}
 
 class BusProfile extends React.Component {
   constructor(props) {
@@ -68,6 +120,11 @@ class BusProfile extends React.Component {
                   <br />
                 </ul>
               </div>
+              <Route exact path="/hostprofile/account" component={account} />
+              <Route exact path="/hostprofile/studios" component={studios} />
+              <Route exact path="/hostprofile/booking" component={booking} />
+              <Route exact path="/hostprofile/reviews" component={reviews} />
+              <Route exact path="/hostprofile/security" component={security} />
             </div>
           </div>
         </div>
@@ -80,18 +137,11 @@ class BusProfile extends React.Component {
     );
   }
 
-  renderAccount = props => {
-    return (
-      <div>
-      </div>
-    );
-  }
   render() {
     return (
       <div>
         <Switch>
           <Route path="/hostprofile" render={this.renderBusProfile} />
-          <Route path="/hostprofile/account" render={this.renderAccount} />
         </Switch>
       </div>
     );
