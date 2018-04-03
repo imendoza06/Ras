@@ -270,6 +270,7 @@ class Search extends React.Component {
           handleDateChange={this.handleDateChange}
           handleRoomChange={this.handleRoomChange}
           handleComments={this.handleComments}
+          handleLogout={this.handleLogout}
           date={date}
           room={room}
           time={time}
