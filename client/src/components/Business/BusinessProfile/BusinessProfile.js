@@ -7,6 +7,7 @@ import Searchicon from "../../Images/Search.png";
 import Test from "../../Images/Test3.jpeg"
 import AddBusiness from "./AddBusiness"
 
+import Api from "../../Api/Api"
 
 const studios = e => {
   return (
@@ -66,7 +67,11 @@ class BusProfile extends React.Component {
       isLoggedIn: ""
     }
   };
-
+  
+  handleLogout = () => {
+    Api.getLogout();
+    console.log("You have logout!")
+  }
 
   renderBusProfile = () => {
     console.log(this.props.isLogged)
@@ -79,7 +84,7 @@ class BusProfile extends React.Component {
             </Link>
           </div>
           <Link to={`/login`}>
-            <a class="hoverturn" id="userlogout">
+            <a class="hoverturn" id="userlogout" onClick={this.handleLogout}>
               <span data-title="Log Out">Log Out</span>
             </a>
           </Link>

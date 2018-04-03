@@ -75,7 +75,7 @@ function getAllStudios(req, res, next) {
       return next(err);
     });
 }
-/*
+
 function createStudio(req, res, next) {
   req.body.age = parseInt(req.body.age);
    const timeStamp = new Date()
@@ -83,25 +83,23 @@ function createStudio(req, res, next) {
         .replace(/z|t/gi, " ")
         .trim();
   db
-    .none(
-//INSERT INTO studios (user_id, latitude, longitude, organization_name, description_summary, address_line_1, city, state, zip_code, website, phone, room_count, image_url, disciplines, uses_list, capacity, created_at)
-      `INSERT INTO studios(
-        name, breed, age, sex)
-        VALUES(${user_id}, ${latitude}, ${longitude}, ${organization_name}, ${description_summary}, ${address_line_1}, ${city}, ${state}, ${zip_code}, ${website}, ${phone}, ${room_count}, ${image_url}, ${disciplines}, ${uses_list}, ${capacity}, ${created_at})`,
-      req.body
-    )
+    .none(//INSERT INTO studios (user_id, latitude, longitude, organization_name, description_summary, address_line_1, city, state, zip_code, website, phone, room_count, image_url, disciplines, uses_list, capacity, created_at)
+      `INSERT INTO studios (user_id, organization_name, description_summary, address_line_1, city, state, zip_code, website, phone, room_count, image_url, disciplines, uses_list, capacity, created_at)
+        VALUES(${user_id}, ${organization_name}, ${description_summary}, ${address_line_1}, ${city}, ${state}, ${zip_code}, ${website}, ${phone}, ${room_count}, ${image_url}, ${disciplines}, ${uses_list}, ${capacity}, ${created_at})`, req.body)
     .then(function(data) {
-      res.status(200).json({
-        status: "success",
-        data: data,
-        message: "Created one studio"
-      });
+      res
+        .status(200)
+        .json({
+          status: "success",
+          data: data,
+          message: "Created one studio"
+        });
     })
     .catch(function(err) {
       return next(err);
     });
 }
-*/
+
 //Rooms
 function getAllRooms(req, res, next) {
   db

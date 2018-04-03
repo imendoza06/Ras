@@ -7,6 +7,8 @@ import Searchicon from "../../Images/Search.png";
 import Test from "../../Images/Test.jpg"
 import Account from './Account';
 
+import Api from "../../Api/Api";
+
 const studios = e => {
   return (
     <div class="studios_table">
@@ -55,14 +57,17 @@ class UserProfile extends React.Component {
     super(props);
     this.state = {
       isLoggedIn: "",
-      name:"",
-      profile:""
-    }
+      name: "",
+      profile: ""
+    };
+  }
+  handleLogout = () => {
+    Api.getLogout();
+    console.log("You have logout!");
   };
 
-
   renderUserProfile = () => {
-    console.log(this.props.isLogged)
+    console.log(this.props.isLogged);
     return (
       <div id="upbacker">
         <div id="topbar">
@@ -72,7 +77,7 @@ class UserProfile extends React.Component {
             </Link>
           </div>
           <Link to={`/login`}>
-            <a class="hoverturn" id="userlogout">
+            <a class="hoverturn" id="userlogout" onClick={this.handleLogout}>
               <span data-title="Log Out">Log Out</span>
             </a>
           </Link>
@@ -81,7 +86,11 @@ class UserProfile extends React.Component {
           <div id="ubar">
             <h3>Welcome To Your Profile {this.props.isLogged} !</h3>
             <div id="ubarcard">
-              <Link to={`/search`}><button type="submit"><img src={Searchicon}></img></button></Link>
+              <Link to={`/search`}>
+                <button type="submit">
+                  <img src={Searchicon} />
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -117,13 +126,21 @@ class UserProfile extends React.Component {
           </div>
         </div>
         <div id="footer">
-          <Link to={`/contact`}><a class="hoverturn"><span data-title="Contact">Contact</span></a></Link>
-          <Link to={`/about`}><a class="hoverturn"><span data-title="About Us">About Us</span></a></Link>
+          <Link to={`/contact`}>
+            <a class="hoverturn">
+              <span data-title="Contact">Contact</span>
+            </a>
+          </Link>
+          <Link to={`/about`}>
+            <a class="hoverturn">
+              <span data-title="About Us">About Us</span>
+            </a>
+          </Link>
           <p>RAS @ 2018</p>
         </div>
       </div>
     );
-  }
+  };
 
   renderAccount = props => {
     return (
@@ -131,7 +148,7 @@ class UserProfile extends React.Component {
         <Account />
       </div>
     );
-  }
+  };
   render() {
     return (
       <div>
@@ -142,7 +159,6 @@ class UserProfile extends React.Component {
       </div>
     );
   }
-
 }
 
 export default UserProfile;
