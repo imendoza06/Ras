@@ -36,38 +36,96 @@ CREATE TABLE studios (
   zip_code INTEGER NOT NULL,
   website  VARCHAR (355) NULL,
   phone TEXT [],
-  operation_hours TEXT [],
   room_count INTEGER NULL,
   image_url TEXT NULL,
   disciplines TEXT [],
   uses_list TEXT [],
-  /*
-  amenities TEXT [],
-  studio_rules TEXT,
-  */
   capacity INTEGER NULL,
   created_at TIMESTAMP NOT NULL,
   updated_at TIMESTAMP NULL
 );
-INSERT INTO studios (user_id, latitude, longitude, organization_name, description_summary, address_line_1, city, state, zip_code,website, phone, operation_hours, room_count, image_url, disciplines, uses_list, capacity, created_at)
+INSERT INTO studios (user_id, latitude, longitude, organization_name, description_summary, address_line_1, city, state, zip_code, website, phone, room_count, image_url, disciplines, uses_list, capacity, created_at)
   VALUES  (5, 40.7644682, -73.9835581, 'Shetler Studios','Modern complex featuring rehearsal studios & performance spaces for dance, music & theater.',
   '244 West 54th Street, 13th Floor','New York', 'New York', 10018,
-    'http://www.shetlerstudios.com','{"212-246-6655"}', '{"Everyday 9:00am - 11:00pm"}', 9, 'None specified',
+    'http://www.shetlerstudios.com','{"212-246-6655"}', 9, 'None specified',
     '{"Dance", "Music", "Theatre"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Special Event", "Reading", "Video/Film Shoot", "Meeting"}' ,99, now() ),
 
 (6, 40.75522, -73.990771, 'Champions Studios',
    'Champions Studios is the most conveniently  located REHEARSAL STUDIO IN NYC, customer  service oriented  studio, where we offer quality REHEARSAL SPACE for acting, photo shoots, dancing, auditions and more at a very reasonable price.',
    '257 West 39th Street, 14th Floor','New York', 'New York', 10019,
-    'http://www.championsstudios.com', '{"212-307-7707", "917-882-8542"}' , '{"Monday-Friday 8:30am - 11:00pm", "Saturday 8:30am - 10:00pm", "Sunday 9:00am - 11:00pm"}' , 17, 'None specified',
+    'http://www.championsstudios.com', '{"212-307-7707", "917-882-8542"}', 17, 'None specified',
     '{"Dance", "Music", "Theatre"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Special Event", "Reading", "Video/Film Shoot", "Meeting"}' ,99, now() ),
 
 
-(7, 40.753617,  -73.991904, 'Ripley-Grier Studios',
+(7, 40.753617,  -73.991904, 'Ripley-Grier Studios @RG520',
    'We are the "Worlds Largest" and voted #1 Rehearsal Studios for nine years in a row by Backstage Magazine.We offer the best SAME DAY rates in NYC.',
    '520 Eighth Avenue','New York', 'New York', 10018,
-    'http://www.ripleygrier.com', '{"212-799-5433"}','{"Everyday 8:00am - 11:00pm"}' , 4, 'None specified',
+    'http://www.ripleygrier.com', '{"212-799-5433"}', 4, 'None specified',
+    '{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' ,99, now() ),
+(7, 40.777795,  -73.9800744, 'Ripley-Grier Studios @RG72',
+   'We are the "Worlds Largest" and voted #1 Rehearsal Studios for nine years in a row by Backstage Magazine.We offer the best SAME DAY rates in NYC.',
+   '131 West 72nd Street','New York', 'New York', 10023,
+    'http://www.ripleygrier.com', '{"212-799-5433"}', 4,  'None specified',
+    '{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' ,99, now() ),
+(7, 40.765892,  -73.9837334, 'Ripley-Grier Studios @RG939',
+   'We are the "Worlds Largest" and voted #1 Rehearsal Studios for nine years in a row by Backstage Magazine.We offer the best SAME DAY rates in NYC.',
+   '939 Eighth Avenue, 3rd Floor (buzzer #307)','New York', 'New York', 10019,
+    'http://www.ripleygrier.com', '{"212-799-5433"}', 4,  'None specified',
     '{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' ,99, now() );
-  
+
+CREATE TABLE operation_hours (
+  oh_id SERIAL PRIMARY KEY,
+  studio_id INTEGER REFERENCES studios(studio_id),
+  monday TEXT [],
+  tuesday TEXT [],
+  wednesday TEXT [],
+  thursday TEXT [],
+  friday TEXT [],
+  saturday TEXT [], 
+  sunday TEXT [], 
+  created_at TIMESTAMP NOT NULL
+);
+INSERT INTO operation_hours (studio_id, monday, tuesday, wednesday, thursday, friday, saturday, sunday, created_at)
+  VALUES (1, '{"9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  now ()),
+  (2, '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM"}',
+  '{"9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM"}',
+  now ()),
+  (3, '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  now ()),
+    (4, '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  now ()),
+    (5, '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
+  now ());
 
 CREATE TABLE rooms (
   room_id SERIAL PRIMARY KEY,
@@ -122,13 +180,13 @@ INSERT INTO rooms (user_id, studio_id, room_name, image_url, dimensions_summary,
 (7, 3, 'Studio 16H','None specified','300.0 sqft','None specified' ,'None specified' , 24,'{"Rehearsal","Class","Audition","Photo Shoot","Video/ Film Shoot"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
 (7, 3, 'Studio 16N','None specified','308.0 sqft','None specified' ,'None specified' , 22,'{"Rehearsal","Class","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
 (7, 3, 'Studio 16I','None specified','300.0 sqft','None specified' ,'None specified' , 24,'{"Rehearsal","Class","Audition","Photo Shoot","Video/ Film Shoot"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
-(7, 3, 'Studio 1R @RG72','None specified','120.0 sqft','None specified' ,'None specified' , 15,'{"Rehearsal","Class"}' ,'{"Music","Theatre"}' ,'4-6' , now()),                                
-(7, 3, 'Studio 3 @RG72', 'None specified','300.0 sqft','None specified' ,'None specified' , 23,'{"Rehearsal","Class"}' ,'{"Music","Theatre"}' ,'4-6' , now()),                                
-(7, 3, 'Studio 1 @RG72', 'None specified','300.0 sqft','None specified' ,'None specified' , 23,'{"Rehearsal","Class"}' ,'{"Music","Theatre"}' ,'4-6' , now()),                                
-(7, 3, 'Studio 4 @RG72', 'None specified','300.0 sqft','None specified' ,'None specified' , 23,'{"Rehearsal","Class","Audition","Photo Shoot","Video/ Film Shoot"}' ,'{"Dance","Music","Theatre"}','4-6' , now()),                                
-(7, 3, 'Studio 2 @RG72', 'None specified','300.0 sqft','None specified' ,'None specified' , 23,'{"Rehearsal","Class","Audition","Photo Shoot","Video/ Film Shoot"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
-(7, 3, 'Studio 3D @RG939', 'None specified','231.0 sqft','None specified' ,'None specified' , 22,'{"Rehearsal","Class","Audition"}' ,'{"Music","Theatre"}','4-6' , now()),                                
-(7, 3, 'Studio 3C @RG939', 'None specified','264.0 sqft','None specified' ,'None specified' , 21,'{"Rehearsal","Class","Audition","Photo Shoot","Video/ Film Shoot"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now());                                
+(7, 4, 'Studio 1R @RG72','None specified','120.0 sqft','None specified' ,'None specified' , 15,'{"Rehearsal","Class"}' ,'{"Music","Theatre"}' ,'4-6' , now()),                                
+(7, 4, 'Studio 3 @RG72', 'None specified','300.0 sqft','None specified' ,'None specified' , 23,'{"Rehearsal","Class"}' ,'{"Music","Theatre"}' ,'4-6' , now()),                                
+(7, 4, 'Studio 1 @RG72', 'None specified','300.0 sqft','None specified' ,'None specified' , 23,'{"Rehearsal","Class"}' ,'{"Music","Theatre"}' ,'4-6' , now()),                                
+(7, 4, 'Studio 4 @RG72', 'None specified','300.0 sqft','None specified' ,'None specified' , 23,'{"Rehearsal","Class","Audition","Photo Shoot","Video/ Film Shoot"}' ,'{"Dance","Music","Theatre"}','4-6' , now()),                                
+(7, 4, 'Studio 2 @RG72', 'None specified','300.0 sqft','None specified' ,'None specified' , 23,'{"Rehearsal","Class","Audition","Photo Shoot","Video/ Film Shoot"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
+(7, 5, 'Studio 3D @RG939', 'None specified','231.0 sqft','None specified' ,'None specified' , 22,'{"Rehearsal","Class","Audition"}' ,'{"Music","Theatre"}','4-6' , now()),                                
+(7, 5, 'Studio 3C @RG939', 'None specified','264.0 sqft','None specified' ,'None specified' , 21,'{"Rehearsal","Class","Audition","Photo Shoot","Video/ Film Shoot"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now());                                
 
 CREATE TABLE reviews (
   review_id SERIAL PRIMARY KEY,
@@ -152,24 +210,23 @@ It is a great choice when you want an affordable space to shoot in.', 5, now()),
 (4,3, 'This is one of the coolest places to host a meeting and our new go-to spot. Inexpensive, Broadway rehearsals happen around you and the creative atmosphere combined with a well-meaning and considerate staff make this an exceptional place for meetings. Skip WeWork. Come here!', 5, now()),
 (2, 3,'All good creative space. Wish the restroom facilities were larger.', 4, now());
 
-/*
 CREATE TABLE bookings (
   booking_id SERIAL PRIMARY KEY,
   room_id INTEGER REFERENCES rooms(room_id),
   user_id INTEGER REFERENCES users(user_id),
-  studio_id INTEGER REFERENCES studios,
-  start_on DATE NOT NULL,
-  end_on DATE NOT NULL,
-  start_time TIME NOT NULL,
-  end_time TIME NOT NULL,
+  booking_date TEXT NOT NULL,
+  booking_time TEXT NOT NULL,
   price_per_hour NUMERIC (5, 2),
   total NUMERIC (9, 2),
-  brooking_status (50) NOT NULL,
   guest_count INTEGER NULL,
+  booking_status TEXT NOT NULL,
+  isPayed BOOLEAN DEFAULT FALSE,
   created_at TIMESTAMP NOT NULL,
   updated_at TIMESTAMP 
 ); 
 
-INSERT INTO bookings (room_id, user_id, start_on, end_on, start_time, end_time, price_per_hour, total, booking_status, guest_count, created_at)
-  VALUES 
-*/
+INSERT INTO bookings (room_id, user_id, booking_date, booking_time, price_per_hour, total, guest_count, booking_status, isPayed, created_at)
+VALUES (2, 1, 'Monday', '8:00AM - 9:00AM', 30, 30, 4, 'Booked', false, now()),
+(4, 3, 'Tuesday', '7:00PM - 9:00PM', 30, 60, 3, 'Booked', false, now()),
+(5, 2, 'Sunday', '10:00AM - 11:00AM', 30, 30, 5, 'Booked', false, now()),
+(1, 4, 'Saturday', '11:00AM - 1:00PM', 30, 60, 2, 'Booked', false, now());
