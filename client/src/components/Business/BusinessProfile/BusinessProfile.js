@@ -11,18 +11,9 @@ import AddBusiness from "./AddBusiness"
 const studios = e => {
   return (
     <div class="rightdiv">
-      <table>
-        <tr>
-          <th>Studio Name</th>
-          <th>Price</th>
-          <th>Locations</th>
-        </tr>
-        <tr>
-          <td><Link to={`studio/profile`}>Salsa Salsa Dance Studio</Link></td>
-          <td>$100</td>
-          <td>Williamburg,Brooklyn</td>
-        </tr>
-      </table>
+      <div class="profileheads">
+        <h3>Studios</h3>
+      </div>
     </div>
   )
 }
@@ -30,7 +21,9 @@ const studios = e => {
 const security = e => {
   return (
     <div class="rightdiv">
-      <h1>Security</h1>
+      <div class="profileheads">
+        <h3>Security</h3>
+      </div>
     </div>
   )
 }
@@ -38,7 +31,9 @@ const security = e => {
 const booking = e => {
   return (
     <div class="rightdiv">
-      <h1>Bookings</h1>
+      <div class="profileheads">
+        <h3>Booking History</h3>
+      </div>
     </div>
   )
 }
@@ -46,7 +41,9 @@ const booking = e => {
 const account = e => {
   return (
     <div class="rightdiv">
-      <h1>Account</h1>
+      <div class="profileheads">
+        <h3>Account Summary</h3>
+      </div>
     </div>
   )
 }
@@ -54,7 +51,9 @@ const account = e => {
 const reviews = e => {
   return (
     <div class="rightdiv">
-      <h1>Reviews</h1>
+      <div class="profileheads">
+        <h3>Reviews</h3>
+      </div>
     </div>
   )
 }
@@ -73,11 +72,6 @@ class BusProfile extends React.Component {
     return (
       <div id="hpbacker">
         <div id="topbar">
-          <div id="barlogo">
-            <Link to={`/`}>
-              <img src={Logo} />
-            </Link>
-          </div>
           <Link to={`/login`}>
             <a class="hoverturn" id="userlogout">
               <span data-title="Log Out">Log Out</span>
@@ -85,10 +79,15 @@ class BusProfile extends React.Component {
           </Link>
         </div>
         <div id="htopbox">
+          <div id="profilelogo">
+            <Link to={`/`}>
+              <img src={Logowhite} />
+            </Link>
+          </div>
           <div id="hbar">
-            <h3>Welcome To Your Profile Host {this.props.isLogged} !</h3>
+            <h3>Welcome Host {this.props.isLogged} !</h3>
             <div id="hbarcard">
-              <Link to={`/hostprofile/add`}>+Add A Studio</Link>
+              <Link to={`/add`}>+Add A Studio</Link>
               <Link to={`/search`}><button type="submit"><img src={Searchicon}></img></button></Link>
             </div>
           </div>

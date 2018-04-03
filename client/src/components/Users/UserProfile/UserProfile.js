@@ -4,48 +4,53 @@ import "./UserProfile.css";
 import Logowhite from "../../Images/LogoWhite.png";
 import Logo from "../../Images/Logo.png";
 import Searchicon from "../../Images/Search.png";
-import Test from "../../Images/Test.jpg"
-import Account from './Account';
 
-const studios = e => {
+const favorites = e => {
   return (
-    <div class="studios_table">
-      <table>
-        <tr>
-          <th>Studio Name</th>
-          <th>Price</th>
-          <th>Locations</th>
-        </tr>
-        <tr>
-          <td><Link to={`studio/profile`}>Salsa Salsa Dance Studio</Link></td>
-          <td>$100</td>
-          <td>Williamburg,Brooklyn</td>
-        </tr>
-      </table>
+    <div class="rightdiv">
+      <div class="profileheads">
+        <h3>Favorties</h3>
+      </div>
     </div>
   )
 }
 
-const manageStudio = e => {
+const security = e => {
   return (
-    <div>
-      <h1>Manage Studio</h1>
+    <div class="rightdiv">
+      <div class="profileheads">
+        <h3>Security</h3>
+      </div>
     </div>
   )
 }
 
-const bookings = e => {
+const booking = e => {
   return (
-    <div>
-      <h1>Bookings</h1>
+    <div class="rightdiv">
+      <div class="profileheads">
+        <h3>Booking History</h3>
+      </div>
     </div>
   )
 }
 
 const account = e => {
   return (
-    <div>
-      <h1>Account</h1>
+    <div class="rightdiv">
+      <div class="profileheads">
+        <h3>Account Summary</h3>
+      </div>
+    </div>
+  )
+}
+
+const reviews = e => {
+  return (
+    <div class="rightdiv">
+      <div class="profileheads">
+        <h3>Reviews</h3>
+      </div>
     </div>
   )
 }
@@ -55,8 +60,8 @@ class UserProfile extends React.Component {
     super(props);
     this.state = {
       isLoggedIn: "",
-      name:"",
-      profile:""
+      name: "",
+      profile: ""
     }
   };
 
@@ -66,11 +71,6 @@ class UserProfile extends React.Component {
     return (
       <div id="upbacker">
         <div id="topbar">
-          <div id="barlogo">
-            <Link to={`/`}>
-              <img src={Logo} />
-            </Link>
-          </div>
           <Link to={`/login`}>
             <a class="hoverturn" id="userlogout">
               <span data-title="Log Out">Log Out</span>
@@ -78,8 +78,13 @@ class UserProfile extends React.Component {
           </Link>
         </div>
         <div id="topbox">
+          <div id="profilelogo">
+            <Link to={`/`}>
+              <img src={Logowhite} />
+            </Link>
+          </div>
           <div id="ubar">
-            <h3>Welcome To Your Profile {this.props.isLogged} !</h3>
+            <h3>Welcome User {this.props.isLogged} !</h3>
             <div id="ubarcard">
               <Link to={`/search`}><button type="submit"><img src={Searchicon}></img></button></Link>
             </div>
@@ -112,7 +117,11 @@ class UserProfile extends React.Component {
                   <br />
                 </ul>
               </div>
-              <Route exact path="/hostprofile/account" component={account} />
+              <Route exact path="/userprofile/account" component={account} />
+              <Route exact path="/userprofile/favorites" component={favorites} />
+              <Route exact path="/userprofile/booking" component={booking} />
+              <Route exact path="/userprofile/reviews" component={reviews} />
+              <Route exact path="/userprofile/security" component={security} />
             </div>
           </div>
         </div>
@@ -125,19 +134,11 @@ class UserProfile extends React.Component {
     );
   }
 
-  renderAccount = props => {
-    return (
-      <div>
-        <Account />
-      </div>
-    );
-  }
   render() {
     return (
       <div>
         <Switch>
           <Route path="/userprofile" render={this.renderUserProfile} />
-          <Route path="/userprofile/account" render={this.renderAccount} />
         </Switch>
       </div>
     );

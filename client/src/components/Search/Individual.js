@@ -8,7 +8,37 @@ import Searchicon from "../Images/Search.png";
 import Logowhite from "../Images/LogoWhite.png";
 
 const Individual = ({
-    name, image, about, description, address, price, dimensions, amenities, isInside, isProfile, submitForm, input, inputaddress, handleAddressSearch, handleSearch
+    name,
+    image,
+    about,
+    description,
+    address,
+    price,
+    dimensions,
+    amenities,
+    isInside,
+    isProfile,
+    submitForm,
+    input,
+    inputaddress,
+    handleAddressSearch,
+    handleSearch,
+    dates,
+    rooms,
+    times,
+    handleDateChange,
+    handleRoomChange,
+    handleComments,
+    date,
+    room,
+    time,
+    comments,
+    submitAvailiable,
+    submitBooking,
+    submitBookAgain,
+    submitComments,
+    studioarr,
+    studioSearch,
 
 }) => (
         <div id="ibacker">
@@ -44,7 +74,7 @@ const Individual = ({
                                     <span data-title="Log Out">Log Out</span>
                                 </a>
                             </Link>
-                            <Link to={`/userprofile`}>
+                            <Link to={`/userprofile/account`}>
                                 <a class="hoverturn">
                                     <span data-title="My Account">My Account</span>
                                 </a>
@@ -78,7 +108,7 @@ const Individual = ({
                                     <span data-title="Log Out">Log Out</span>
                                 </a>
                             </Link>
-                            <Link to={`/hostprofile`}>
+                            <Link to={`/hostprofile/account`}>
                                 <a class="hoverturn">
                                     <span data-title="My Account">My Account</span>
                                 </a>
@@ -132,8 +162,9 @@ const Individual = ({
                 <section class="section isection whitebg">
                     <div id="studiocontent">
                         <div id="studioinfo">
+                            <p id="studiotopsub">Dance Studio For The Masses</p>
                             <h1>{name}</h1>
-                            <h3>Brooklyn,NY</h3>
+                            <p id="studioaddress">Brooklyn,NY</p>
                             <h3>About The Studio</h3>
                             <p>The best place and area in Brooklyn "Prospect Park"
                             Prospect Park is a 526-acre (213 hectare)[4] public park in the New York City borough of Brooklyn, and the second largest public park in Brooklyn. That's exactly where you going to be a few step away from it, plus restaurants. Is a Private Bedroom 1 Bed, 1 bath furnished with a Queen sized bed.Perfect for a couples and travelers
@@ -153,12 +184,50 @@ const Individual = ({
                         </div>
                         <div id="book">
                             <h3>$45 per hour</h3>
-                            <p> Date</p>
-                            <select></select>
-                            <p> Rooms</p>
-                            <select></select>
-                            <br />
-                            <button type="submit">Book Now</button>
+                            {date && room ?
+                                [
+                                    (time
+                                        ?
+                                        [
+                                            (comments
+                                                ?
+                                                <div id="bookinfo">
+                                                    <p>You Have Successfully Booked</p>
+                                                    <p>For <strong>{date}</strong></p>
+                                                    <p>In Room <strong>{room}</strong></p>
+                                                    <p>At <strong>{time}</strong>.</p>
+                                                    <p>You Can See Your Booking In Your User Profile.</p>
+                                                    <button type="submit" onClick={submitBookAgain} >Book Here Again</button>
+                                                </div>
+                                                : <div id="bookcomments">
+                                                    <p id="timesh">Please Give Host Information On Your Usage</p>
+                                                    <textarea placeholder="Comments" onChange={handleComments} />
+                                                    <button type="submit" onClick={submitComments} >Submit</button>
+                                                </div>
+                                            )
+                                        ]
+                                        : <div>
+                                            <p id="timesh">Choose A Time</p>
+                                            <div id="times">
+                                                {times.map(time => <div> {time}<br /><button type="submit" name={time} onClick={submitBooking} >Book Now</button></div>)}
+                                            </div>
+                                        </div>
+                                    )
+                                ]
+                                :
+                                <div id="dateroom">
+                                    <p>Date</p>
+                                    <select onChange={handleDateChange}>
+                                        {dates.map(date => <option value={date}>{date}</option>)}
+                                    </select>
+                                    <p>Rooms</p>
+                                    <select onChange={handleRoomChange}>
+                                        {rooms.map(room => <option value={room}>{room}</option>)}
+                                    </select>
+                                    <br />
+                                    <button type="submit" onClick={submitAvailiable} >Check Availiability</button>
+                                </div>
+                            }
                         </div>
                     </div>
                 </section>

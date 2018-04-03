@@ -8,7 +8,7 @@
 }
 
 #studiodiv img {
-    width: 38.6vh;
+    width: 18.8vw;
     height: 31vh;
     margin: 0px;
     padding: 0px;
@@ -18,7 +18,7 @@
 #studiodiv {
     float: left;
     height: 41vh;
-    width: 38.6vh;
+    width: 18.8vw;
     /* border: red 3px solid; */
     margin: 7.5px;
     border-radius: 5px;
@@ -29,7 +29,7 @@
     /* border: black 1px solid; */
     margin: 0px;
     height: 11vh;
-    width: 38.6vh;
+    width: 18.8vw;
     top: -10px;
     background-color: black;
     text-align: center;

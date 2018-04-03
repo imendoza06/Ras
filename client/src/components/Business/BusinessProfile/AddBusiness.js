@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './AddBusiness.css'
+import Logowhite from "../../Images/LogoWhite.png";
 
 class AddingBusiness extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             studio_Name: "",
             studio_Address: "",
-            city:"",
+            city: "",
             state: "",
             zipcode: 0,
             description: "",
-            category:"",
+            category: "",
             isLogin: false
         }
     }
@@ -23,7 +24,7 @@ class AddingBusiness extends Component {
         })
     }
 
-    handleAddress = e =>{
+    handleAddress = e => {
         this.setState({
             studio_Address: e.target.value
         })
@@ -49,86 +50,87 @@ class AddingBusiness extends Component {
 
     handleCategory = e => {
         this.setState({
-            category: e .taget.value
+            category: e.taget.value
         })
     }
 
-    handleForm = e =>{
-        const {isLogin} = this.state
+    submitForm = e => {
         e.preventDefault();
-    if(isLogin ===  true){
-        }
-    }
+    };
 
 
     render() {
-    const {studio_Name,studio_Address,city,state,zipcode,description,category,isLogin} = this.state
+        const { studio_Name, studio_Address, city, state, zipcode, description, category, isLogin } = this.state
         return (
-            <div>
+            <div id="addbacker">
                 <div id="topbar">
-                    <Link to={`/login`}><a class="hoverturn"><span data-title="Log In">Log In</span></a></Link>
-                    <Link to={`/signup`}><a class="hoverturn"><span data-title="Sign Up">Sign Up</span></a></Link>
+                    <div id="barlogo">
+                        <Link to={`/`}>
+                            <img src={Logowhite} alt="logo" />
+                        </Link>
+                    </div>
+                    <Link to={`/logout`}><a class="hoverturn"><span data-title="Log Out">Log Out</span></a></Link>
+                    <Link to={`/hostprofile/account`}><a class="hoverturn"><span data-title="My Account">My Account</span></a></Link>
                 </div>
-                <div className="add_studio">
+                <div className="addcontent">
                     <h1>Add Your Studio</h1>
-                    <br/>
-                    <form id="form">
-
+                    <br />
+                    <form>
                         <input id="name"
                             name=""
                             type="text"
                             placeholder="Studio Name"
                             onChange={this.handleAddress}
                         />
-                        <br/>
-                        <input id="Address"
+                        <br />
+                        <input
                             name=""
                             type=" text"
                             placeholder="Studio Address"
                             onChange={this.handleAddress}
                         />
-                        <br/>
-                        <input id="City"
+                        <br />
+                        <input
                             name=""
                             type="text"
                             placeholder="City"
                             onChange={this.handleAddress}
                         />
                         <br />
-                        <input id="State"
+                        <input
                             name=""
                             type="text"
                             placeholder="State"
                             onChange={this.handleAddress}
                         />
-                        <br/>
-                        <input id="Zip"
+                        <br />
+                        <input
                             name=""
                             type="number"
                             placeholder="Zip Code"
                             onChange={this.handleAddress}
                         />
-                        <br/>
-                        <input id="Description"
+                        <br />
+                        <input
                             name=""
                             type="text"
-                            placeholder="Drescribe Your Business"
+                            placeholder="Describe Your Business"
                             onChange={this.handleAddress}
                         />
-                        <br/>
-                        <input id="Category"
+                        <br />
+                        <input
                             name=""
                             type="text"
                             placeholder="Category ex: Music, Art"
                             onChange={this.handleAddress}
                         />
-                        <br/>
-                        <button id="submiting" onSubmit={this.handleAddress}>Submit</button>
+                        <br />
+                        <button type="submit" onClick={this.submitForm}>Add Studio</button>
                     </form>
                 </div>
                 <div id="footer">
                     <Link to={`/contact`}><a class="hoverturn"><span data-title="Contact">Contact</span></a></Link>
-                    <Link to={`/`}><a class="hoverturn"><span data-title="Home">Home</span></a></Link>
+                    <Link to={`/about`}><a class="hoverturn"><span data-title="About Us">About Us</span></a></Link>
                     <p>RAS @ 2018</p>
                 </div>
             </div>

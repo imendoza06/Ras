@@ -5,6 +5,8 @@ import Listing from "./Listing";
 import Test from "../Images/Test.jpg";
 import Test2 from "../Images/Test2.jpg";
 import Test3 from "../Images/Test3.jpeg";
+import Test4 from "../Images/Test4.jpg";
+import Test5 from "../Images/Test5.jpg";
 
 class Home extends React.Component {
   constructor(props) {
@@ -32,6 +34,8 @@ class Home extends React.Component {
     const { input, address } = this.state;
     this.props.handleSearchName(input);
     this.props.handleSearchAddress(address);
+    var studios = this.props.studioarr.filter((studio) => studio.name.toLowerCase().includes(input.toLowerCase()));
+    this.props.handleStudioSearch(studios)
     this.props.history.push("/search");
   };
 
@@ -53,7 +57,7 @@ class Home extends React.Component {
                   <span data-title="Log In">Log Out</span>
                 </a>
               </Link>
-              <Link to={`/userprofile`}>
+              <Link to={`/userprofile/account`}>
                 <a class="hoverturn">
                   <span data-title="My Account">My Account</span>
                 </a>
@@ -65,7 +69,7 @@ class Home extends React.Component {
                   <span data-title="Log In">Log Out</span>
                 </a>
               </Link>
-              <Link to={`/hostprofile`}>
+              <Link to={`/hostprofile/account`}>
                 <a class="hoverturn">
                   <span data-title="My Account">My Account</span>
                 </a>
@@ -140,9 +144,9 @@ class Home extends React.Component {
             <div id="homereviewlist" >
               <div>
                 <Listing image={Test} header="Broadway Dance Center" description="New York, NY" bigdiv="reviewdiv" worddiv="reviewword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
-                <Listing image={Test2} header="Broadway Dance Center" description="New York, NY" bigdiv="reviewdiv" worddiv="reviewword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
-                <Listing image={Test} header="Broadway Dance Center" description="New York, NY" bigdiv="reviewdiv" worddiv="reviewword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
-                <Listing image={Test3} header="Broadway Dance Center" description="New York, NY" bigdiv="reviewdiv" worddiv="reviewword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
+                <Listing image={Test2} header="NOCA" description="New York, NY" bigdiv="reviewdiv" worddiv="reviewword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
+                <Listing image={Test3} header="Hip Hop Conversatory" description="New York, NY" bigdiv="reviewdiv" worddiv="reviewword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
+                <Listing image={Test4} header="Jazz Mazz" description="New York, NY" bigdiv="reviewdiv" worddiv="reviewword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
               </div>
             </div>
           </section>
@@ -166,10 +170,10 @@ class Home extends React.Component {
           <section class="section halfsection blackbg" id="homenew">
             <h1> Newly Added Studios </h1>
             <div id="homenewlist">
-              <Listing image={Test3} header="Broadway Dance Center" description="New York, NY" bigdiv="newdiv" worddiv="newword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
-              <Listing image={Test} header="Broadway Dance Center" description="New York, NY" bigdiv="newdiv" worddiv="newword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
-              <Listing image={Test2} header="Broadway Dance Center" description="New York, NY" bigdiv="newdiv" worddiv="newword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
-              <Listing image={Test} header="Broadway Dance Center" description="New York, NY" bigdiv="newdiv" worddiv="newword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
+              <Listing image={Test5} header="DNYC" description="New York, NY" bigdiv="newdiv" worddiv="newword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
+              <Listing image={Test2} header="Monoco Studios" description="New York, NY" bigdiv="newdiv" worddiv="newword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
+              <Listing image={Test3} header="HHS" description="New York, NY" bigdiv="newdiv" worddiv="newword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
+              <Listing image={Test4} header="Serene Studios" description="New York, NY" bigdiv="newdiv" worddiv="newword" alink="https://nypost.com/2018/02/28/rent-the-runway-implements-no-fur-policy-peta/" />
             </div>
           </section>
         </main>

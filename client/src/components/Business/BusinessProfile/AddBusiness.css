@@ -1,0 +1,41 @@
+.addcontent {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    border: white 6px double;
+    width: 40vw;
+    height: 75vh;
+    text-align: center;
+}
+
+.addcontent h1 {
+    margin-bottom: 4px;
+}
+
+.addcontent input {
+    border: none;
+    border-radius: 5px;
+    padding-left: 5px;
+    height: 6vh;
+    width: 60vh;
+    outline: none;
+    margin-bottom: 5px;
+}
+
+.addcontent button[type=submit] {
+    height: 30px;
+    width: 200px;
+    border-radius: 8px;
+    margin: 8px;
+    background-color: #6ba1a7;
+    color: white;
+    border: none;
+}
+
+.addcontent button[type=submit]:hover {
+    background-color: white;
+    color: black;
+}

@@ -10,7 +10,7 @@ import Logo from "../Images/Logo.png";
 class Contact extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { name: "", email: "", issue: "", comment: "", faq: "" }
+    this.state = { name: "", email: "", issue: "", comment: "", faq: "Choose A Question" }
   };
 
   handleNameInput = e => {
@@ -47,7 +47,23 @@ class Contact extends React.Component {
   render() {
     const { name, email, issue, comment, faq } = this.state;
     const issues = ["", "Payment", "Booking", "Cancelation"];
-    const questions = ["", "How does RAS work?"];
+    const questions = ["Choose A Question", "What Is RAS?", "What Can I Do As A Host?", "What Can I Do As A User?", "Do I Have To Pay To Use Your Services?"];
+    var answer = "";
+    if (faq !== "Choose A Question") {
+      if (faq === "What Is RAS?") {
+        answer = "RAS, which stands for Rent A Studio, is a marketplace where users can find different types of studios and book then as well as a system that hosts can use to list their studio spaces."
+      }
+      else if (faq === "What Can I Do As A Host?") {
+        answer = "A host can list their studio spaces and keep track of all the people who are booking them. Times in which the studio spaces are available can be editted."
+      }
+      else if (faq === "What Can I Do As A User?") {
+        answer = "A user can look for studios by name or address and book seamlessly."
+      }
+      else if (faq === "Do I Have To Pay To Use Your Services?") {
+        answer = "Whether you are a user or a host, RAS is free to use. The only payment would be when a user books a studio, there will be a 3% commission."
+      }
+    }
+
     return <div id="cbacker">
       {this.props.isLogged ?
         [
@@ -113,8 +129,7 @@ class Contact extends React.Component {
           <h1> Frequenty Asked Questions </h1>
           <h3>
             {" "}
-            Click Below And You May Find The Answer To Your
-            Problem
+            Looking For An Answer To Your Questions?
                 </h3>
           <select onChange={this.handleFaqChange}>
             {questions.map(question => (
@@ -122,12 +137,8 @@ class Contact extends React.Component {
             ))}
           </select>
           <br />
-          {faq !== "" ? <div>
-            <p>
-              {" "}
-              RAS is a simple booking system for studios. ETC
-                      ETC{" "}
-            </p>
+          {faq !== "Choose A Question" ? <div>
+            <p>{answer}</p>
           </div> : ""}
         </div>
         <div id="contact">

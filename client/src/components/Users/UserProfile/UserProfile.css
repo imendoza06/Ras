@@ -27,14 +27,23 @@
 
 #topbox {
     position: relative;
-    background: url(../../Images/Test.jpg);
-    background-size: 100% 200%;
+    background: url(../../Images/Test5.jpg);
+    background-size: 100% 150%;
+    background-position: center bottom;
     height: 30vh;
     width: 100%;
     display: flex;
     align-content: center;
     justify-content: center;
     /* border: red 1px solid; */
+}
+
+#profilelogo{
+ margin-top: 8vh;
+}
+
+#profilelogo img{
+  width: 4vw;
 }
 
 /* Usercontent */
@@ -78,34 +87,6 @@
 
 #box1 a:hover {
     color: #6ba1a7;
-}
-
-/* Right Info Box */
-
-.rightbox {
-    border: black 2px solid;
-    border-radius: 5px;
-    color: white;
-    background: #6ba1a7;
-    position: absolute;
-    height: 45vh;
-    width: 70vw;
-    top: 0vh;
-    left: 25%;
-    font-size: 15px;
-}
-
-.infobox {
-    border-style: solid;
-    border-width: 1px;
-    /* border-radius: 5px; */
-    background: white;
-    color: black;
-    margin-left: -1px;
-    height: 38.5vh;
-    width: 70vw;
-    margin-top: -15px;
-    font-size: 23px;
 }
 
 .uls {

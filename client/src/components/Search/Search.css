@@ -8,11 +8,11 @@
 
 #sbar {
     position: fixed;
-    top: 6.5%;
+    top: 0%;
     width: 100%;
     text-align: center;
     background-color: #6ba1a7;
-    height: 11vh;
+    height: 24vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,10 +55,10 @@
 
 #filters {
     position: fixed;
-    top: 17.5%;
+    top: 18vh;
     width: 100%;
     text-align: center;
-    background-color: #3a686dd3;
+    background-color: #3a686d;
     height: 6vh;
     display: flex;
     align-items: center;
