@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import './Studios.css';
 import Rating from '../Images/Rating.png';
 
-const Studios = ({ studioarr, bigdiv, worddiv }) => (
+const Studios = ({ studioarr, singleStudio, bigdiv, worddiv }) => (
     <div>
         {studioarr.map(studio => (
-            <div id={bigdiv}>
+            <div id={bigdiv} onClick={singleStudio}>
                 <Link to={`/search/${studio.organization_name}`}>
                     <div>
                         <img src={studio.image_url} alt="Studio" border="0" />

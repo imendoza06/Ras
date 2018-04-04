@@ -24,7 +24,9 @@ class Search extends React.Component {
       roomchose: "",
       commentswritten: "",
       studioSearch: this.props.studioSearch,
-      studioarr: this.props.studioarr
+      studioarr: this.props.studioarr,
+      singlestudio:[],
+      individualname:""
     };
   }
 
@@ -67,6 +69,20 @@ class Search extends React.Component {
     this.setState({
       commentswritten: e.target.value
     });
+  };
+
+  getSingleStudio = id => {
+    Api.getSingleStudioInfo(id)
+      .then(response => {
+        console.log("Response: ", response);
+        console.log("Response Data: ", response.data);
+        this.setState({
+          singlestudio: response.data.data,
+        });
+      })
+      .catch(err => {
+        console.log("Error: ", err);
+      });
   };
 
   handleLogout = () => {
@@ -232,7 +248,8 @@ class Search extends React.Component {
   };
 
   renderIndividual = props => {
-    const { name } = props.match.params;
+    const { name, singlestudio } = props.match.params;
+    
     const {
       input,
       address,
