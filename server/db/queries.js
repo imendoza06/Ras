@@ -60,6 +60,7 @@ function getSingleUser(req, res, next) {
       return next(err);
     });
 }
+
 //Studios
 function getAllStudios(req, res, next) {
   db

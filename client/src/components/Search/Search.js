@@ -115,7 +115,7 @@ class Search extends React.Component {
     this.props.handleSearchName(input);
     this.props.handleSearchAddress(address);
     var studios = this.props.studioarr.filter(studio =>
-      studio.name.toLowerCase().includes(input.toLowerCase())
+      studio.organization_name.toLowerCase().includes(input.toLowerCase())
     );
     this.props.handleStudioSearch(studios);
     this.props.history.push("/search");
@@ -252,6 +252,8 @@ class Search extends React.Component {
     ];
     const rooms = ["Choose A Room", "Small", "Medium", "Large"];
     const times = ["9:00-10:00", "10:00-11:00", "1:00-2:00", "3:00-4:00"];
+    var onestudio = this.props.studioarr.find((studio)=> studio.organization_name === name)
+    console.log(onestudio)
     console.log(this.state.datechose, this.state.roomchose);
     return (
       <div>
