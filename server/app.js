@@ -31,7 +31,7 @@ app.use(cookieParser());
 app.use(
   session({
     store: new pgSessionStore({
-      conString: "postgres://c4q:c4q@localhost:5432/rasdb"
+      conString: "postgres://localhost/rasdb"
     }),
     secret:
       "\x02\xf3\xf7r\t\x9f\xee\xbbu\xb1\xe1\x90\xfe'\xab\xa6L6\xdd\x8d[\xccO\xfe",

@@ -11,7 +11,7 @@ router.get("/", function(req, res, next) {
 
 
 router.post("/new", authHelpers.loginRedirect, (req, res, next) => {
-  console.log("sign up request", req.body);
+  // console.log("sign up request", req.body);
   return authHelpers
     .createUser(req, res, next)
     .then(response => {
