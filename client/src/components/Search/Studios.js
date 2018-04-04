@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './Studios.css';
+import Rating from '../Images/Rating.png';
 
 const Studios = ({ studioarr, bigdiv, worddiv }) => (
     <div>
@@ -15,7 +16,8 @@ const Studios = ({ studioarr, bigdiv, worddiv }) => (
                             {studio.organization_name}
                         </h1>
                         <p>{studio.about}</p>
-                        <p>{studio.price} per hour</p>
+                        <img src ={Rating} />
+                        <p id="pricep">$ {studio.price} per hour</p>
                     </div>
                 </Link>
             </div>

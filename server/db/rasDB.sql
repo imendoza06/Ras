@@ -39,6 +39,8 @@ CREATE TABLE studios (
   hour TEXT NOT NULL,
   price INTEGER NULL,
   phone TEXT [],
+  amenities TEXT NOT NULL,
+  rules TEXT NOT NULL,
   room_count INTEGER NULL,
   image_url TEXT NULL,
   disciplines TEXT [],
@@ -47,36 +49,33 @@ CREATE TABLE studios (
   created_at TIMESTAMP NOT NULL,
   updated_at TIMESTAMP NULL
 );
-<<<<<<< HEAD
-=======
 
->>>>>>> bc2ee0a55e85525b5e440004291db8a06df120ef
-INSERT INTO studios (user_id, latitude, longitude, organization_name, about, description_summary, address_line_1, city, state, zip_code, website, hour, price, phone, room_count, image_url, disciplines, uses_list, capacity, created_at)
+INSERT INTO studios (user_id, latitude, longitude, organization_name, about, description_summary, address_line_1, city, state, zip_code, website, hour, price, phone, amenities, rules, room_count, image_url, disciplines, uses_list, capacity, created_at)
   VALUES  (1,40.7644682,-73.9835581,'Empire Rehearsal','Music Studio For The Best','We have over 200 sound-proofed music rehearsal studios. Rooms can be rented by the hour, month to month or long term. Each studio is soundproofed for rehearsal use, 
   features carpeting, heat, air conditioning, and free Wi-Fi. Some studios have windows and vocal booths. Check out the 4th floor build-out for higher end studios in Brooklyn, open now!',
   '244 West 54th Street, 13th Floor','New York','New York',10018,'http://www.empire-rehearsal-studios.com/','9:00 AM to 6:00 PM Monday to Friday',45,
-  '{"212-246-6655"}',9,'https://www.empirerecordingstudios.com/wp-content/uploads/2014/01/empire_recording_studio_8.jpg',
+  '{"212-246-6655"}', 'Wifi', 'No Smoking',9,'https://www.empirerecordingstudios.com/wp-content/uploads/2014/01/empire_recording_studio_8.jpg',
   '{"Dance", "Music", "Theatre"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Special Event", "Reading", "Video/Film Shoot", "Meeting"}' ,99, now() ),
 
 (3, 40.75522, -73.990771, 'Champions Studios', 'Dance Studio For Champions', 'Champions Studios is the most conveniently  located REHEARSAL STUDIO IN NYC, customer  service oriented  studio, where we offer quality REHEARSAL SPACE for acting, photo shoots, dancing, auditions and more at a very reasonable price.',
 '257 West 39th Street, 14th Floor', 'New York', 'New York', 10019, 'http://www.championsstudios.com', '9:00 AM to 6:00 PM Monday to Friday ', 60,
-'{"212-307-7707", "917-882-8542"}', 17, 'http://www.championsstudios.moonfruit.com/communities/0/004/005/587/340//images/4515826740.jpg','{"Dance", "Music", "Theatre"}', 
+'{"212-307-7707", "917-882-8542"}', 'Wifi', 'No Smoking', 17, 'http://www.championsstudios.moonfruit.com/communities/0/004/005/587/340//images/4515826740.jpg','{"Dance", "Music", "Theatre"}', 
 '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Special Event", "Reading", "Video/Film Shoot", "Meeting"}' , 99, now() ),
 
 
 (4, 40.753617,  -73.991904, 'Ripley-Grier Studios @RG520','Worlds Largest Studio','We are the "Worlds Largest" and voted #1 Rehearsal Studios for nine years in a row by Backstage Magazine.We offer the best SAME DAY rates in NYC.',
-'520 Eighth Avenue','New York', 'New York', 10018,'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ',50,'{"212-799-5433"}', 
+'520 Eighth Avenue','New York', 'New York', 10018,'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ',50,'{"212-799-5433"}', 'Wifi', 'No Smoking',
 4, 'https://static1.squarespace.com/static/56d49499a3360c50fb6937fd/57168e732eeb81c770ead7e8/57bdaf4ce3df28e77a3d1df8/1472049267195/dance-studio.jpg?format=1500w',
 '{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' ,99, now() ),
 
 
 (6, 40.777795,  -73.9800744, 'Brooklyn Studios For Dance', 'Brooklyns Best Dance','Launched in May 2015, Brooklyn Studios for Dance is a newly renovated space inside the historic Cadman Congregational Church in Clinton Hill, Brooklyn. Inspired by a shared reverence for gathering space, the church congregation and the dance community entered a partnership to share a facility. The mission of BkSD is to serve the professional art community while at the same time building a culture of local engagement that responds to the interests of both communities..',
 '131 West 72nd Street','New York', 'New York', 10023,'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ',
- 30,'{"212-799-5433"}', 4,  'http://www.elegantsolutionsinternational.com/uploads/images/Gallery/Karen_Hardy_Dance_Studios_Project_Gallery/dance-studio-two-image-karen-hardy-dance-studios-case-studies-elegant-solutions-limited-south-london-project.jpg',
+ 30,'{"212-799-5433"}', 'Wifi', 'No Smoking', 4,  'http://www.elegantsolutionsinternational.com/uploads/images/Gallery/Karen_Hardy_Dance_Studios_Project_Gallery/dance-studio-two-image-karen-hardy-dance-studios-case-studies-elegant-solutions-limited-south-london-project.jpg',
 '{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' , 99,  now() ),
 
 (7,40.765892, -73.9837334,'Millennium Dance Complex','Worldwide Premiere Studio','The Millennium Dance Complex is known worldwide as the premiere studio of the commercial dance world and is widely referred to as a ‘the place where it all happens’. Although the studio’s A-list clientele and a faculty of the most sought after dancers and choreographers in the world has catapulted MILLENNIUM to a global brand, it still remains notably grounded, welcoming and dedicated to the highest level of service and instruction.',
-'939 Eighth Avenue, 3rd Floor (buzzer #307)','New York', 'New York', 10019, 'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ', 90,'{"212-799-5433"}', 4,  'http://berryvilleballroom.com/wp-content/uploads/2015/07/Dance-Studio_VA01_1.jpg',
+'939 Eighth Avenue, 3rd Floor (buzzer #307)','New York', 'New York', 10019, 'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ', 90,'{"212-799-5433"}', 'Wifi', 'No Smoking', 4,  'http://berryvilleballroom.com/wp-content/uploads/2015/07/Dance-Studio_VA01_1.jpg',
 '{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' ,99, now() );
 
 CREATE TABLE operation_hours (

@@ -270,7 +270,7 @@ const Individual = ({
                 </select>
                 <br />
                 <button type="submit" onClick={submitAvailiable}>
-                  Check Availiability
+                  Check Availability
                 </button>
               </div>
             )}

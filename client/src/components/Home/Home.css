@@ -29,6 +29,10 @@ select {
     background-color: white;
 }
 
+button{
+    outline:none;
+}
+
 /* Topbar */
 
 #topbar {

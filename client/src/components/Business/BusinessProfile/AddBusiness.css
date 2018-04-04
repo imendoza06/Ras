@@ -6,13 +6,18 @@
     margin-left: auto;
     margin-right: auto;
     border: white 6px double;
-    width: 40vw;
+    width: 45vw;
     height: 75vh;
     text-align: center;
 }
 
 .addcontent h1 {
     margin-bottom: 4px;
+}
+
+.addcontent p {
+    margin: 2px;
+    font-size: 13px;
 }
 
 .addcontent input {
@@ -23,6 +28,16 @@
     width: 60vh;
     outline: none;
     margin-bottom: 5px;
+}
+
+.addcontent textarea{
+    border: none;
+    border-radius: 5px;
+    padding-left: 5px;
+    height: 8vh;
+    width: 60vh;
+    outline: none;
+    margin-bottom: 2px;
 }
 
 .addcontent button[type=submit] {
@@ -39,3 +54,26 @@
     background-color: white;
     color: black;
 }
+
+#addform{
+    /* border: 1px white solid; */
+    overflow-y: scroll;
+    overflow-x:hidden;
+    margin: 0px;
+    height: 52vh;
+}
+
+.addcontent table, th, td{
+    border: 1px solid white;
+    text-align:center; 
+    vertical-align:middle;
+}
+
+.addcontent table{
+    table-layout: fixed !important;
+    border-collapse:collapse;
+    width: 96%;
+    font-size: 10px;
+    margin: 10px;
+}
+

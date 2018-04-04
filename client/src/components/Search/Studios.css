@@ -53,4 +53,19 @@
     /* border: black 1px solid; */
     margin-top: 0px;
     font-size: 2vh;
+    
+}
+
+#studioword #pricep{
+    position: absolute;
+    right:1vw;
+    top: 7vh;
+}
+
+#studioword img{
+    width: 5vw;
+    height: 3vh;
+    position: absolute;
+    left:1vw;
+    top: 7vh;
 }
