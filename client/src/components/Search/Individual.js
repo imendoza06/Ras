@@ -15,6 +15,8 @@ const Individual = ({
   about,
   description,
   address,
+  state,
+  hours,
   price,
   dimensions,
   amenities,
@@ -176,23 +178,16 @@ const Individual = ({
       <section class="section isection whitebg">
         <div id="studiocontent">
           <div id="studioinfo">
-            <p id="studiotopsub">Dance Studio For The Masses</p>
+            <p id="studiotopsub">{about}</p>
             <h1>{name}</h1>
-            <p id="studioaddress">Brooklyn,NY</p>
+            <p id="studioaddress">{state}</p>
             <h3>About The Studio</h3>
             <p>
-              The best place and area in Brooklyn "Prospect Park" Prospect Park
-              is a 526-acre (213 hectare)[4] public park in the New York City
-              borough of Brooklyn, and the second largest public park in
-              Brooklyn. That's exactly where you going to be a few step away
-              from it, plus restaurants. Is a Private Bedroom 1 Bed, 1 bath
-              furnished with a Queen sized bed.Perfect for a couples and
-              travelers You'll be a few blocks from Subway Q and B line so you
-              will be in Manhattan in no time.
+              {description}
             </p>
             <div>
               <h3>Hours</h3>
-              <p> 9:00 to 5:00 Monday - Friday</p>
+              <p>{hours}</p>
             </div>
             <div>
               <h3>Amenities</h3>

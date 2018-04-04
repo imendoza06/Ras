@@ -40,7 +40,7 @@ class Home extends React.Component {
     this.props.handleSearchName(input);
     this.props.handleSearchAddress(address);
     var studios = this.props.studioarr.filter(studio =>
-      studio.name.toLowerCase().includes(input.toLowerCase())
+      studio.organization_name.toLowerCase().includes(input.toLowerCase())
     );
     this.props.handleStudioSearch(studios);
     this.props.history.push("/search");

@@ -6,15 +6,15 @@ const Studios = ({ studioarr, bigdiv, worddiv }) => (
     <div>
         {studioarr.map(studio => (
             <div id={bigdiv}>
-                <Link to={`/search/${studio.name}`}>
+                <Link to={`/search/${studio.organization_name}`}>
                     <div>
-                        <img src={studio.image} alt="Studio" border="0" />
+                        <img src={studio.image_url} alt="Studio" border="0" />
                     </div>
                     <div id={worddiv}>
                         <h1>
-                            {studio.name}
+                            {studio.organization_name}
                         </h1>
-                        <p>{studio.description}</p>
+                        <p>{studio.about}</p>
                         <p>{studio.price} per hour</p>
                     </div>
                 </Link>

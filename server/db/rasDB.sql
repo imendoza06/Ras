@@ -47,6 +47,10 @@ CREATE TABLE studios (
   created_at TIMESTAMP NOT NULL,
   updated_at TIMESTAMP NULL
 );
+<<<<<<< HEAD
+=======
+
+>>>>>>> bc2ee0a55e85525b5e440004291db8a06df120ef
 INSERT INTO studios (user_id, latitude, longitude, organization_name, about, description_summary, address_line_1, city, state, zip_code, website, hour, price, phone, room_count, image_url, disciplines, uses_list, capacity, created_at)
   VALUES  (1,40.7644682,-73.9835581,'Empire Rehearsal','Music Studio For The Best','We have over 200 sound-proofed music rehearsal studios. Rooms can be rented by the hour, month to month or long term. Each studio is soundproofed for rehearsal use, 
   features carpeting, heat, air conditioning, and free Wi-Fi. Some studios have windows and vocal booths. Check out the 4th floor build-out for higher end studios in Brooklyn, open now!',
