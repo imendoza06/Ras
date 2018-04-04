@@ -3,9 +3,8 @@ var router = express.Router();
 
 const db = require("../../db/queries");
 
-/* GET users listing. */
 router.get("/", function(req, res, next) {
-  res.send("respond from API");
+  res.send("You Are Inside API");
 });
 
 router.get("/studios", db.getAllStudios);
@@ -18,5 +17,6 @@ router.get("/studiosinfo", db.getAllStudiosInfo);
 router.get("/reviewsinfo", db.getAllReviewsInfo);
 router.get("/bookingsinfo", db.getAllBookingsInfo);
 router.get("/studios/:id", db.getSingleStudioInfo);
+router.get("/rooms/:id", db.getSingleRoom);
 
 module.exports = router;

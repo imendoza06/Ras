@@ -6,7 +6,7 @@ const indexController = require("../controllers/index");
 /* GET home page. */
 router.get('/', function(req, res, next) {
 const renderObject = {};
-  renderObject.title = "Welcome to Express!";
+  renderObject.title = "Welcome to RAS API!";
   indexController.sum(4, 2, (error, results) => {
     if (error) return next(error);
     if (results) {

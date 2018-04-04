@@ -78,60 +78,6 @@ INSERT INTO studios (user_id, latitude, longitude, organization_name, about, des
 '939 Eighth Avenue, 3rd Floor (buzzer #307)','New York', 'New York', 10019, 'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ', 90,'{"212-799-5433"}', 'Wifi', 'No Smoking', 4,  'http://berryvilleballroom.com/wp-content/uploads/2015/07/Dance-Studio_VA01_1.jpg',
 '{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' ,99, now() );
 
-CREATE TABLE operation_hours (
-  oh_id SERIAL PRIMARY KEY,
-  studio_id INTEGER REFERENCES studios(studio_id),
-  monday TEXT [],
-  tuesday TEXT [],
-  wednesday TEXT [],
-  thursday TEXT [],
-  friday TEXT [],
-  saturday TEXT [], 
-  sunday TEXT [], 
-  created_at TIMESTAMP NOT NULL
-);
-INSERT INTO operation_hours (studio_id, monday, tuesday, wednesday, thursday, friday, saturday, sunday, created_at)
-  VALUES (1, '{"9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  now ()),
-  (2, '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM"}',
-  '{"9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM"}',
-  now ()),
-  (3, '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  now ()),
-    (4, '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  now ()),
-    (5, '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  '{"8:00AM","9:00AM","10:00AM","11:00AM","12:00PM","1:00PM","2:00PM","3:00PM","4:00PM","5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM","11:00PM"}',
-  now ());
-
 CREATE TABLE rooms (
   room_id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(user_id),
@@ -193,6 +139,81 @@ INSERT INTO rooms (user_id, studio_id, room_name, image_url, dimensions_summary,
 (7, 5, 'Studio 3D @RG939', 'None specified','231.0 sqft','None specified' ,'None specified' , 22,'{"Rehearsal","Class","Audition"}' ,'{"Music","Theatre"}','4-6' , now()),                                
 (7, 5, 'Studio 3C @RG939', 'None specified','264.0 sqft','None specified' ,'None specified' , 21,'{"Rehearsal","Class","Audition","Photo Shoot","Video/ Film Shoot"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now());                                
 
+CREATE TABLE operation_hours (
+  oh_id SERIAL PRIMARY KEY,
+  room_id INTEGER REFERENCES rooms(room_id),
+  monday TEXT [],
+  tuesday TEXT [],
+  wednesday TEXT [],
+  thursday TEXT [],
+  friday TEXT [],
+  saturday TEXT [], 
+  sunday TEXT [], 
+  created_at TIMESTAMP NOT NULL
+);
+INSERT INTO operation_hours (room_id, monday, tuesday, wednesday, thursday, friday, saturday, sunday, created_at)
+  VALUES (1, '{"9AM - 10AM", "10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM", "7PM - 8PM", "8PM - 9PM"}',
+  '{"11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM", "7PM - 8PM"}',
+  '{"6AM - 7AM", "7AM - 8AM", "8AM - 9AM", "9AM - 10AM", "10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM"}',
+  '{"4AM - 5AM", "5AM - 6AM", "6AM - 7AM", "7AM - 8AM", "8AM - 9AM", "9AM - 10AM", "10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM","3PM - 4PM"}',
+  '{"12AM - 1AM", "1AM - 2AM", "2AM - 3AM", "3AM - 4AM", "4AM - 5AM", "5AM - 6AM", "6AM - 7AM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM", "7PM - 8PM", "8PM - 9PM"}',
+  '{"9AM - 10AM", "10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM"}',
+  '{"10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM"}',
+  now ()),
+  (2, '{"4PM - 5PM", "5PM - 6PM", "6PM - 7PM", "7PM - 8PM", "8PM - 9PM", "9PM - 10PM", "10PM - 11PM", "11PM - 12AM"}',
+  '{"6AM - 7AM","7AM - 8AM", "8AM - 9AM", "9AM - 10AM", "10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM"}',
+  '{"4PM - 5PM", "5PM - 6PM", "6PM - 7PM", "7PM - 8PM", "8PM - 9PM", "9PM - 10PM", "10PM - 11PM", "11PM - 12AM"}',
+  '{"9AM - 10AM", "10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM"}',
+  '{"3AM - 4AM", "4AM - 5AM", "5AM - 6AM", "6AM - 7AM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM", "7PM - 8PM", "8PM - 9PM", "9PM - 10PM", "10PM - 11PM", "11PM - 12AM"}',
+  '{"12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM"}',
+  '{"10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM"}',
+  now ()),
+  (3, '{"9AM - 10AM", "10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM", "7PM - 8PM", "8PM - 9PM"}',
+  '{"11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM", "7PM - 8PM"}',
+  '{"6AM - 7AM", "7AM - 8AM", "8AM - 9AM", "9AM - 10AM", "10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM"}',
+  '{"4AM - 5AM", "5AM - 6AM", "6AM - 7AM", "7AM - 8AM", "8AM - 9AM", "9AM - 10AM", "10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM","3PM - 4PM"}',
+  '{"12AM - 1AM", "1AM - 2AM", "2AM - 3AM", "3AM - 4AM", "4AM - 5AM", "5AM - 6AM", "6AM - 7AM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM", "7PM - 8PM", "8PM - 9PM"}',
+  '{"9AM - 10AM", "10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM"}',
+  '{"10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM"}',
+  now ()),
+    (4, '{"4PM - 5PM", "5PM - 6PM", "6PM - 7PM", "7PM - 8PM", "8PM - 9PM", "9PM - 10PM", "10PM - 11PM", "11PM - 12AM"}',
+  '{"6AM - 7AM","7AM - 8AM", "8AM - 9AM", "9AM - 10AM", "10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM"}',
+  '{"4PM - 5PM", "5PM - 6PM", "6PM - 7PM", "7PM - 8PM", "8PM - 9PM", "9PM - 10PM", "10PM - 11PM", "11PM - 12AM"}',
+  '{"9AM - 10AM", "10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM"}',
+  '{"3AM - 4AM", "4AM - 5AM", "5AM - 6AM", "6AM - 7AM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM", "7PM - 8PM", "8PM - 9PM", "9PM - 10PM", "10PM - 11PM", "11PM - 12AM"}',
+  '{"12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM"}',
+  '{"10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM"}',
+  now ()),
+    (5, '{"9AM - 10AM", "10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM", "7PM - 8PM", "8PM - 9PM"}',
+  '{"11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM", "7PM - 8PM"}',
+  '{"6AM - 7AM", "7AM - 8AM", "8AM - 9AM", "9AM - 10AM", "10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM"}',
+  '{"4AM - 5AM", "5AM - 6AM", "6AM - 7AM", "7AM - 8AM", "8AM - 9AM", "9AM - 10AM", "10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM","3PM - 4PM"}',
+  '{"12AM - 1AM", "1AM - 2AM", "2AM - 3AM", "3AM - 4AM", "4AM - 5AM", "5AM - 6AM", "6AM - 7AM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM", "7PM - 8PM", "8PM - 9PM"}',
+  '{"9AM - 10AM", "10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM", "5PM - 6PM", "6PM - 7PM"}',
+  '{"10AM - 11AM", "11AM - 12PM", "12PM - 1PM", "1PM - 2PM", "2PM - 3PM", "3PM - 4PM", "4PM - 5PM"}',
+  now ());
+
+CREATE TABLE bookings (
+  booking_id SERIAL PRIMARY KEY,
+  room_id INTEGER REFERENCES rooms(room_id),
+  user_id INTEGER REFERENCES users(user_id),
+  booking_date TEXT NOT NULL,
+  booking_time TEXT NOT NULL,
+  price_per_hour NUMERIC (5, 2),
+  total NUMERIC (9, 2),
+  guest_count INTEGER NULL,
+  booking_status TEXT NOT NULL,
+  isPayed BOOLEAN DEFAULT FALSE,
+  created_at TIMESTAMP NOT NULL,
+  updated_at TIMESTAMP 
+); 
+
+INSERT INTO bookings (room_id, user_id, booking_date, booking_time, price_per_hour, total, guest_count, booking_status, isPayed, created_at)
+VALUES (2, 1, 'Monday', '8:00AM - 9:00AM', 30, 30, 4, 'Booked', false, now()),
+(4, 3, 'Tuesday', '7:00PM - 9:00PM', 30, 60, 3, 'Booked', false, now()),
+(5, 2, 'Sunday', '10:00AM - 11:00AM', 30, 30, 5, 'Booked', false, now()),
+(1, 4, 'Saturday', '11:00AM - 1:00PM', 30, 60, 2, 'Booked', false, now());
+
 CREATE TABLE reviews (
   review_id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(user_id),
@@ -215,23 +236,3 @@ It is a great choice when you want an affordable space to shoot in.', 5, now()),
 (4,3, 'This is one of the coolest places to host a meeting and our new go-to spot. Inexpensive, Broadway rehearsals happen around you and the creative atmosphere combined with a well-meaning and considerate staff make this an exceptional place for meetings. Skip WeWork. Come here!', 5, now()),
 (2, 3,'All good creative space. Wish the restroom facilities were larger.', 4, now());
 
-CREATE TABLE bookings (
-  booking_id SERIAL PRIMARY KEY,
-  room_id INTEGER REFERENCES rooms(room_id),
-  user_id INTEGER REFERENCES users(user_id),
-  booking_date TEXT NOT NULL,
-  booking_time TEXT NOT NULL,
-  price_per_hour NUMERIC (5, 2),
-  total NUMERIC (9, 2),
-  guest_count INTEGER NULL,
-  booking_status TEXT NOT NULL,
-  isPayed BOOLEAN DEFAULT FALSE,
-  created_at TIMESTAMP NOT NULL,
-  updated_at TIMESTAMP 
-); 
-
-INSERT INTO bookings (room_id, user_id, booking_date, booking_time, price_per_hour, total, guest_count, booking_status, isPayed, created_at)
-VALUES (2, 1, 'Monday', '8:00AM - 9:00AM', 30, 30, 4, 'Booked', false, now()),
-(4, 3, 'Tuesday', '7:00PM - 9:00PM', 30, 60, 3, 'Booked', false, now()),
-(5, 2, 'Sunday', '10:00AM - 11:00AM', 30, 30, 5, 'Booked', false, now()),
-(1, 4, 'Saturday', '11:00AM - 1:00PM', 30, 60, 2, 'Booked', false, now());
