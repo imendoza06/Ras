@@ -46,9 +46,8 @@ class Login extends React.Component {
     e.preventDefault();
     const { username, password, profile } = this.state;
     var newuser = username.replace(/"/g, "'");
-    console.log(username)
+    console.log(username) 
     this.props.handleLoginInfo(username);
-    
 
     if (profile === "User") {
       axios
@@ -62,6 +61,7 @@ class Login extends React.Component {
           console.log("logged in: ", res);
           console.log("data : ", res.data);
           this.props.handleLogin(username);
+          this.props.handleLoginInfo(username);
           this.setState({
             userData: res.data,
             isLoggedIn: true,
@@ -90,6 +90,7 @@ class Login extends React.Component {
           console.log("logged in: ", res);
           console.log("data : ", res.data);
           this.props.handleLogin(username, profile);
+          this.props.handleLoginInfo(username);
           this.setState({
             userData: res.data,
             username: "",

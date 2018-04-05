@@ -9,11 +9,60 @@ import AddBusiness from "./AddBusiness"
 
 import Api from "../../Api/Api"
 
-const Studios = e => {
+const Studios = ({ studios }) => {
   return (
     <div class="rightdiv">
       <div class="profileheads">
         <h3>Studios</h3>
+      </div>
+      <div class="bookingcontent">
+        {studios.map(studio => (
+          <div class="bookinglist">
+            <h3>{studio.organization_name}</h3>
+            <table>
+              <tr class="bookingsubs">
+                <td colspan="4" >About</td>
+              </tr>
+              <tr>
+                <td colspan="4">{studio.about}</td>
+              </tr>
+              <tr class="bookingsubs">
+                <td colspan="4" >Description</td>
+              </tr>
+              <tr>
+                <td colspan="4">{studio.description_summary}</td>
+              </tr>
+              <tr class="bookingsubs">
+                <td>Address</td>
+                <td>City</td>
+                <td>State</td>
+                <td>Zip code</td>
+              </tr>
+              <tr>
+                <td>{studio.address_line_1}</td>
+                <td>{studio.city}</td>
+                <td>{studio.state}</td>
+                <td>{studio.zip_code}</td>
+              </tr>
+              <tr class="bookingsubs">
+                <td colspan="2">Hours</td>
+                <td colspan="2">Price Per Hour</td>
+              </tr>
+              <tr>
+                <td colspan="2">{studio.hour}</td>
+                <td colspan="2">{studio.price}</td>
+              </tr>
+              <tr class="bookingsubs">
+                <td colspan="2">Amenities</td>
+                <td colspan="2">Rules</td>
+              </tr>
+              <tr>
+                <td colspan="2">{studio.amenities}</td>
+                <td colspan="2">{studio.rules}</td>
+              </tr>
+            </table>
+          </div>
+        ))}
       </div>
     </div>
   )
@@ -90,7 +139,8 @@ class BusProfile extends React.Component {
     super(props);
     this.state = {
       isLoggedIn: "",
-      bookings: []
+      bookings: [],
+      studios: []
     }
   };
 
@@ -99,14 +149,31 @@ class BusProfile extends React.Component {
     console.log("You have logout!")
   }
 
+  handleStudios = id => {
+    Api.getStudiosByUser(id)
+      .then(response => {
+        console.log("Response: ", response);
+        console.log("Response Data: ", response.data);
+        this.setState({
+          studios: response.data.data,
+        });
+      })
+      .catch(err => {
+        console.log("Error: ", err);
+      });
+  };
+
   componentWillMount() {
     this.props.handleLoginInfo(this.props.isLogged);
     this.props.handleHostBookingInfo(this.props.userloggedid)
+    this.handleStudios(this.props.userloggedid)
   }
+
 
   renderBusProfile = () => {
     console.log(this.props.isLogged)
     console.log(this.state.bookings)
+    console.log(this.state.studios)
     return (
       <div id="hpbacker">
         <div id="topbar">
@@ -158,7 +225,7 @@ class BusProfile extends React.Component {
                 </ul>
               </div>
               <Route exact path="/hostprofile/account" component={() => <Account />} />
-              <Route exact path="/hostprofile/studios" component={() => <Studios />} />
+              <Route exact path="/hostprofile/studios" component={() => <Studios studios={this.state.studios} />} />
               <Route exact path="/hostprofile/booking" component={() => <Booking bookings={this.props.hostbookings} />} />
               <Route exact path="/hostprofile/reviews" component={() => <Reviews />} />
               <Route exact path="/hostprofile/security" component={() => <Security />} />

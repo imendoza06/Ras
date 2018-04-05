@@ -130,6 +130,31 @@ function getSingleStudioInfo(req, res, next) {
     });
 }
 
+function getStudiosByUser(req, res, next) {
+  const userid = parseInt(req.params.userid);
+  // console.log(roomID)
+  db
+    .any(
+      `SELECT users.user_id, users.username, users.first_name, users.last_name, 
+        studios.latitude, studios.longitude, studios.organization_name, studios.about, studios.description_summary,
+        studios.address_line_1, studios.city, studios.state, studios.zip_code, studios.website, studios.hour, studios.price, studios.phone, 
+        studios.amenities, studios.rules, studios.room_count,
+        studios.image_url, studios.disciplines, studios.uses_list FROM users JOIN studios ON users.user_id=studios.user_id 
+        WHERE users.user_id=$1`,
+      userid
+    )
+    .then(function (data) {
+      res.status(200).json({
+        status: "success",
+        data: data,
+        message: "Retrieved ALL Studios Information"
+      });
+    })
+    .catch(function (err) {
+      return next(err);
+    });
+}
+
 function createStudio(req, res, next) {
   req.body.age = parseInt(req.body.age);
   const timeStamp = new Date()
@@ -464,5 +489,6 @@ module.exports = {
   getAllStudiosInfo: getAllStudiosInfo,
   getAllReviewsInfo: getAllReviewsInfo,
   getAllBookingsInfo: getAllBookingsInfo,
-  getSingleStudioInfo: getSingleStudioInfo
+  getSingleStudioInfo: getSingleStudioInfo,
+  getStudiosByUser: getStudiosByUser
 };
