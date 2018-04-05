@@ -12,6 +12,8 @@ const getSingleStudioInfo = id => axios.get(`/api/studios/${id}`);
 
 const getSingleUser = username => axios.get(`/users/${username}`);
 
+const getSingleRoom = roomname => axios.get(`/api/rooms/${roomname}`);
+
 const getLogout = () => axios.get("/auth/logout");
 
 export default {
@@ -21,5 +23,6 @@ export default {
   getAllReviewsInfo,
   getSingleStudioInfo,
   getSingleUser,
+  getSingleRoom,
   getLogout
 };

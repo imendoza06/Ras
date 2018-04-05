@@ -45,6 +45,15 @@ class App extends React.Component {
       studioimage: "",
       studiocategory: [],
 
+      singleroom: [],
+      monday: [],
+      tuesday: [],
+      wednesday: [],
+      thursday: [],
+      friday: [],
+      saturday: [],
+      sunday: [],
+
       userloggedin: "",
       userloggedfname: "",
       userloggedlname: "",
@@ -92,8 +101,13 @@ class App extends React.Component {
       .then(response => {
         console.log("Response: ", response);
         console.log("Response Data: ", response.data);
+        let array = ["Choose A Room"];
+        response.data.data.forEach(el => {
+          array.push(el.room_name);
+        });
         this.setState({
           singlestudio: response.data.data,
+          studioroomsname: array,
           singlestudiouserid: response.data.data[0].user_id,
           studioname: response.data.data[0].organization_name,
           studioabout: response.data.data[0].about,
@@ -108,6 +122,27 @@ class App extends React.Component {
           rules: response.data.data[0].rules,
           studioimage: response.data.data[0].image_url,
           studiocategory: response.data.data[0].disciplines,
+        });
+      })
+      .catch(err => {
+        console.log("Error: ", err);
+      });
+  };
+
+  handleRoomInfo = name => {
+    Api.getSingleRoom(name)
+      .then(response => {
+        console.log("Response: ", response);
+        console.log("Response Data: ", response.data);
+        this.setState({
+          singleroom: response.data.data[0],
+          monday: response.data.data[0].monday,
+          tueday: response.data.data[0].tuesday,
+          wednesday: response.data.data[0].wednesday,
+          thursday: response.data.data[0].thursday,
+          friday: response.data.data[0].friday,
+          saturday: response.data.data[0].saturday,
+          sunday: response.data.data[0].sunday
         });
       })
       .catch(err => {
@@ -144,13 +179,6 @@ class App extends React.Component {
   render() {
     console.log(this.state.studioSearch);
     console.log("Studio Array : ", this.state.singlestudio);
-    console.log("Studio Rules : ", this.state.rules);
-    console.log(this.state.isLoggedIn)
-    console.log(this.state.userloggedin)
-    console.log(this.state.userloggedfname)
-    console.log(this.state.userloggedlname)
-    console.log(this.state.userloggedid)
-
 
     return (
       <div>
@@ -205,6 +233,15 @@ class App extends React.Component {
             <Search
               handleStudioSearch={this.handleStudioSearch}
               handleSingleStudio={this.handleSingleStudio}
+              handleRoomInfo={this.handleRoomInfo}
+              monday={this.state.monday}
+              tuesday={this.state.tuesday}
+              wednesday={this.state.wednesday}
+              thursday={this.state.thursday}
+              friday={this.state.friday}
+              saturday={this.state.saturday}
+              sunday={this.state.sunday}
+              studioroomsname={this.state.studioroomsname}
               singlestudiouserid={this.state.singlestudiouserid}
               studioname={this.state.studioname}
               studioabout={this.state.studioabout}

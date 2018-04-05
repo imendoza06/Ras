@@ -172,7 +172,7 @@ const Individual = ({
     <main class="wrapper">
       <section class="section imgsection parallax">
         <div id="indiv">
-          <img src={Test} />
+          <img src={image} />
           <br />
         </div>
       </section>
@@ -200,7 +200,7 @@ const Individual = ({
             </div>
           </div>
           <div id="book">
-            <h3>$45 per hour</h3>
+            <h3>${price} per hour</h3>
             {date && room ? (
               [
                 time ? (

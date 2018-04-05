@@ -17,6 +17,6 @@ router.get("/studiosinfo", db.getAllStudiosInfo);
 router.get("/reviewsinfo", db.getAllReviewsInfo);
 router.get("/bookingsinfo", db.getAllBookingsInfo);
 router.get("/studios/:id", db.getSingleStudioInfo);
-router.get("/rooms/:id", db.getSingleRoom);
+router.get("/rooms/:roomname", db.getSingleRoom);
 
 module.exports = router;

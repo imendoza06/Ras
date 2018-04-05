@@ -171,22 +171,23 @@ function getAllRooms(req, res, next) {
 }
 
 function getSingleRoom(req, res, next) {
-  const roomID = parseInt(req.params.id);
-  // console.log(roomID)
+  const roomname = req.params.roomname;
+  var rname = roomname.replace(/"/g, "'");
+
   db
     .any(
       `SELECT studios.studio_id, studios.organization_name, rooms.room_id, rooms.room_name,
        operation_hours.monday, operation_hours.tuesday, operation_hours.wednesday, operation_hours.thursday, 
        operation_hours.friday, operation_hours.saturday,operation_hours.sunday
        FROM studios JOIN rooms ON studios.studio_id=rooms.studio_id JOIN operation_hours 
-       ON rooms.room_id = operation_hours.room_id WHERE rooms.room_id=$1`,
-      roomID
+       ON rooms.room_id = operation_hours.room_id WHERE rooms.room_name=$1`,
+      rname
     )
     .then(function (data) {
       res.status(200).json({
         status: "success",
         data: data,
-        message: "Retrieved ALL Studios Information"
+        message: roomname
       });
     })
     .catch(function (err) {
@@ -296,6 +297,7 @@ function getAllOperationHours(req, res, next) {
       return next(err);
     });
 }
+   
 /*
 function createOperationHours(req, res, next) {
   req.body;
