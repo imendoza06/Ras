@@ -7,7 +7,7 @@ import Searchicon from "../../Images/Search.png";
 
 import Api from "../../Api/Api";
 
-const favorites = e => {
+const Favorites = e => {
   return (
     <div class="rightdiv">
       <div class="profileheads">
@@ -17,7 +17,7 @@ const favorites = e => {
   )
 }
 
-const security = e => {
+const Security = e => {
   return (
     <div class="rightdiv">
       <div class="profileheads">
@@ -27,17 +27,39 @@ const security = e => {
   )
 }
 
-const booking = e => {
+const Booking = ({ bookings }) => {
+  console.log(bookings)
+  console.log(bookings[0].first_name)
   return (
     <div class="rightdiv">
       <div class="profileheads">
         <h3>Booking History</h3>
       </div>
+      <div class="bookingcontent">
+      {bookings.map(booking => (
+        <div class="bookinglist">
+          <h3>{booking.room_name}</h3>
+          <table>
+            <tr class="bookingsubs">
+              <td>Date</td>
+              <td>Time</td>
+              <td>Total</td>
+            </tr>
+            <tr>
+              <td>{booking.booking_date}</td>
+              <td>{booking.booking_time}</td>
+              <td>{booking.total}</td>
+            </tr>
+          </table>
+           
+        </div>
+      ))}
+      </div>
     </div>
   )
 }
 
-const account = e => {
+const Account = e => {
   return (
     <div class="rightdiv">
       <div class="profileheads">
@@ -47,7 +69,7 @@ const account = e => {
   )
 }
 
-const reviews = e => {
+const Reviews = e => {
   return (
     <div class="rightdiv">
       <div class="profileheads">
@@ -64,26 +86,13 @@ class UserProfile extends React.Component {
       isLoggedIn: "",
       name: "",
       profile: "",
-      bookings: []
+      bookings: [],
     };
   }
 
-  handleBookingInfo = id => {
-    Api.getUserBooking(id)
-      .then(response => {
-        console.log("Response: ", response);
-        console.log("Response Data: ", response.data);
-        this.setState({
-          bookings: response.data.data,
-        });
-      })
-      .catch(err => {
-        console.log("Error: ", err);
-      });
-  };
-
   componentDidMount() {
-    this.handleBookingInfo(this.props.userloggedid)
+    this.props.handleUserBookingInfo(this.props.userloggedid)
+    this.props.handleLoginInfo(this.props.isLogged);
   }
 
   handleLogout = () => {
@@ -93,6 +102,7 @@ class UserProfile extends React.Component {
 
   renderUserProfile = () => {
     console.log(this.props.isLogged);
+    console.log(this.props.userloggedid)
 
     return (
       <div id="upbacker">
@@ -147,11 +157,11 @@ class UserProfile extends React.Component {
                   <br />
                 </ul>
               </div>
-              <Route exact path="/userprofile/account" component={account} />
-              <Route exact path="/userprofile/favorites" component={favorites} />
-              <Route exact path="/userprofile/booking" component={booking} />
-              <Route exact path="/userprofile/reviews" component={reviews} />
-              <Route exact path="/userprofile/security" component={security} />
+              <Route exact path="/userprofile/account" component={() => <Account />} />
+              <Route exact path="/userprofile/favorites" component={() => <Favorites />} />
+              <Route exact path="/userprofile/booking" component={() => <Booking bookings={this.props.userbookings} />} />
+              <Route exact path="/userprofile/reviews" component={() => <Reviews />} />
+              <Route exact path="/userprofile/security" component={() => <Security />} />
             </div>
           </div>
         </div>

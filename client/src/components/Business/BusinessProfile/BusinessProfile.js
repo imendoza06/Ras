@@ -9,7 +9,7 @@ import AddBusiness from "./AddBusiness"
 
 import Api from "../../Api/Api"
 
-const studios = e => {
+const Studios = e => {
   return (
     <div class="rightdiv">
       <div class="profileheads">
@@ -19,7 +19,7 @@ const studios = e => {
   )
 }
 
-const security = e => {
+const Security = e => {
   return (
     <div class="rightdiv">
       <div class="profileheads">
@@ -29,17 +29,43 @@ const security = e => {
   )
 }
 
-const booking = e => {
+const Booking = ({ bookings }) => {
+  console.log(bookings)
+  console.log(bookings[0].first_name)
   return (
     <div class="rightdiv">
       <div class="profileheads">
         <h3>Booking History</h3>
       </div>
+      <div class="bookingcontent">
+        {bookings.map(booking => (
+          <div class="bookinglist">
+            <h3>{booking.room_name}</h3>
+            <table>
+              <tr class="bookingsubs">
+                <td>Booker Name</td>
+                <td>Date</td>
+                <td>Time</td>
+                <td>Total</td>
+                <td>Comments</td>
+              </tr>
+              <tr>
+                <td>{booking.first_name} {booking.last_name}</td>
+                <td>{booking.booking_date}</td>
+                <td>{booking.booking_time}</td>
+                <td>{booking.total}</td>
+                <td></td>
+              </tr>
+            </table>
+
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
 
-const account = e => {
+const Account = e => {
   return (
     <div class="rightdiv">
       <div class="profileheads">
@@ -49,7 +75,7 @@ const account = e => {
   )
 }
 
-const reviews = e => {
+const Reviews = e => {
   return (
     <div class="rightdiv">
       <div class="profileheads">
@@ -73,22 +99,9 @@ class BusProfile extends React.Component {
     console.log("You have logout!")
   }
 
-  handleBookingInfo = id => {
-    Api.getHostBooking(id)
-      .then(response => {
-        console.log("Response: ", response);
-        console.log("Response Data: ", response.data);
-        this.setState({
-          bookings: response.data.data[0],
-        });
-      })
-      .catch(err => {
-        console.log("Error: ", err);
-      });
-  };
-
   componentDidMount() {
-    this.handleBookingInfo(this.props.userloggedid)
+    this.props.handleHostBookingInfo(this.props.userloggedid)
+    this.props.handleLoginInfo(this.props.isLogged);
   }
 
   renderBusProfile = () => {
@@ -144,11 +157,11 @@ class BusProfile extends React.Component {
                   <br />
                 </ul>
               </div>
-              <Route exact path="/hostprofile/account" component={account} />
-              <Route exact path="/hostprofile/studios" component={studios} />
-              <Route exact path="/hostprofile/booking" component={booking} />
-              <Route exact path="/hostprofile/reviews" component={reviews} />
-              <Route exact path="/hostprofile/security" component={security} />
+              <Route exact path="/hostprofile/account" component={() => <Account />} />
+              <Route exact path="/hostprofile/studios" component={() => <Studios />} />
+              <Route exact path="/hostprofile/booking" component={() => <Booking bookings={this.props.hostbookings} />} />
+              <Route exact path="/hostprofile/reviews" component={() => <Reviews />} />
+              <Route exact path="/hostprofile/security" component={() => <Security />} />
             </div>
           </div>
         </div>
