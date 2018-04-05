@@ -16,9 +16,9 @@ CREATE TABLE users (
 );
 INSERT INTO users (username, first_name, last_name, password_digest, user_profile, isBusiness, created_at)
   VALUES ('stephaniehou@ac.c4q.nyc', 'Stephanie', 'Hou', '$2a$10$eUTj3k2Akwr/3CNOWIryteyTXBF9Srzbk2B8NNAZwsU09VFrP7IJO','User', false, now()),
-  ('angelarias@ac.c4q.nyc', 'Angel' ,'Arias', '$2a$10$XrxD2GUQthxZ5Gf.//kEUOMyokVnDejHA/P5H839f/a19W8tloXPa', 'User', false, now()),
-  ('susantan@ac.c4q.nyc', 'Susan' , 'Tan', '$2a$10$ZCQadMInPNK3QU5biYHXYOMmzuKWm/5A1vKF2e2HF.0f4wNoxLNQS', 'User', false, now()), 
-  ('ivanmendoza@ac.c4q.nyc', 'Ivan', 'Mendoza', '$2a$10$3gU0o/yA.wn6zo9TxeTfbOVshm9jrA0O0WkkSi5ftBjGqa7sVcxlu','User', false, now()), 
+  ('angelarias@ac.c4q.nyc', 'Angel' ,'Arias', '$2a$10$XrxD2GUQthxZ5Gf.//kEUOMyokVnDejHA/P5H839f/a19W8tloXPa', 'Business', false, now()),
+  ('susantan@ac.c4q.nyc', 'Susan' , 'Tan', '$2a$10$ZCQadMInPNK3QU5biYHXYOMmzuKWm/5A1vKF2e2HF.0f4wNoxLNQS', 'Business', false, now()), 
+  ('ivanmendoza@ac.c4q.nyc', 'Ivan', 'Mendoza', '$2a$10$3gU0o/yA.wn6zo9TxeTfbOVshm9jrA0O0WkkSi5ftBjGqa7sVcxlu','Business', false, now()), 
   ('sales@shetlerstudios.com', 'Kyle', 'Groff', 'shetlerstudios', 'Business', true,now()),
   ('championsstudios@gmail.com', 'General', 'Manager', 'championsstudios', 'Business', true, now()),
   ('sales@ripleygrier.com', 'Graham', 'McCarty', 'ripleygrier', 'Business', true, now()); 
@@ -51,19 +51,19 @@ CREATE TABLE studios (
 );
 
 INSERT INTO studios (user_id, latitude, longitude, organization_name, about, description_summary, address_line_1, city, state, zip_code, website, hour, price, phone, amenities, rules, room_count, image_url, disciplines, uses_list, capacity, created_at)
-  VALUES  (1,40.7644682,-73.9835581,'Empire Rehearsal','Music Studio For The Best','We have over 200 sound-proofed music rehearsal studios. Rooms can be rented by the hour, month to month or long term. Each studio is soundproofed for rehearsal use, 
+  VALUES  (3,40.7644682,-73.9835581,'Empire Rehearsal','Music Studio For The Best','We have over 200 sound-proofed music rehearsal studios. Rooms can be rented by the hour, month to month or long term. Each studio is soundproofed for rehearsal use, 
   features carpeting, heat, air conditioning, and free Wi-Fi. Some studios have windows and vocal booths. Check out the 4th floor build-out for higher end studios in Brooklyn, open now!',
   '244 West 54th Street, 13th Floor','New York','New York',10018,'http://www.empire-rehearsal-studios.com/','9:00 AM to 6:00 PM Monday to Friday',45,
   '{"212-246-6655"}', 'Wifi', 'No Smoking',9,'https://www.empirerecordingstudios.com/wp-content/uploads/2014/01/empire_recording_studio_8.jpg',
   '{"Dance", "Music", "Theatre"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Special Event", "Reading", "Video/Film Shoot", "Meeting"}' ,99, now() ),
 
-(3, 40.75522, -73.990771, 'Champions Studios', 'Dance Studio For Champions', 'Champions Studios is the most conveniently  located REHEARSAL STUDIO IN NYC, customer  service oriented  studio, where we offer quality REHEARSAL SPACE for acting, photo shoots, dancing, auditions and more at a very reasonable price.',
+(4, 40.75522, -73.990771, 'Champions Studios', 'Dance Studio For Champions', 'Champions Studios is the most conveniently  located REHEARSAL STUDIO IN NYC, customer  service oriented  studio, where we offer quality REHEARSAL SPACE for acting, photo shoots, dancing, auditions and more at a very reasonable price.',
 '257 West 39th Street, 14th Floor', 'New York', 'New York', 10019, 'http://www.championsstudios.com', '9:00 AM to 6:00 PM Monday to Friday ', 60,
 '{"212-307-7707", "917-882-8542"}', 'Wifi', 'No Smoking', 17, 'http://www.championsstudios.moonfruit.com/communities/0/004/005/587/340//images/4515826740.jpg','{"Dance", "Music", "Theatre"}', 
 '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Special Event", "Reading", "Video/Film Shoot", "Meeting"}' , 99, now() ),
 
 
-(4, 40.753617,  -73.991904, 'Ripley-Grier Studios @RG520','Worlds Largest Studio','We are the "Worlds Largest" and voted #1 Rehearsal Studios for nine years in a row by Backstage Magazine.We offer the best SAME DAY rates in NYC.',
+(5, 40.753617,  -73.991904, 'Ripley-Grier Studios @RG520','Worlds Largest Studio','We are the "Worlds Largest" and voted #1 Rehearsal Studios for nine years in a row by Backstage Magazine.We offer the best SAME DAY rates in NYC.',
 '520 Eighth Avenue','New York', 'New York', 10018,'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ',50,'{"212-799-5433"}', 'Wifi', 'No Smoking',
 4, 'https://static1.squarespace.com/static/56d49499a3360c50fb6937fd/57168e732eeb81c770ead7e8/57bdaf4ce3df28e77a3d1df8/1472049267195/dance-studio.jpg?format=1500w',
 '{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' ,99, now() ),
@@ -97,25 +97,25 @@ CREATE TABLE rooms (
 
 INSERT INTO rooms (user_id, studio_id, room_name, image_url, dimensions_summary,length, width, price_per_hour, permitted_uses, disciplines, capacity, created_at)
   VALUES (5, 1, 'Penthouse 4','https://s3.amazonaws.com/pa-spaces.production/attachments/8277/PH4_3.thumb.jpg?1367959726','300.0 sqft', 20 , 15 , 30,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' , '{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
-(5, 1, 'Penthouse 5','https://s3.amazonaws.com/pa-spaces.production/attachments/8284/PH5_3.thumb.jpg?1367960177','238.0 sqft', 17 , 14 , 30,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-5' , now()),
-(5, 1, 'Penthouse 8','https://s3.amazonaws.com/pa-spaces.production/attachments/9750/PH8.thumb.jpg?1380552556','234.0 sqft', 18 , 13 , 30, '{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-5' , now()),
-(5, 1, 'Penthouse 6','https://s3.amazonaws.com/pa-spaces.production/attachments/8287/PH9-1.thumb.jpg?1367960333','112.0 sqft', 14 , 8 , 30, '{"Rehearsal", "Meeting"}' , '{"Music"}' ,'2' , now()),
-(5, 1, 'Penthouse 1','https://s3.amazonaws.com/pa-spaces.production/attachments/8287/PH9-1.thumb.jpg?1367960333','143.0 sqft', 13 , 11 , 30, '{"Rehearsal", "Meeting"}' , '{"Music"}','2', now()),
-(5, 1, 'Penthouse 7','https://s3.amazonaws.com/pa-spaces.production/attachments/9755/PH7.slide.jpg?1380554797','154.0 sqft', 14 , 11 , 30,'{"Rehearsal", "Meeting"}' , '{"Music"}','2', now()),
-(6, 2, 'Studio #28','https://s3.amazonaws.com/pa-spaces.production/attachments/9072/IMG_2180.slide.jpg?1373672830','400.0 sqft','None specified' ,'None specified' , 29 ,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' , '{"Dance","Theatre"}' ,'4-6' , now()),                                
-(6, 2, 'Studio #21','https://s3.amazonaws.com/pa-spaces.production/attachments/9078/Studio___21_window(1).slide.jpg?1373675230','375.0 sqft','None specified' ,'None specified' , 29,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Theatre"}' ,'4-6' , now()),                                
-(6, 2, 'Studio #34','None specified','264.0 sqft','None specified' ,'None specified' , 24,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
-(6, 2, 'Studio #27','https://s3.amazonaws.com/pa-spaces.production/attachments/9076/Studio___27.slide.jpg?1373674810','286.0 sqft','None specified' ,'None specified' , 27,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
-(6, 2, 'Studio #35','None specified' ,'400.0 sqft','None specified' ,'None specified' , 29,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
-(6, 2, 'Studio #32','None specified','228.0 sqft','None specified' ,'None specified' , 24 ,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
-(6, 2, 'Studio #29','None specified','140.0 sqft','None specified' ,'None specified' , 19,  '{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' , '{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
-(7, 3, 'Studio 16A','None specified','264.0 sqft','None specified' ,'None specified' , 25,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition", "Reading", "Meeting"}' ,'{"Dance","Music","Film","Theatre"}' ,'4-6' , now()),                                
-(7, 3, 'Studio 16I','None specified','300.0 sqft','None specified' ,'None specified' , 24,'{"Rehearsal","Class","Audition","Photo Shoot","Video/ Film Shoot"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
-(7, 4, 'Studio 1R @RG72','None specified','120.0 sqft','None specified' ,'None specified' , 15,'{"Rehearsal","Class"}' ,'{"Music","Theatre"}' ,'4-6' , now()),                                
-(7, 4, 'Studio 3 @RG72', 'None specified','300.0 sqft','None specified' ,'None specified' , 23,'{"Rehearsal","Class"}' ,'{"Music","Theatre"}' ,'4-6' , now()),                                
-(7, 4, 'Studio 1 @RG72', 'None specified','300.0 sqft','None specified' ,'None specified' , 23,'{"Rehearsal","Class"}' ,'{"Music","Theatre"}' ,'4-6' , now()),                                
-(7, 4, 'Studio 4 @RG72', 'None specified','300.0 sqft','None specified' ,'None specified' , 23,'{"Rehearsal","Class","Audition","Photo Shoot","Video/ Film Shoot"}' ,'{"Dance","Music","Theatre"}','4-6' , now()),                                
-(7, 4, 'Studio 2 @RG72', 'None specified','300.0 sqft','None specified' ,'None specified' , 23,'{"Rehearsal","Class","Audition","Photo Shoot","Video/ Film Shoot"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
+(3, 1, 'Penthouse 5','https://s3.amazonaws.com/pa-spaces.production/attachments/8284/PH5_3.thumb.jpg?1367960177','238.0 sqft', 17 , 14 , 30,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-5' , now()),
+(3, 1, 'Penthouse 8','https://s3.amazonaws.com/pa-spaces.production/attachments/9750/PH8.thumb.jpg?1380552556','234.0 sqft', 18 , 13 , 30, '{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-5' , now()),
+(3, 1, 'Penthouse 6','https://s3.amazonaws.com/pa-spaces.production/attachments/8287/PH9-1.thumb.jpg?1367960333','112.0 sqft', 14 , 8 , 30, '{"Rehearsal", "Meeting"}' , '{"Music"}' ,'2' , now()),
+(3, 1, 'Penthouse 1','https://s3.amazonaws.com/pa-spaces.production/attachments/8287/PH9-1.thumb.jpg?1367960333','143.0 sqft', 13 , 11 , 30, '{"Rehearsal", "Meeting"}' , '{"Music"}','2', now()),
+(3, 1, 'Penthouse 7','https://s3.amazonaws.com/pa-spaces.production/attachments/9755/PH7.slide.jpg?1380554797','154.0 sqft', 14 , 11 , 30,'{"Rehearsal", "Meeting"}' , '{"Music"}','2', now()),
+(4, 2, 'Studio #28','https://s3.amazonaws.com/pa-spaces.production/attachments/9072/IMG_2180.slide.jpg?1373672830','400.0 sqft','None specified' ,'None specified' , 29 ,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' , '{"Dance","Theatre"}' ,'4-6' , now()),                                
+(4, 2, 'Studio #21','https://s3.amazonaws.com/pa-spaces.production/attachments/9078/Studio___21_window(1).slide.jpg?1373675230','375.0 sqft','None specified' ,'None specified' , 29,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Theatre"}' ,'4-6' , now()),                                
+(4, 2, 'Studio #34','None specified','264.0 sqft','None specified' ,'None specified' , 24,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
+(4, 2, 'Studio #27','https://s3.amazonaws.com/pa-spaces.production/attachments/9076/Studio___27.slide.jpg?1373674810','286.0 sqft','None specified' ,'None specified' , 27,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
+(4, 2, 'Studio #35','None specified' ,'400.0 sqft','None specified' ,'None specified' , 29,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
+(4, 2, 'Studio #32','None specified','228.0 sqft','None specified' ,'None specified' , 24 ,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
+(4, 2, 'Studio #29','None specified','140.0 sqft','None specified' ,'None specified' , 19,  '{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' , '{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
+(5, 3, 'Studio 16A','None specified','264.0 sqft','None specified' ,'None specified' , 25,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition", "Reading", "Meeting"}' ,'{"Dance","Music","Film","Theatre"}' ,'4-6' , now()),                                
+(5, 3, 'Studio 16I','None specified','300.0 sqft','None specified' ,'None specified' , 24,'{"Rehearsal","Class","Audition","Photo Shoot","Video/ Film Shoot"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
+(6, 4, 'Studio 1R @RG72','None specified','120.0 sqft','None specified' ,'None specified' , 15,'{"Rehearsal","Class"}' ,'{"Music","Theatre"}' ,'4-6' , now()),                                
+(6, 4, 'Studio 3 @RG72', 'None specified','300.0 sqft','None specified' ,'None specified' , 23,'{"Rehearsal","Class"}' ,'{"Music","Theatre"}' ,'4-6' , now()),                                
+(6, 4, 'Studio 1 @RG72', 'None specified','300.0 sqft','None specified' ,'None specified' , 23,'{"Rehearsal","Class"}' ,'{"Music","Theatre"}' ,'4-6' , now()),                                
+(6, 4, 'Studio 4 @RG72', 'None specified','300.0 sqft','None specified' ,'None specified' , 23,'{"Rehearsal","Class","Audition","Photo Shoot","Video/ Film Shoot"}' ,'{"Dance","Music","Theatre"}','4-6' , now()),                                
+(6, 4, 'Studio 2 @RG72', 'None specified','300.0 sqft','None specified' ,'None specified' , 23,'{"Rehearsal","Class","Audition","Photo Shoot","Video/ Film Shoot"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
 (7, 5, 'Studio 3D @RG939', 'None specified','231.0 sqft','None specified' ,'None specified' , 22,'{"Rehearsal","Class","Audition"}' ,'{"Music","Theatre"}','4-6' , now()),                                
 (7, 5, 'Studio 3C @RG939', 'None specified','264.0 sqft','None specified' ,'None specified' , 21,'{"Rehearsal","Class","Audition","Photo Shoot","Video/ Film Shoot"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now());                                
 
@@ -305,6 +305,7 @@ CREATE TABLE bookings (
   booking_id SERIAL PRIMARY KEY,
   room_id INTEGER REFERENCES rooms(room_id),
   user_id INTEGER REFERENCES users(user_id),
+  host_id INTEGER NULL,
   booking_date TEXT NOT NULL,
   booking_time TEXT NOT NULL,
   price_per_hour NUMERIC (5, 2),
@@ -316,11 +317,11 @@ CREATE TABLE bookings (
   updated_at TIMESTAMP 
 ); 
 
-INSERT INTO bookings (room_id, user_id, booking_date, booking_time, price_per_hour, total, guest_count, booking_status, isPayed, created_at)
-VALUES (2, 1, 'Monday', '8:00AM - 9:00AM', 30, 30, 4, 'Booked', false, now()),
-(4, 3, 'Tuesday', '7:00PM - 9:00PM', 30, 60, 3, 'Booked', false, now()),
-(5, 2, 'Sunday', '10:00AM - 11:00AM', 30, 30, 5, 'Booked', false, now()),
-(1, 4, 'Saturday', '11:00AM - 1:00PM', 30, 60, 2, 'Booked', false, now());
+INSERT INTO bookings (room_id, user_id, host_id, booking_date, booking_time, price_per_hour, total, guest_count, booking_status, isPayed, created_at)
+VALUES (2, 1, 3, 'March 2', '8:00AM - 9:00AM', 30, 30, 4, 'Booked', false, now()),
+(4, 1, 4, 'March 9', '7:00PM - 9:00PM', 30, 60, 3, 'Booked', false, now()),
+(5, 1, 5, 'March 20', '10:00AM - 11:00AM', 30, 30, 5, 'Booked', false, now()),
+(1, 1, 6, 'April 2', '11:00AM - 1:00PM', 30, 60, 2, 'Booked', false, now());
 
 CREATE TABLE reviews (
   review_id SERIAL PRIMARY KEY,

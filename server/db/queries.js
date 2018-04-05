@@ -255,6 +255,52 @@ function getAllBookingsInfo(req, res, next) {
       return next(err);
     });
 }
+
+function getBookingByUser(req, res, next) {
+  const userid = req.params.userid;
+  var id = userid.replace(/"/g, "'");
+
+  db
+    .any(
+      `SELECT users.user_id, users.first_name, users.last_name,rooms.room_name, bookings.booking_date, bookings.booking_time,
+      bookings.total, bookings.guest_count FROM users JOIN bookings ON users.user_id=bookings.user_id 
+      JOIN rooms ON rooms.room_id=bookings.room_id WHERE bookings.user_id=$1`,
+      id
+    )
+    .then(function (data) {
+      res.status(200).json({
+        status: "success",
+        data: data,
+        message: id
+      });
+    })
+    .catch(function (err) {
+      return next(err);
+    });
+}
+
+function getBookingByHost(req, res, next) {
+  const hostid = req.params.hostid;
+  var id = hostid.replace(/"/g, "'");
+
+  db
+    .any(
+      `SELECT users.user_id, users.first_name, users.last_name,rooms.room_name, bookings.booking_date, bookings.booking_time,
+      bookings.total, bookings.guest_count FROM users JOIN bookings ON users.user_id=bookings.user_id 
+      JOIN rooms ON rooms.room_id=bookings.room_id WHERE bookings.host_id=$1`,
+      id
+    )
+    .then(function (data) {
+      res.status(200).json({
+        status: "success",
+        data: data,
+        message: id
+      });
+    })
+    .catch(function (err) {
+      return next(err);
+    });
+}
 /*
 function createBooking(req, res, next) {
   req.body
@@ -297,7 +343,7 @@ function getAllOperationHours(req, res, next) {
       return next(err);
     });
 }
-   
+
 /*
 function createOperationHours(req, res, next) {
   req.body;
@@ -411,6 +457,8 @@ module.exports = {
   getAllRooms: getAllRooms,
   getSingleRoom: getSingleRoom,
   getAllBookings: getAllBookings,
+  getBookingByUser: getBookingByUser,
+  getBookingByHost: getBookingByHost,
   getAllReviews: getAllReviews,
   getAllOperationHours: getAllOperationHours,
   getAllStudiosInfo: getAllStudiosInfo,

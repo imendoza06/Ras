@@ -3,7 +3,7 @@ var router = express.Router();
 
 const db = require("../../db/queries");
 
-router.get("/", function(req, res, next) {
+router.get("/", function (req, res, next) {
   res.send("You Are Inside API");
 });
 
@@ -18,5 +18,7 @@ router.get("/reviewsinfo", db.getAllReviewsInfo);
 router.get("/bookingsinfo", db.getAllBookingsInfo);
 router.get("/studios/:id", db.getSingleStudioInfo);
 router.get("/rooms/:roomname", db.getSingleRoom);
+router.get("/bookings/user/:userid", db.getBookingByUser);
+router.get("/bookings/host/:hostid", db.getBookingByHost);
 
 module.exports = router;
