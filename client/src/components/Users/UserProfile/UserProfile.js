@@ -90,9 +90,9 @@ class UserProfile extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.props.handleUserBookingInfo(this.props.userloggedid)
+  componentWillMount() {
     this.props.handleLoginInfo(this.props.isLogged);
+    this.props.handleUserBookingInfo(this.props.userloggedid)
   }
 
   handleLogout = () => {

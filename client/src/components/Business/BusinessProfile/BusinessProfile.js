@@ -99,9 +99,9 @@ class BusProfile extends React.Component {
     console.log("You have logout!")
   }
 
-  componentDidMount() {
-    this.props.handleHostBookingInfo(this.props.userloggedid)
+  componentWillMount() {
     this.props.handleLoginInfo(this.props.isLogged);
+    this.props.handleHostBookingInfo(this.props.userloggedid)
   }
 
   renderBusProfile = () => {
