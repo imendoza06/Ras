@@ -10,6 +10,8 @@ const getAllReviewsInfo = () => axios.get("/api/reviewsinfo");
 
 const getSingleStudioInfo = id => axios.get(`/api/studios/${id}`);
 
+const getSingleUser = username => axios.get(`/users/${username}`);
+
 const getLogout = () => axios.get("/auth/logout");
 
 export default {
@@ -18,5 +20,6 @@ export default {
   getAllBookingsInfo,
   getAllReviewsInfo,
   getSingleStudioInfo,
+  getSingleUser,
   getLogout
 };

@@ -5,6 +5,7 @@ import Logowhite from "../../Images/LogoWhite.png";
 import Flip from "../../Images/FlipLogo.png";
 
 import axios from "axios";
+import Api from "../../Api/Api"
 
 class Login extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class Login extends React.Component {
       profile: "Choose Account Type",
       userData: [],
       isLoggedIn: false,
-      message: ""
+      message: "",
     }
   };
 
@@ -40,9 +41,14 @@ class Login extends React.Component {
     });
   };
 
+
   submitForm = e => {
     e.preventDefault();
     const { username, password, profile } = this.state;
+    var newuser = username.replace(/"/g, "'");
+    console.log(username)
+    this.props.handleLoginInfo(username);
+    
 
     if (profile === "User") {
       axios
@@ -114,6 +120,7 @@ class Login extends React.Component {
         profile: ${profile},
         isLoggedIn: ${isLoggedIn},
         message: ${message}`);
+
     return <div id="lsbacker">
       <div id="topbar">
         <div id="barlogo">

@@ -25,12 +25,17 @@ class App extends React.Component {
       studioSearch: [],
       studiosData: [],
       studioarr: [],
-      individualname: ""
+      individualname: "",
+      userloggedin: "",
+      userloggedfname: "",
+      userloggedlname: "",
+      userloggedid: ""
     };
   }
   componentDidMount() {
     this.getAllStudiosInformation();
   }
+
   getAllStudiosInformation = () => {
     Api.getAllStudios()
       .then(response => {
@@ -45,6 +50,24 @@ class App extends React.Component {
         console.log("Error: ", err);
       });
   };
+
+  handleLoginInfo = (username) => {
+    Api.getSingleUser(username)
+      .then(response => {
+        console.log("Response: ", response);
+        console.log("Response Data: ", response.data);
+        this.setState({
+          userloggedin: response.data.data,
+          userloggedfname: response.data.data[0].first_name,
+          userloggedlname: response.data.data[0].last_name,
+          userloggedid: response.data.data[0].user_id
+        });
+      })
+      .catch(err => {
+        console.log("Error: ", err);
+      });
+  };
+
   handleLogin = (login, profile) => {
     this.setState({
       isLoggedIn: login,
@@ -72,10 +95,13 @@ class App extends React.Component {
 
 
   render() {
-    // console.log(this.state.isLoggedIn)
-    // console.log(this.state.searchAddress)
     console.log(this.state.studioSearch);
     console.log("Studio Array : ", this.state.studioarr);
+    console.log(this.state.isLoggedIn)
+    console.log(this.state.userloggedin)
+    console.log(this.state.userloggedfname)
+    console.log(this.state.userloggedlname)
+    console.log(this.state.userloggedid)
 
     return (
       <div>
@@ -120,7 +146,8 @@ class App extends React.Component {
         <Route
           exact
           path="/login"
-          render={props => <Login handleLogin={this.handleLogin} {...props} />}
+          render={props => <Login handleLogin={this.handleLogin}
+            handleLoginInfo={this.handleLoginInfo}{...props} />}
         />
         <Route exact path="/signup" component={Signup} />
         <Route
@@ -143,13 +170,21 @@ class App extends React.Component {
         <Route
           path="/userprofile"
           render={props => (
-            <UserProfile isLogged={this.state.isLoggedIn} {...props} />
+            <UserProfile isLogged={this.state.isLoggedIn} 
+            userloggedfname={this.state.userloggedfname} 
+            userloggedlname={this.state.userloggedlname}
+            userloggedid={this.state.userloggedid}
+            {...props} />
           )}
         />
         <Route
           path="/hostprofile"
           render={props => (
-            <BusProfile isLogged={this.state.isLoggedIn} {...props} />
+            <BusProfile isLogged={this.state.isLoggedIn} 
+            userloggedfname={this.state.userloggedfname} 
+            userloggedlname={this.state.userloggedlname}
+            userloggedid={this.state.userloggedid}
+            {...props} />
           )}
         />
         <Route exact path="/MapContainer" component={MapContainer} />
