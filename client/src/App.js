@@ -22,14 +22,33 @@ class App extends React.Component {
       profile: "",
       searchName: "",
       searchAddress: "",
+
       studioSearch: [],
       studiosData: [],
       studioarr: [],
-      individualname: "",
+
+      singlestudio: [],
+      singlestudiouserid: "",
+      studioname: "",
+      studioroomsid: [],
+      studioroomsname: [],
+      studioabout: "",
+      studiodescription: "",
+      studioaddress: "",
+      studiocity: "",
+      studiostate: "",
+      studiozip: "",
+      studiohours: "",
+      studioprice: "",
+      amenities: "",
+      rules: "",
+      studioimage: "",
+      studiocategory: [],
+
       userloggedin: "",
       userloggedfname: "",
       userloggedlname: "",
-      userloggedid: ""
+      userloggedid: "",
     };
   }
   componentDidMount() {
@@ -68,6 +87,34 @@ class App extends React.Component {
       });
   };
 
+  handleSingleStudio = id => {
+    Api.getSingleStudioInfo(id)
+      .then(response => {
+        console.log("Response: ", response);
+        console.log("Response Data: ", response.data);
+        this.setState({
+          singlestudio: response.data.data,
+          singlestudiouserid: response.data.data[0].user_id,
+          studioname: response.data.data[0].organization_name,
+          studioabout: response.data.data[0].about,
+          studiodescription: response.data.data[0].description_summary,
+          studioaddress: response.data.data[0].address_line_1,
+          studiocity: response.data.data[0].city,
+          studiostate: response.data.data[0].state,
+          studiozip: response.data.data[0].zip_code,
+          studiohours: response.data.data[0].hour,
+          studioprice: response.data.data[0].price,
+          amenities: response.data.data[0].amenities,
+          rules: response.data.data[0].rules,
+          studioimage: response.data.data[0].image_url,
+          studiocategory: response.data.data[0].disciplines,
+        });
+      })
+      .catch(err => {
+        console.log("Error: ", err);
+      });
+  };
+
   handleLogin = (login, profile) => {
     this.setState({
       isLoggedIn: login,
@@ -96,12 +143,14 @@ class App extends React.Component {
 
   render() {
     console.log(this.state.studioSearch);
-    console.log("Studio Array : ", this.state.studioarr);
+    console.log("Studio Array : ", this.state.singlestudio);
+    console.log("Studio Rules : ", this.state.rules);
     console.log(this.state.isLoggedIn)
     console.log(this.state.userloggedin)
     console.log(this.state.userloggedfname)
     console.log(this.state.userloggedlname)
     console.log(this.state.userloggedid)
+
 
     return (
       <div>
@@ -155,6 +204,21 @@ class App extends React.Component {
           render={props => (
             <Search
               handleStudioSearch={this.handleStudioSearch}
+              handleSingleStudio={this.handleSingleStudio}
+              singlestudiouserid={this.state.singlestudiouserid}
+              studioname={this.state.studioname}
+              studioabout={this.state.studioabout}
+              studiodescription={this.state.studiodescription}
+              studioaddress={this.state.studioaddress}
+              studiocity={this.state.studiocity}
+              studiostate={this.state.studiostate}
+              studiozip={this.state.studiozip}
+              studiohours={this.state.studiohours}
+              studioprice={this.state.studioprice}
+              amenities={this.state.amenities}
+              studioimage={this.state.studioimage}
+              studiocategory={this.state.studiocategory}
+              rules={this.state.rules}
               studioarr={this.state.studioarr}
               studioSearch={this.state.studioSearch}
               isLogged={this.state.isLoggedIn ? true : false}
@@ -170,21 +234,21 @@ class App extends React.Component {
         <Route
           path="/userprofile"
           render={props => (
-            <UserProfile isLogged={this.state.isLoggedIn} 
-            userloggedfname={this.state.userloggedfname} 
-            userloggedlname={this.state.userloggedlname}
-            userloggedid={this.state.userloggedid}
-            {...props} />
+            <UserProfile isLogged={this.state.isLoggedIn}
+              userloggedfname={this.state.userloggedfname}
+              userloggedlname={this.state.userloggedlname}
+              userloggedid={this.state.userloggedid}
+              {...props} />
           )}
         />
         <Route
           path="/hostprofile"
           render={props => (
-            <BusProfile isLogged={this.state.isLoggedIn} 
-            userloggedfname={this.state.userloggedfname} 
-            userloggedlname={this.state.userloggedlname}
-            userloggedid={this.state.userloggedid}
-            {...props} />
+            <BusProfile isLogged={this.state.isLoggedIn}
+              userloggedfname={this.state.userloggedfname}
+              userloggedlname={this.state.userloggedlname}
+              userloggedid={this.state.userloggedid}
+              {...props} />
           )}
         />
         <Route exact path="/MapContainer" component={MapContainer} />

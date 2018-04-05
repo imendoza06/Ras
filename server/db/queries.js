@@ -110,7 +110,7 @@ function getSingleStudioInfo(req, res, next) {
   // console.log(roomID)
   db
     .any(
-      `SELECT users.user_id, rooms.room_id, users.username, users.first_name, users.last_name, 
+      `SELECT users.user_id, rooms.room_id, rooms.room_name, users.username, users.first_name, users.last_name, 
         studios.latitude, studios.longitude, studios.organization_name, studios.about, studios.description_summary,
         studios.address_line_1, studios.city, studios.state, studios.zip_code, studios.website, studios.hour, studios.price, studios.phone, 
         studios.amenities, studios.rules, studios.room_count,

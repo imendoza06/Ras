@@ -66,7 +66,7 @@ class BusProfile extends React.Component {
       isLoggedIn: ""
     }
   };
-  
+
   handleLogout = () => {
     Api.getLogout();
     console.log("You have logout!")
@@ -90,7 +90,7 @@ class BusProfile extends React.Component {
             </Link>
           </div>
           <div id="hbar">
-            <h3>Welcome Host {this.props.isLogged} !</h3>
+            <h3>Welcome Host {this.props.userloggedfname} !</h3>
             <div id="hbarcard">
               <Link to={`/add`}>+Add A Studio</Link>
               <Link to={`/search`}><button type="submit"><img src={Searchicon}></img></button></Link>

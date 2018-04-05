@@ -38,6 +38,7 @@ const Individual = ({
   room,
   time,
   comments,
+  rules,
   submitAvailiable,
   submitBooking,
   submitBookAgain,
@@ -180,7 +181,7 @@ const Individual = ({
           <div id="studioinfo">
             <p id="studiotopsub">{about}</p>
             <h1>{name}</h1>
-            <p id="studioaddress">{state}</p>
+            <p id="studioaddress">{address}, {state}</p>
             <h3>About The Studio</h3>
             <p>
               {description}
@@ -191,11 +192,11 @@ const Individual = ({
             </div>
             <div>
               <h3>Amenities</h3>
-              <p>Elevator</p>
+              <p>{amenities}</p>
             </div>
             <div>
               <h3>Rules</h3>
-              <p>No Food</p>
+              <p>{rules}</p>
             </div>
           </div>
           <div id="book">

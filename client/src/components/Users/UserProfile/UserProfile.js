@@ -73,6 +73,7 @@ class UserProfile extends React.Component {
 
   renderUserProfile = () => {
     console.log(this.props.isLogged);
+    console.log(this.props.userloggedfname)
     return (
       <div id="upbacker">
         <div id="topbar">
@@ -89,7 +90,7 @@ class UserProfile extends React.Component {
             </Link>
           </div>
           <div id="ubar">
-            <h3>Welcome User {this.props.isLogged} !</h3>
+            <h3>Welcome User {this.props.userloggedfname} !</h3>
             <div id="ubarcard">
               <Link to={`/search`}>
                 <button type="submit">

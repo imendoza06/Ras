@@ -6,8 +6,8 @@ import Rating from '../Images/Rating.png';
 const Studios = ({ studioarr, singleStudio, bigdiv, worddiv }) => (
     <div>
         {studioarr.map(studio => (
-            <div id={bigdiv} onClick={singleStudio}>
-                <Link to={`/search/${studio.organization_name}`}>
+            <div id={bigdiv}>
+                <Link to={`/search/${studio.studio_id}`} onClick={singleStudio}>
                     <div>
                         <img src={studio.image_url} alt="Studio" border="0" />
                     </div>

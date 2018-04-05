@@ -25,8 +25,6 @@ class Search extends React.Component {
       commentswritten: "",
       studioSearch: this.props.studioSearch,
       studioarr: this.props.studioarr,
-      singlestudio:[],
-      individualname:""
     };
   }
 
@@ -69,20 +67,6 @@ class Search extends React.Component {
     this.setState({
       commentswritten: e.target.value
     });
-  };
-
-  getSingleStudio = id => {
-    Api.getSingleStudioInfo(id)
-      .then(response => {
-        console.log("Response: ", response);
-        console.log("Response Data: ", response.data);
-        this.setState({
-          singlestudio: response.data.data,
-        });
-      })
-      .catch(err => {
-        console.log("Error: ", err);
-      });
   };
 
   handleLogout = () => {
@@ -228,7 +212,7 @@ class Search extends React.Component {
             </select>
           </div>
           <div id="listings">
-            <Studios bigdiv={"studiodiv"} worddiv={"studioword"} studioarr={array} />
+            <Studios bigdiv={"studiodiv"} worddiv={"studioword"} studioarr={array}/>
           </div>
         </div>
         <div id="footer">
@@ -248,7 +232,8 @@ class Search extends React.Component {
   };
 
   renderIndividual = props => {
-    const { name, singlestudio } = props.match.params;
+    const { id, singlestudio } = props.match.params;
+    this.props.handleSingleStudio(id);
     
     const {
       input,
@@ -269,13 +254,13 @@ class Search extends React.Component {
     ];
     const rooms = ["Choose A Room", "Small", "Medium", "Large"];
     const times = ["9:00-10:00", "10:00-11:00", "1:00-2:00", "3:00-4:00"];
-    var onestudio = this.props.studioarr.find((studio)=> studio.organization_name === name)
-    console.log(onestudio)
+    
+
     console.log(this.state.datechose, this.state.roomchose);
     return (
       <div>
         <Individual
-          name={name}
+          name={this.props.studioname}
           isProfile={this.props.protype}
           isInside={this.props.isLogged}
           submitForm={this.state.submitForm}
@@ -294,6 +279,15 @@ class Search extends React.Component {
           room={room}
           time={time}
           comments={comments}
+          rules={this.props.rules}
+          about={this.props.studioabout}
+          description={this.props.studiodescription}
+          address={this.props.studiocity}
+          state={this.props.studiostate}
+          hours={this.props.studiohours}
+          price={this.props.studioprice}
+          amenities={this.props.amenities}
+          image={this.props.studioimage}
           submitAvailiable={this.submitAvailiable}
           submitBooking={this.submitBooking}
           submitBookAgain={this.submitBookAgain}
@@ -309,7 +303,7 @@ class Search extends React.Component {
       <div>
         <Switch>
           <Route exact path="/search" render={this.renderSearch} />
-          <Route exact path="/search/:name" render={this.renderIndividual} />
+          <Route exact path="/search/:id" render={this.renderIndividual} />
         </Switch>
       </div>
     );
