@@ -63,17 +63,37 @@ class UserProfile extends React.Component {
     this.state = {
       isLoggedIn: "",
       name: "",
-      profile: ""
+      profile: "",
+      bookings: []
     };
   }
+
+  handleBookingInfo = id => {
+    Api.getUserBooking(id)
+      .then(response => {
+        console.log("Response: ", response);
+        console.log("Response Data: ", response.data);
+        this.setState({
+          bookings: response.data.data,
+        });
+      })
+      .catch(err => {
+        console.log("Error: ", err);
+      });
+  };
+
+  componentDidMount() {
+    this.handleBookingInfo(this.props.userloggedid)
+  }
+
   handleLogout = () => {
     Api.getLogout();
     console.log("You have logout!");
-    }
+  }
 
   renderUserProfile = () => {
     console.log(this.props.isLogged);
-    console.log(this.props.userloggedfname)
+
     return (
       <div id="upbacker">
         <div id="topbar">

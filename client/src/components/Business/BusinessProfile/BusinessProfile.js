@@ -63,7 +63,8 @@ class BusProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: ""
+      isLoggedIn: "",
+      bookings: []
     }
   };
 
@@ -72,8 +73,27 @@ class BusProfile extends React.Component {
     console.log("You have logout!")
   }
 
+  handleBookingInfo = id => {
+    Api.getHostBooking(id)
+      .then(response => {
+        console.log("Response: ", response);
+        console.log("Response Data: ", response.data);
+        this.setState({
+          bookings: response.data.data[0],
+        });
+      })
+      .catch(err => {
+        console.log("Error: ", err);
+      });
+  };
+
+  componentDidMount() {
+    this.handleBookingInfo(this.props.userloggedid)
+  }
+
   renderBusProfile = () => {
     console.log(this.props.isLogged)
+    console.log(this.state.bookings)
     return (
       <div id="hpbacker">
         <div id="topbar">

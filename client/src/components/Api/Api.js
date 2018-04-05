@@ -14,6 +14,10 @@ const getSingleUser = username => axios.get(`/users/${username}`);
 
 const getSingleRoom = roomname => axios.get(`/api/rooms/${roomname}`);
 
+const getUserBooking = id => axios.get(`/api/bookings/user/${id}`);
+
+const getHostBooking = id => axios.get(`/api/bookings/host/${id}`);
+
 const getLogout = () => axios.get("/auth/logout");
 
 export default {
@@ -24,5 +28,7 @@ export default {
   getSingleStudioInfo,
   getSingleUser,
   getSingleRoom,
+  getUserBooking,
+  getHostBooking,
   getLogout
 };
