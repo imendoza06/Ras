@@ -117,6 +117,9 @@ class Search extends React.Component {
     
     postRequestBooking = () => {
         const { room, date, time, commentswritten } = this.state;
+        const { studioprice } = this.props.studioprice;
+        const { userloggedid } = this.props.userloggedid;
+        const { hostid } = this.props.hostid;
         const roomID = this.props.match.params.id;
             axios
           .post("/api/newbooking", {
@@ -124,6 +127,10 @@ class Search extends React.Component {
             room: room,
             bookingDate: date,
             bookingTime: time,
+            price: studioprice,
+            total: studioprice,
+            userID: userloggedid,
+            hostID: hostid
           })
           .then(res => {
             this.setState({
@@ -131,6 +138,7 @@ class Search extends React.Component {
               room: "",
               date: "",
               time: "",
+              comments: commentswritten,
               message: "Booked a Room!"
             });
           })
