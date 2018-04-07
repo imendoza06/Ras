@@ -4,8 +4,41 @@ import "./UserProfile.css";
 import Logowhite from "../../Images/LogoWhite.png";
 import Logo from "../../Images/Logo.png";
 import Searchicon from "../../Images/Search.png";
-
+import axios from "axios";
 import Api from "../../Api/Api";
+
+const security = e => {
+  return (
+    <div class="rightdiv">
+      <div class="profileheads">
+        <h3>Edit Profile</h3>
+        <br />First Name <input type="text" className="inputs" />
+        <br />
+        <br />Last Name <input type="text" className="inputs" />
+        <br />
+        <br />I Am<select>
+          <option>female</option>
+          <option>male</option>
+          <option>other</option>
+          <br />
+        </select>
+        <br />
+        <br />
+        Birthday
+        <br /> <input type="date" name="bday" />
+        <br />
+        <br />Email Address <input type="text" className="inputs" />
+        <br />
+        <br />Phone Number <input type="text" className="inputs" />
+        <br />
+        <br />Where You Live<input type="text" className="inputs" />
+        <br />
+        <br />Describe Yourself<textarea>Tell us about you</textarea>
+        
+      </div>
+    </div>
+  );
+};
 
 const favorites = e => {
   return (
@@ -14,18 +47,8 @@ const favorites = e => {
         <h3>Favorties</h3>
       </div>
     </div>
-  )
-}
-
-const security = e => {
-  return (
-    <div class="rightdiv">
-      <div class="profileheads">
-        <h3>Security</h3>
-      </div>
-    </div>
-  )
-}
+  );
+};
 
 const booking = e => {
   return (
@@ -34,8 +57,8 @@ const booking = e => {
         <h3>Booking History</h3>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const account = e => {
   return (
@@ -44,8 +67,8 @@ const account = e => {
         <h3>Account Summary</h3>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const reviews = e => {
   return (
@@ -54,8 +77,8 @@ const reviews = e => {
         <h3>Reviews</h3>
       </div>
     </div>
-  )
-}
+  );
+};
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -66,10 +89,22 @@ class UserProfile extends React.Component {
       profile: ""
     };
   }
+
+  // handleBooking = e => {
+  //   const { getAllBookingsInfo } = this.state;
+  //   axios
+  //     .get("/api/bookingsinfo", {
+  //       booking_date: "data"
+  //     })
+  //     .then(res => {
+  //       console.log("data : ", res.data["data"][0]);
+  //     });
+  // };
+
   handleLogout = () => {
     Api.getLogout();
     console.log("You have logout!");
-    }
+  };
 
   renderUserProfile = () => {
     console.log(this.props.isLogged);
@@ -124,13 +159,16 @@ class UserProfile extends React.Component {
                     <Link to="/userprofile/reviews">Reviews</Link>
                   </li>
                   <br />
+                  <li>
+                    <button onClick={this.handleBooking}>Testing</button>
+                  </li>
                 </ul>
               </div>
+              <Route exact path="/userprofile/security" component={security} />
               <Route exact path="/userprofile/account" component={account} />
               <Route exact path="/userprofile/favorites" component={favorites} />
               <Route exact path="/userprofile/booking" component={booking} />
               <Route exact path="/userprofile/reviews" component={reviews} />
-              <Route exact path="/userprofile/security" component={security} />
             </div>
           </div>
         </div>
