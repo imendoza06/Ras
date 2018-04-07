@@ -117,7 +117,7 @@ class Search extends React.Component {
     
     postRequestBooking = () => {
         const { room, date, time, commentswritten } = this.state;
-        const roomID = props.match.params.id;
+        const roomID = this.props.match.params.id;
             axios
           .post("/api/newbooking", {
             roomID: roomID,
