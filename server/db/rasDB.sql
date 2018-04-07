@@ -53,7 +53,7 @@ CREATE TABLE studios (
 INSERT INTO studios (user_id, latitude, longitude, organization_name, about, description_summary, address_line_1, city, state, zip_code, website, hour, price, phone, amenities, rules, room_count, image_url, disciplines, uses_list, capacity, created_at)
   VALUES  (3,40.765892, -73.9837334,'Slic Studios','Experience Slic','SLIC is a full service Film and Photography Studios located in the heart of trendy LIC, minutes away from Manhattan, 1 block away from the midtown tunnel and the 7 and G train. With 4 customizable studios with cyclorama walls up to 1,800sf, ample windows for natural lighting with blackout capabilities and access to the Rooftop we offer unique shooting & filming opportunities.',
   '21-07 Borden Avenue, 5th Floor','New York', 'New York', 10019, 'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ', 90,'{"212-799-5433"}', 'Wifi', 'No Smoking', 4,  'http://slicstudios.com/wp-content/uploads/2016/12/studio3-3.jpg',
-  '{"Photography","Film"}', '{Photo Shoot", "Video/Film Shoot"}' ,99, now() );
+  '{"Photography","Film"}', '{"Photo Shoot", "Video/Film Shoot"}' ,99, now() ),
 
 (4,40.7644682,-73.9835581,'Empire Rehearsal Studio','Music Studio For The Best','We have over 200 sound-proofed music rehearsal studios. Rooms can be rented by the hour, month to month or long term. Each studio is soundproofed for rehearsal use, 
   features carpeting, heat, air conditioning, and free Wi-Fi. Some studios have windows and vocal booths. Check out the 4th floor build-out for higher end studios in Brooklyn, open now!',
@@ -76,7 +76,7 @@ INSERT INTO studios (user_id, latitude, longitude, organization_name, about, des
 (7, 40.777795,  -73.9800744, 'Brooklyn Studios For Dance', 'Brooklyns Best Dance','Launched in May 2015, Brooklyn Studios for Dance is a newly renovated space inside the historic Cadman Congregational Church in Clinton Hill, Brooklyn. Inspired by a shared reverence for gathering space, the church congregation and the dance community entered a partnership to share a facility. The mission of BkSD is to serve the professional art community while at the same time building a culture of local engagement that responds to the interests of both communities..',
 '131 West 72nd Street','New York', 'New York', 10023,'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ',
  30,'{"212-799-5433"}', 'Wifi', 'No Smoking', 4,  'http://www.elegantsolutionsinternational.com/uploads/images/Gallery/Karen_Hardy_Dance_Studios_Project_Gallery/dance-studio-two-image-karen-hardy-dance-studios-case-studies-elegant-solutions-limited-south-london-project.jpg',
-'{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' , 99,  now() ),
+'{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' , 99,  now() );
 
 
 CREATE TABLE rooms (
