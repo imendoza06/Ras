@@ -46,7 +46,7 @@ class App extends React.Component {
       studiocategory: [],
 
       singleroom: [],
-      hostid:"",
+      hostid: "",
       monday: [],
       tuesday: [],
       wednesday: [],
@@ -335,7 +335,11 @@ class App extends React.Component {
           )}
         />
         <Route exact path="/MapContainer" component={MapContainer} />
-        <Route exact path="/add" component={BusProfileAdd} />
+        <Route exact path="/add" render={props => (
+          <BusProfileAdd isLogged={this.state.isLoggedIn}
+            userloggedid={this.state.userloggedid}
+            {...props} />
+        )} />
       </div>
     );
   }

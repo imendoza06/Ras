@@ -156,15 +156,39 @@ function getStudiosByUser(req, res, next) {
 }
 
 function createStudio(req, res, next) {
-  req.body.age = parseInt(req.body.age);
+  console.log(req.body)
+  const pricing = parseInt(req.body.price)
+  const zip = parseInt(req.body.zip_code)
+  // console.log(pricing,zip)
   const timeStamp = new Date()
     .toISOString()
     .replace(/z|t/gi, " ")
     .trim();
   db
     .none(//INSERT INTO studios (user_id, latitude, longitude, organization_name, description_summary, address_line_1, city, state, zip_code, website, phone, room_count, image_url, disciplines, uses_list, capacity, created_at)
-      `INSERT INTO studios (user_id, organization_name, about, description_summary, address_line_1, city, state, zip_code, website, hour, price, phone, amenities, rules, room_count, image_url, disciplines, uses_list, capacity, created_at)
-        VALUES(${user_id}, ${organization_name}, ${about}, ${description_summary}, ${address_line_1}, ${city}, ${state}, ${zip_code}, ${website}, ${hour}, ${price}, ${phone}, ${amenities}, ${rules}, ${room_count}, ${image_url}, ${disciplines}, ${uses_list}, ${capacity}, ${created_at})`, req.body)
+      "INSERT INTO studios (user_id, organization_name, about, description_summary, address_line_1, city, state, zip_code, website, hour, price, phone, amenities, rules, room_count, image_url, disciplines, uses_list, capacity, created_at) VALUES( ${user_id}, ${organization_name}, ${about}, ${description_summary}, ${address_line_1}, ${city}, ${state}, ${zip_code}, ${website}, ${hour}, ${price}, ${phone}, ${amenities}, ${rules}, ${room_count}, ${image_url}, ${disciplines}, ${uses_list}, ${capacity}, ${created_at})",
+      {
+        user_id: req.body.userID,
+        organization_name: req.body.organization_name,
+        about: req.body.about,
+        description_summary: req.body.description_summary,
+        address_line_1: req.body.address_line_1,
+        city: req.body.city,
+        state: req.body.state,
+        zip_code: zip,
+        website: req.body.website,
+        hour: req.body.hour,
+        price: pricing,
+        phone: req.body.phone,
+        amenities: req.body.amenities,
+        rules: req.body.rules,
+        room_count: req.body.room_count,
+        image_url:req.body.image_url,
+        disciplines:req.body.disciplines,
+        uses_list:req.body.uses_list,
+        capacity: req.body.capacity,
+        created_at: timeStamp
+      })
     .then(function (data) {
       res
         .status(200)
@@ -331,10 +355,10 @@ INSERT INTO bookings (room_id, user_id, host_id, booking_date, booking_time, pri
 */
 function createBooking(req, res, next) {
   console.log("Request Body: ", req.body)
-      const timeStamp = new Date()
-        .toISOString()
-        .replace(/z|t/gi, " ")
-        .trim();
+  const timeStamp = new Date()
+    .toISOString()
+    .replace(/z|t/gi, " ")
+    .trim();
   db
     .none(
       "INSERT INTO bookings (room_id, user_id, host_id, booking_date, booking_time, price_per_hour, total, guest_count, booking_status, isPayed, created_at) VALUES( ${room_id}, ${user_id}, ${host_id}, ${booking_date}, ${booking_time}, ${price_per_hour}, ${total}, ${guest_count}, ${booking_status}, ${isPayed}, ${created_at})",
@@ -352,14 +376,14 @@ function createBooking(req, res, next) {
         created_at: timeStamp
       }
     )
-    .then(function(data) {
+    .then(function (data) {
       res.status(200).json({
         status: "success",
         data: data,
         message: "Created one booking"
       });
     })
-    .catch(function(err) {
+    .catch(function (err) {
       return next(err);
     });
 }
@@ -491,6 +515,7 @@ module.exports = {
   getSingleUser: getSingleUser,
   getAllBusinesses: getAllBusinesses,
   getAllStudios: getAllStudios,
+  createStudio: createStudio,
   getAllRooms: getAllRooms,
   getSingleRoom: getSingleRoom,
   getAllBookings: getAllBookings,
