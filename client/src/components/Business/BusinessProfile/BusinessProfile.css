@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Passion+One");
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif|Orbitron');
 #hpbacker {
     /* border: 1px red solid; */
     height: 100vh;
@@ -107,12 +108,12 @@
     font-size: 20px;
 }
 
-.bookingsubs{
+.bookingsubs {
     border-bottom: solid 2px lightgray;
 }
 
-.bookingsubs td{
-    color:grey;
+.bookingsubs td {
+    color: grey;
     font-size: 18px;
 }
 
@@ -132,7 +133,7 @@ td {
 }
 
 .bookinglist td {
-  padding:5px;
+    padding: 5px;
 }
 
 /* Search Bar */
@@ -184,4 +185,78 @@ td {
 
 #hbar img {
     width: 15px;
+}
+
+#image {
+    width: 22vw;
+    height: 35vh;
+    margin: 30px;
+    margin-top: 60px;
+}
+
+/* IMAGE FOR THE CHART */
+
+#chart {
+    width: 22vw;
+    height: 35vh;
+    margin-left: 320px;
+    margin-bottom: 25px;
+}
+
+#payment {
+    width: 15vw;
+    height: 8vh;
+    border: 5px solid grey;
+    padding: 25px;
+    border-radius: 5px;
+    margin: 25px;
+    margin-left: 380px;
+    margin-top: 120px;
+}
+
+#payment h4 {
+    position: relative;
+    margin-top: -25px;
+    padding: 10px;
+    text-align: center;
+}
+
+#i {
+    margin-left: -20px;
+}
+
+#p {
+    margin-left: -20px;
+}
+
+#hosting-summary {
+    width: 15vw;
+    height: 8vh;
+    border: 5px solid grey;
+    border-radius: 5px;
+    padding: 25px;
+    margin: 25px;
+    margin-left: 380px;
+    margin-top: 40px;
+}
+
+#hosting-summary h4 {
+    position: relative;
+    margin-top: -25px;
+    padding: 10px;
+    text-align: center;
+}
+
+#amount {
+    margin-left: 85px;
+    font-family: 'IBM Plex Serif', serif;
+}
+
+#text {
+    margin-left: -20px;
+}
+
+#a {
+    margin-left: 115px;
+    font-family: 'IBM Plex Serif', serif;
 }
