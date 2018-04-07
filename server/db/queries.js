@@ -201,10 +201,10 @@ function getSingleRoom(req, res, next) {
 
   db
     .any(
-      `SELECT studios.studio_id, studios.organization_name, rooms.room_id, rooms.room_name,
+      `SELECT users.user_id, studios.studio_id, studios.organization_name, rooms.room_id, rooms.room_name,
        operation_hours.monday, operation_hours.tuesday, operation_hours.wednesday, operation_hours.thursday, 
        operation_hours.friday, operation_hours.saturday,operation_hours.sunday
-       FROM studios JOIN rooms ON studios.studio_id=rooms.studio_id JOIN operation_hours 
+       FROM users JOIN studios ON users.user_id=studios.user_id JOIN rooms ON studios.studio_id=rooms.studio_id JOIN operation_hours 
        ON rooms.room_id = operation_hours.room_id WHERE rooms.room_name=$1`,
       rname
     )
