@@ -68,18 +68,71 @@
 
 .profileheads {
     position: absolute;
-    height: 7vh;
+    height: 9vh;
     background-color: #6ba1a7;
     width: 100%;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
 }
 
 .profileheads h3 {
     /* border: 1px black solid; */
     margin: 0;
-    padding: 9px;
+    padding: 15px;
     font-family: 'Phosphate-Inline';
     font-size: 23px;
+}
+
+/* Booking */
+
+.bookingcontent {
+    position: absolute;
+    top: 9vh;
+    /* border:blue 1px solid; */
+    height: 45vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.bookinglist {
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.bookinglist h3 {
+    border: none;
+    border-bottom: solid 2px #92dce5;
+    margin: 0px;
+    padding: 5px;
+    background-color: lightgrey;
+    font-size: 20px;
+}
+
+.bookingsubs{
+    border-bottom: solid 2px lightgray;
+}
+
+.bookingsubs td{
+    color:grey;
+    font-size: 18px;
+}
+
+.bookinglist table,
+th,
+td {
+    /* border: 1px solid black; */
+    text-align: center;
+    vertical-align: middle;
+}
+
+.bookinglist table {
+    table-layout: fixed !important;
+    border-collapse: collapse;
+    width: 96%;
+    margin: 10px;
+}
+
+.bookinglist td {
+  padding:5px;
 }
 
 /* Search Bar */

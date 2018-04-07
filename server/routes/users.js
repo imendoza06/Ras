@@ -8,12 +8,13 @@ const db = require("../db/queries");
 /* GET users listing. */
 router.get("/", function(req, res, next) {
   console.log(req.sessionID);
-  res.send("respond with a resource");
+  res.send("You Are Inside Users");
 });
 
 router.get("/all", db.getAll);
 router.get("/allusers", db.getAllUsers);
 router.get("/allbusiness", db.getAllBusinesses);
+router.get("/:username", db.getSingleUser);
 
 router.get("/login", authHelpers.loginRequired, (req, res, next) => {
   handleResponse(res, 200, "success");

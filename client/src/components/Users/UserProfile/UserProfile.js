@@ -55,7 +55,7 @@ const booking = e => {
     <div class="rightdiv">
       <div class="profileheads">
         <h3>Booking History</h3>
-      </div>
+      </div> 
     </div>
   );
 };
@@ -90,7 +90,7 @@ class UserProfile extends React.Component {
     };
   }
 
-  // handleBooking = e => {
+ // handleBooking = e => {
   //   const { getAllBookingsInfo } = this.state;
   //   axios
   //     .get("/api/bookingsinfo", {
