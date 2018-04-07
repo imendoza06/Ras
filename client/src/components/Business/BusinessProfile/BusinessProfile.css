@@ -187,76 +187,73 @@ td {
     width: 15px;
 }
 
-#image {
+/* #image {
     width: 22vw;
     height: 35vh;
     margin: 30px;
     margin-top: 60px;
+} */
+
+/* Account Content*/
+#accountcontent{
+    position: absolute;
+    top: 9vh;
+    border:blue 1px solid;
+    height: 45vh;
+    width: 72vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
-/* IMAGE FOR THE CHART */
+#accountcontent img{
+    width: 22vw;
+    height: 35vh;
+    margin: 30px;
+}
 
 #chart {
     width: 22vw;
     height: 35vh;
-    margin-left: 320px;
-    margin-bottom: 25px;
+    position: absolute;
+    top: 0vh;
+    left: 45vw;
+    /* margin-left: 320px;
+    margin-bottom: 25px; */
 }
 
 #payment {
+    position: absolute;
+    top: 5vh;
+    left: 27vw;
     width: 15vw;
-    height: 8vh;
-    border: 5px solid grey;
-    padding: 25px;
+    height: 12vh;
+    border: 5px double grey;
     border-radius: 5px;
-    margin: 25px;
+    padding: 10px;
+    /* margin: 25px;
     margin-left: 380px;
-    margin-top: 120px;
-}
+    margin-top: 120px;*/
+} 
 
 #payment h4 {
-    position: relative;
-    margin-top: -25px;
+    margin: 0px;
     padding: 10px;
     text-align: center;
-}
-
-#i {
-    margin-left: -20px;
-}
-
-#p {
-    margin-left: -20px;
 }
 
 #hosting-summary {
+    position: absolute;
+    top: 23vh;
+    left: 27vw;
     width: 15vw;
-    height: 8vh;
-    border: 5px solid grey;
+    height: 12vh;
+    border: 5px double grey;
     border-radius: 5px;
-    padding: 25px;
-    margin: 25px;
-    margin-left: 380px;
-    margin-top: 40px;
+    padding: 10px;
 }
 
 #hosting-summary h4 {
-    position: relative;
-    margin-top: -25px;
+    margin: 0px;
     padding: 10px;
     text-align: center;
-}
-
-#amount {
-    margin-left: 85px;
-    font-family: 'IBM Plex Serif', serif;
-}
-
-#text {
-    margin-left: -20px;
-}
-
-#a {
-    margin-left: 115px;
-    font-family: 'IBM Plex Serif', serif;
 }

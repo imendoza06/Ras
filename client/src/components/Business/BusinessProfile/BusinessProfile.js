@@ -120,10 +120,10 @@ const Account = e => {
     <div class="rightdiv">
       <div class="profileheads">
         <h3>Account Summary</h3>
-        <img id="image" src="https://static1.squarespace.com/static/528cfee3e4b0c3afb632d2fc/5988be3e4c0dbf6ffb661845/5988be7e59cc68e08f166280/1502133941077/Honoree_John-Gomez.jpg?format=1000w" />
-        <img id="chart" src={Chart} />
-
       </div>
+      <div id="accountcontent">
+      <img id="image" src="https://static1.squarespace.com/static/528cfee3e4b0c3afb632d2fc/5988be3e4c0dbf6ffb661845/5988be7e59cc68e08f166280/1502133941077/Honoree_John-Gomez.jpg?format=1000w" />
+      <img id="chart" src={Chart} />
       <div id="payment">
         <h4>Payments</h4>
         <Link id="i" to={`/invoices`}>Invoices</Link><br />
@@ -136,7 +136,7 @@ const Account = e => {
         <span id="text">30-day views</span>
         <span id="a">53</span>
       </div>
-
+     </div>
 
     </div>
   )
