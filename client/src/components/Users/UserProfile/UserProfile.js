@@ -168,75 +168,63 @@ const Favorites = e => {
           </h3>
           <ul>
             <li>
-              <strong>Empire Rehearsal: </strong>
+              <strong>Empire Rehearsal </strong>
               <br />
-              5 Stars: It was great, the studio was prepared and ready for me.
             </li>
             <br />
             <li>
               <strong>Ripley-Grier Studios</strong>
               <br />
-              1 Stars: The studio smelled like cheese and cats! No bueno.
             </li>
             <br />
             <li>
               <strong>Brooklyn Studios For Dance</strong>
               <br />
-              4 Stars: It was great, the studio was prepared and ready for me.
             </li>
             <br />
             <li>
               <strong>Millennium Dance Complex </strong>
               <br />
-              5 Stars: It was great, the studio was prepared and ready for me.
             </li>
             <br />
             <li>
               <strong>Worldwide Premiere Studio</strong>
               <br />
-              3 Stars: It was great, the studio was prepared and ready for me.
             </li>
             <br />
             <li>
               <strong>Dance Dance</strong>
               <br />
-              4 Stars: It was great, the studio was prepared and ready for me.
             </li>
             <br />
             <li>
               <strong>Fred Astaire Dance </strong>
               <br />
-              5 Stars: It was great, the studio was prepared and ready for me.
             </li>
             <br />
             <li>
               <strong>Sessions Dance</strong>
               <br />
-              1 Stars: The studio smelled like cheese and cats! No bueno.
             </li>
             <br />
             <li>
               <strong>Rainbow Dancers </strong>
               <br />
-              5 Stars: It was great, the studio was prepared and ready for me.
             </li>
             <br />
             <li>
               <strong>Mercury</strong>
               <br />
-              1 Stars: The studio smelled like cheese and cats! No bueno.
             </li>
             <br />
             <li>
               <strong>Empire Rehearsal </strong>
               <br />
-              5 Stars: It was great, the studio was prepared and ready for me.
             </li>
             <br />
             <li>
               <strong>Champions</strong>
               <br />
-              1 Stars: The studio smelled like cheese and cats! No bueno.
             </li>
             <br />
           </ul>
@@ -257,74 +245,74 @@ const Reviews = e => {
           </h3>
           <ul>
             <li>
-              <strong>Penthouse: </strong>
+              <strong>Ripley-Grier Studios </strong>
               <br />
               5 Stars: It was great, the studio was prepared and ready for me.
             </li>
             <br />
             <li>
-              <strong>Mercury</strong>
+              <strong>Millennium Dance Complex</strong>
               <br />
               1 Stars: The studio smelled like cheese and cats! No bueno.
             </li>
             <br />
             <li>
-              <strong>Dance Dance</strong>
+              <strong>Fred Astaire Dance Studio</strong>
               <br />
               4 Stars: Deborah was great to work with and friendly
             </li>
             <br />
             <li>
-              <strong>Penthouse: </strong>
+              <strong>Brooklyn Studio House </strong>
               <br />
               5 Stars: Deborah was a pleasure and left the studio in great
               shape.
             </li>
             <br />
             <li>
-              <strong>Mercury</strong>
+              <strong>Champions Studios</strong>
               <br />
               3 Stars: Deborah overstayed but danced great
             </li>
             <br />
             <li>
-              <strong>Dance Dance</strong>
+              <strong>Dance Dance Studios</strong>
               <br />
               4 Stars: Deborah was great to work with and friendly
             </li>
             <br />
             <li>
-              <strong>Penthouse: </strong>
+              <strong>Queens Stronghold Dance Studio</strong>
               <br />
               5 Stars: It was great, the studio was prepared and ready for me.
             </li>
             <br />
             <li>
-              <strong>Mercury</strong>
+              <strong>The Williams Dance</strong>
               <br />
               1 Stars: The studio smelled like cheese and cats! No bueno.
             </li>
             <br />
             <li>
-              <strong>Penthouse: </strong>
+              <strong>Island Dancers </strong>
               <br />
               5 Stars: It was great, the studio was prepared and ready for me.
             </li>
             <br />
             <li>
-              <strong>Mercury</strong>
+              <strong>Tap Dance is Life</strong>
               <br />
               1 Stars: The studio smelled like cheese and cats! No bueno.
             </li>
             <br />
             <li>
-              <strong>Penthouse: </strong>
+              <strong>Irish Step Studios </strong>
               <br />
               5 Stars: It was great, the studio was prepared and ready for me.
             </li>
             <br />
             <li>
-              <strong>Mercury</strong>
+              <strong>Yodeling Dance Stuido</strong>
               <br />
               1 Stars: The studio smelled like cheese and cats! No bueno.
             </li>
