@@ -6,6 +6,7 @@ import Searchicon from "../Images/Search.png";
 import Individual from "./Individual";
 import Studios from "./Studios";
 
+import axios from "axios";
 import Api from "../Api/Api";
 
 class Search extends React.Component {
@@ -20,6 +21,8 @@ class Search extends React.Component {
             room: "",
             time: "",
             comments: "",
+            isBooked: false,
+            message: "",
             datechose: "",
             roomchose: "",
             roomtimes: "",
@@ -88,10 +91,10 @@ class Search extends React.Component {
     submitBooking = e => {
         const { room, date, time } = this.state;
         e.preventDefault();
-        this.setState({
-            time: e.target.name
+        this.setState({ 
+            time: e.target.name 
         });
-    };
+        };
 
     submitBookAgain = e => {
         e.preventDefault();
@@ -109,7 +112,46 @@ class Search extends React.Component {
         this.setState({
             comments: commentswritten
         });
+        this.postRequestBooking();
     };
+    
+    postRequestBooking = () => {
+        const { room, date, time, commentswritten } = this.state;
+        const { studioprice } = this.props.studioprice;
+        const { userloggedid } = this.props.userloggedid;
+        const { hostid } = this.props.hostid;
+        const roomID = this.props.match.params.id;
+            axios
+          .post("/api/newbooking", {
+            roomID: roomID,
+            room: room,
+            bookingDate: date,
+            bookingTime: time,
+            price: studioprice,
+            total: studioprice,
+            userID: userloggedid,
+            hostID: hostid
+          })
+          .then(res => {
+            this.setState({
+              isBooked: true,
+              room: "",
+              date: "",
+              time: "",
+              comments: commentswritten,
+              message: "Booked a Room!"
+            });
+          })
+          .catch(err => {
+            this.setState({
+              isBooked: false,
+              room: "",
+              date: "",
+              time: "",
+              message: "Error Booking a Room!"
+            });
+          });
+    }
 
     submitForm = e => {
         e.preventDefault();

@@ -201,10 +201,10 @@ function getSingleRoom(req, res, next) {
 
   db
     .any(
-      `SELECT studios.studio_id, studios.organization_name, rooms.room_id, rooms.room_name,
+      `SELECT users.user_id, studios.studio_id, studios.organization_name, rooms.room_id, rooms.room_name,
        operation_hours.monday, operation_hours.tuesday, operation_hours.wednesday, operation_hours.thursday, 
        operation_hours.friday, operation_hours.saturday,operation_hours.sunday
-       FROM studios JOIN rooms ON studios.studio_id=rooms.studio_id JOIN operation_hours 
+       FROM users JOIN studios ON users.user_id=studios.user_id JOIN rooms ON studios.studio_id=rooms.studio_id JOIN operation_hours 
        ON rooms.room_id = operation_hours.room_id WHERE rooms.room_name=$1`,
       rname
     )
@@ -327,17 +327,30 @@ function getBookingByHost(req, res, next) {
     });
 }
 /*
+INSERT INTO bookings (room_id, user_id, host_id, booking_date, booking_time, price_per_hour, total, guest_count, booking_status, isPayed, created_at)
+*/
 function createBooking(req, res, next) {
-  req.body
+  console.log("Request Body: ", req.body)
       const timeStamp = new Date()
         .toISOString()
         .replace(/z|t/gi, " ")
         .trim();
   db
     .none(
-      `INSERT INTO bookings (room_id, user_id, booking_date, booking_time, price_per_hour, total, booking_status, guest_count, created_at)
-        VALUES(${room_id}, ${user_id}, ${booking_date}, ${booking_time}, ${price_per_hour}, ${total}, ${booking_status}, ${guest_count})`,
-      req.body
+      "INSERT INTO bookings (room_id, user_id, host_id, booking_date, booking_time, price_per_hour, total, guest_count, booking_status, isPayed, created_at) VALUES( ${room_id}, ${user_id}, ${host_id}, ${booking_date}, ${booking_time}, ${price_per_hour}, ${total}, ${guest_count}, ${booking_status}, ${isPayed}, ${created_at})",
+      {
+        room_id: req.body.roomID,
+        user_id: req.body.userID,
+        host_id: req.body.hostID,
+        booking_date: req.body.bookingDate,
+        booking_time: req.body.bookingTime,
+        price_per_hour: req.body.price,
+        total: req.body.total,
+        guest_count: 5,
+        booking_status: 'Booked',
+        isPayed: false,
+        created_at: timeStamp
+      }
     )
     .then(function(data) {
       res.status(200).json({
@@ -350,7 +363,6 @@ function createBooking(req, res, next) {
       return next(err);
     });
 }
-*/
 
 // Hours
 
@@ -484,6 +496,7 @@ module.exports = {
   getAllBookings: getAllBookings,
   getBookingByUser: getBookingByUser,
   getBookingByHost: getBookingByHost,
+  createBooking: createBooking,
   getAllReviews: getAllReviews,
   getAllOperationHours: getAllOperationHours,
   getAllStudiosInfo: getAllStudiosInfo,
