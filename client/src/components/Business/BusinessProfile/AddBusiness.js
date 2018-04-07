@@ -4,6 +4,7 @@ import './AddBusiness.css'
 import Logowhite from "../../Images/LogoWhite.png";
 
 import Api from "../../Api/Api";
+import axios from "axios";
 
 class AddingBusiness extends Component {
   constructor(props) {
@@ -1805,7 +1806,7 @@ class AddingBusiness extends Component {
 
   handleCity = e => {
     this.setState({
-      city: e.taget.value
+      city: e.target.value
     });
   };
 
@@ -1817,56 +1818,62 @@ class AddingBusiness extends Component {
 
   handleDescription = e => {
     this.setState({
-      description: e.taget.value
+      description: e.target.value
     });
   };
 
   handleAmenities = e => {
     this.setState({
-      amenities: e.taget.value
+      amenities: e.target.value
     });
   };
 
   handleRules = e => {
     this.setState({
-      rules: e.taget.value
+      rules: e.target.value
     });
   };
 
   handlePrice = e => {
     this.setState({
-      price: e.taget.value
+      price: e.target.value
     });
   };
 
   handlePhone = e => {
     this.setState({
-      phone: e.taget.value
+      phone: e.target.value
     });
   };
 
   handleHours = e => {
     this.setState({
-      hours: e.taget.value
+      hours: e.target.value
     });
   };
 
   handleRooms = e => {
     this.setState({
-      rooms: e.taget.value
+      rooms: e.target.value
     });
   };
 
   handleImage = e => {
     this.setState({
-      image: e.taget.value
+      image: e.target.value
     });
   };
 
 
   handleCategory = e => {
     this.setState({
-      category: e.taget.value
+      category: e.target.value
+    });
+  };
+
+  handleState = e => {
+    this.setState({
+      state: e.target.value
     });
   };
 
@@ -1877,8 +1884,69 @@ class AddingBusiness extends Component {
 
   submitForm = e => {
     e.preventDefault();
+    this.postRequestStudio();
   };
 
+  postRequestStudio = () => {
+    const { studio_Name, studio_Address, about, description, city, state, zipcode, price, hours, phone, amenities, rules, image } = this.state;
+    console.log(this.props.userloggedid, studio_Name, studio_Address, about, description, city, state, zipcode, price, hours, phone, amenities, rules, image)
+    axios
+      .post("/api/newstudio", {
+        userID: this.props.userloggedid,
+        organization_name: studio_Name,
+        about: about,
+        description_summary: description,
+        address_line_1: studio_Address,
+        city: city,
+        state: state,
+        zip_code: zipcode,
+        website: 'None',
+        price: price,
+        phone: phone,
+        amenities: amenities,
+        rules: rules,
+        hour: hours,
+        room_count: 2,
+        image_url: image,
+        disciplines: '{"None"}',
+        uses_list: '{"1"}',
+        capacity: 99
+      })
+      .then(res => {
+        this.setState({
+          studio_Name: "",
+          about:"",
+          description:"",
+          address_line_1: "",
+          city: "",
+          state:"",
+          zip_code:"",
+          price:"",
+          amenities:"",
+          rules:"",
+          hours:"",
+          image: "",
+          message: "Booked a Room!"
+        });
+      })
+      .catch(err => {
+        this.setState({
+          studio_Name: "",
+          about:"",
+          description:"",
+          address_line_1: "",
+          city: "",
+          state:"",
+          zip_code:"",
+          price:"",
+          amenities:"",
+          rules:"",
+          hours:"",
+          image: "",
+          message: "Error Booking a Room!"
+        });
+      });
+  }
   render() {
     const {
       studio_Name,

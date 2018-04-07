@@ -6,6 +6,7 @@ import Logo from "../../Images/Logo.png";
 import Searchicon from "../../Images/Search.png";
 import Test from "../../Images/Test3.jpeg"
 import AddBusiness from "./AddBusiness"
+import Chart from "../../Images/ChartGo.png"
 
 import Api from "../../Api/Api"
 
@@ -80,7 +81,7 @@ const Security = e => {
 
 const Booking = ({ bookings }) => {
   console.log(bookings)
-  console.log(bookings[0].first_name)
+  // console.log(bookings[0].first_name)
   return (
     <div class="rightdiv">
       <div class="profileheads">
@@ -119,7 +120,24 @@ const Account = e => {
     <div class="rightdiv">
       <div class="profileheads">
         <h3>Account Summary</h3>
+        <img id="image" src="https://static1.squarespace.com/static/528cfee3e4b0c3afb632d2fc/5988be3e4c0dbf6ffb661845/5988be7e59cc68e08f166280/1502133941077/Honoree_John-Gomez.jpg?format=1000w" />
+        <img id="chart" src={Chart} />
+
       </div>
+      <div id="payment">
+        <h4>Payments</h4>
+        <Link id="i" to={`/invoices`}>Invoices</Link><br />
+        <Link id="p" to={`/payments`}>Add Payment Info</Link><br />
+      </div>
+      <div id="hosting-summary">
+        <h4>Hosting Summary</h4>
+        <span id="text">March Earnings</span>
+        <span id="amount">$150</span><br />
+        <span id="text">30-day views</span>
+        <span id="a">53</span>
+      </div>
+
+
     </div>
   )
 }

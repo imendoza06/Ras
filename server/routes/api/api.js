@@ -23,5 +23,6 @@ router.get("/bookings/user/:userid", db.getBookingByUser);
 router.get("/bookings/host/:hostid", db.getBookingByHost);
 
 router.post("/newbooking", db.createBooking);
+router.post("/newstudio", db.createStudio);
 
 module.exports = router;

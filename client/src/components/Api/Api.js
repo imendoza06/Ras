@@ -8,6 +8,8 @@ const getAllBookingsInfo = () => axios.get("/api/bookingsinfo");
 
 // const createBooking = () => axios.post("/api/newbooking");
 
+// const createStudio = () => axios.post("/api/newstudio");
+
 const getAllReviewsInfo = () => axios.get("/api/reviewsinfo");
 
 const getSingleStudioInfo = id => axios.get(`/api/studios/${id}`);
@@ -29,6 +31,7 @@ export default {
   getAllStudios,
   getAllBookingsInfo,
   // createBooking,
+  // createStudio,
   getAllReviewsInfo,
   getSingleStudioInfo,
   getStudiosByUser,
