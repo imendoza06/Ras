@@ -15,8 +15,8 @@ CREATE TABLE users (
   updated_at TIMESTAMP NULL
 );
 INSERT INTO users (username, first_name, last_name, password_digest, user_profile, isBusiness, created_at)
-  VALUES ('stephaniehou@ac.c4q.nyc', 'Stephanie', 'Hou', '$2a$10$eUTj3k2Akwr/3CNOWIryteyTXBF9Srzbk2B8NNAZwsU09VFrP7IJO','User', false, now()),
-  ('angelarias@ac.c4q.nyc', 'Angel' ,'Arias', '$2a$10$XrxD2GUQthxZ5Gf.//kEUOMyokVnDejHA/P5H839f/a19W8tloXPa', 'Business', true, now()),
+  VALUES ('deborahsmith@gmail.com', 'Deborah', 'Smith', '$2a$10$Ysv6qZ9ljZ4qj7pdW3GwVetAknD1iGA2pDyTWuBbzl8UQOSpgYpYe','User', false, now()),
+  ('johnlopez@gmail.com', 'John' ,'Lopez', '$2a$10$HnCK2MWMEvGpRXm5vifa5.KY5vc8V1963SPbwJThp/1FEU3B.CUSq', 'Business', true, now()),
   ('susantan@ac.c4q.nyc', 'Susan' , 'Tan', '$2a$10$ZCQadMInPNK3QU5biYHXYOMmzuKWm/5A1vKF2e2HF.0f4wNoxLNQS', 'Business', true, now()), 
   ('ivanmendoza@ac.c4q.nyc', 'Ivan', 'Mendoza', '$2a$10$3gU0o/yA.wn6zo9TxeTfbOVshm9jrA0O0WkkSi5ftBjGqa7sVcxlu','Business', true, now()), 
   ('sales@shetlerstudios.com', 'Kyle', 'Groff', 'shetlerstudios', 'Business', true,now()),
