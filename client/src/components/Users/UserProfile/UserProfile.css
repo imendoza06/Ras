@@ -138,12 +138,99 @@
 }
 
 #textarea {
-    width: 50vw;
-    height: 40vh;
+    width: 45vw;
+    height: 30vh;
 }
 
 .inputs {
     float: center;
-    border-radius:10px;
-    width:45vw;
+    border-radius: 10px;
+    width: 45vw;
+}
+
+.profileheads {
+    position: fixed;
+    /* top: 0;
+    left: 0; */
+}
+
+#deborah{
+    width: 17vw;
+    margin-top: 20px;
+    margin-left: 20px;
+    justify-content: center;
+}
+
+#profilebox{
+    width: 43vw;
+    height: 35vh;
+    border: 3px solid grey;
+    padding: 15px;
+    margin: 25px;
+    margin-left: 280px;
+    margin-top: -352px;
+    overflow: scroll;
+}
+
+#bottombox{
+    width: 65vw;
+    height: 55vh;
+    border: 3px solid grey;
+    padding: 15px;
+    margin: 25px;
+    margin-left: 25px;
+    margin-top: 20px;
+    overflow: scroll;
+}
+
+#welcome{
+    width: 12vw;
+    height: 5vh;
+    /* border: 3px solid grey; */
+    padding: 10px;
+    margin: 35px;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+
+#editprofile{
+    width: 50vw;
+    height: 100vh;
+    border: 3px solid grey;
+    padding: 10px;
+    margin: 35px;
+    margin-left: 120px;
+    margin-top: 40px;
+    overflow: scroll;
+}
+
+#favorites{
+    width: 60vw;
+    height: 35vh;
+    border: 3px solid grey;
+    padding: 10px;
+    margin: 35px;
+    margin-left: 70px;
+    margin-top: 30px;
+    overflow: scroll;
+}
+
+#reviews{
+    width: 60vw;
+    height: 35vh;
+    border: 3px solid grey;
+    padding: 10px;
+    margin: 35px;
+    margin-left: 70px;
+    margin-top: 30px;
+    overflow: scroll;
+}
+
+.h3divs{
+    position: relative;
+    height: 3vh;
+    width: 7vw;
+    size: 10px;
+    background-color: #bfc6c7;
+    width: 100%;
 }
