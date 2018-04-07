@@ -99,8 +99,6 @@ class Signup extends React.Component {
           isBusiness: false
         })
         .then(res => {
-          console.log("logged in: ", res);
-          console.log("data : ", res.data);
           this.setState({
             userData: res.data,
             isRegistered: true,
