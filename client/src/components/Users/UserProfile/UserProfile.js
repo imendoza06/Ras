@@ -13,6 +13,7 @@ const Account = e => {
     <div class="rightdiv">
       <div class="profileheads">
         <h3>Account Summary</h3>
+        <div id = "container">
         <img id="deborah" src={Deborah_image} />
         <p>
           <div id="welcome">
@@ -85,6 +86,7 @@ const Account = e => {
             </ul>
           </div>
         </p>
+        </div>
       </div>
     </div>
   );
