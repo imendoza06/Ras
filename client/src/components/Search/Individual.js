@@ -201,6 +201,7 @@ const Individual = ({
           </div>
           <div id="book">
             <h3>${price} per hour</h3>
+            
             {date && room ? (
               [
                 time ? (
