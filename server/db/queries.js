@@ -163,8 +163,8 @@ function createStudio(req, res, next) {
     .trim();
   db
     .none(//INSERT INTO studios (user_id, latitude, longitude, organization_name, description_summary, address_line_1, city, state, zip_code, website, phone, room_count, image_url, disciplines, uses_list, capacity, created_at)
-      `INSERT INTO studios (user_id, organization_name, description_summary, address_line_1, city, state, zip_code, website, phone, room_count, image_url, disciplines, uses_list, capacity, created_at)
-        VALUES(${user_id}, ${organization_name}, ${description_summary}, ${address_line_1}, ${city}, ${state}, ${zip_code}, ${website}, ${phone}, ${room_count}, ${image_url}, ${disciplines}, ${uses_list}, ${capacity}, ${created_at})`, req.body)
+      `INSERT INTO studios (user_id, organization_name, about, description_summary, address_line_1, city, state, zip_code, website, hour, price, phone, amenities, rules, room_count, image_url, disciplines, uses_list, capacity, created_at)
+        VALUES(${user_id}, ${organization_name}, ${about}, ${description_summary}, ${address_line_1}, ${city}, ${state}, ${zip_code}, ${website}, ${hour}, ${price}, ${phone}, ${amenities}, ${rules}, ${room_count}, ${image_url}, ${disciplines}, ${uses_list}, ${capacity}, ${created_at})`, req.body)
     .then(function (data) {
       res
         .status(200)

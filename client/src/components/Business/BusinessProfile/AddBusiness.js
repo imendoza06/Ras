@@ -23,6 +23,7 @@ class AddingBusiness extends Component {
       rules: "",
       category: "",
       rooms: "",
+      image: "",
       isLogin: false,
       monday: [],
       tuesday: [],
@@ -1856,6 +1857,12 @@ class AddingBusiness extends Component {
     });
   };
 
+  handleImage = e => {
+    this.setState({
+      image: e.taget.value
+    });
+  };
+
 
   handleCategory = e => {
     this.setState({
@@ -1882,7 +1889,8 @@ class AddingBusiness extends Component {
       description,
       category,
       isLogin,
-      times
+      times,
+      image
     } = this.state;
 
     const time1 = ["M1", "T1", "W1", "TH1", "F1", "S1", "SU1"]
@@ -1957,6 +1965,8 @@ class AddingBusiness extends Component {
             <input name="" type="text" placeholder="Amenities" onChange={this.handleAmenities} />
             <br />
             <input name="" type="text" placeholder="Rules" onChange={this.handleRules} />
+            <br />
+            <input name="" type="text" placeholder="Url Of Studio Image" onChange={this.handleImage} />
             <br />
             <input name="" type="text" placeholder="Category ex: Music, Art" onChange={this.handleCategory} />
             <br />
