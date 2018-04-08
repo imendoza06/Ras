@@ -187,18 +187,11 @@ td {
     width: 15px;
 }
 
-/* #image {
-    width: 22vw;
-    height: 35vh;
-    margin: 30px;
-    margin-top: 60px;
-} */
-
 /* Account Content*/
 #accountcontent{
     position: absolute;
     top: 9vh;
-    border:blue 1px solid;
+    /* border:blue 1px solid; */
     height: 45vh;
     width: 72vw;
     overflow-y: scroll;

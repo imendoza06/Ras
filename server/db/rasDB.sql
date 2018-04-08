@@ -21,7 +21,11 @@ INSERT INTO users (username, first_name, last_name, password_digest, user_profil
   ('ivanmendoza@ac.c4q.nyc', 'Ivan', 'Mendoza', '$2a$10$3gU0o/yA.wn6zo9TxeTfbOVshm9jrA0O0WkkSi5ftBjGqa7sVcxlu','Business', true, now()), 
   ('sales@shetlerstudios.com', 'Kyle', 'Groff', 'shetlerstudios', 'Business', true,now()),
   ('championsstudios@gmail.com', 'General', 'Manager', 'championsstudios', 'Business', true, now()),
-  ('sales@ripleygrier.com', 'Graham', 'McCarty', 'ripleygrier', 'Business', true, now()); 
+  ('sales@ripleygrier.com', 'Graham', 'McCarty', 'ripleygrier', 'Business', true, now()),
+  ('jamescorden@gmail.com', 'James', 'Corden', 'ripleygrier', 'Business', true, now()),
+  ('kwaniiechan@gmail.com', 'Kwaniie', 'Chen', 'ripleygrier', 'Business', true, now()),
+  ('maxfury@gmail.com', 'Max', 'Fury', 'ripleygrier', 'Business', true, now()),
+  ('tianagonalez@gmail.com', 'Tiana', 'Gonalez', 'ripleygrier', 'Business', true, now());
 
 CREATE TABLE studios (
   studio_id SERIAL PRIMARY KEY,
@@ -52,7 +56,7 @@ CREATE TABLE studios (
 
 INSERT INTO studios (user_id, latitude, longitude, organization_name, about, description_summary, address_line_1, city, state, zip_code, website, hour, price, phone, amenities, rules, room_count, image_url, disciplines, uses_list, capacity, created_at)
   VALUES  (3,40.765892, -73.9837334,'Slic Studios','Experience Slic','SLIC is a full service Film and Photography Studios located in the heart of trendy LIC, minutes away from Manhattan, 1 block away from the midtown tunnel and the 7 and G train. With 4 customizable studios with cyclorama walls up to 1,800sf, ample windows for natural lighting with blackout capabilities and access to the Rooftop we offer unique shooting & filming opportunities.',
-  '21-07 Borden Avenue, 5th Floor','New York', 'New York', 10019, 'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ', 90,'{"212-799-5433"}', 'Wifi', 'No Smoking', 4,  'http://slicstudios.com/wp-content/uploads/2016/12/studio3-3.jpg',
+  '21-07 Borden Avenue, 5th Floor','New York', 'New York', 10019, 'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ', 60,'{"212-799-5433"}', 'Wifi', 'No Smoking', 4,  'http://slicstudios.com/wp-content/uploads/2016/12/studio3-3.jpg',
   '{"Photography","Film"}', '{"Photo Shoot", "Video/Film Shoot"}' ,99, now() ),
 
 (4,40.7644682,-73.9835581,'Empire Rehearsal Studio','Music Studio For The Best','We have over 200 sound-proofed music rehearsal studios. Rooms can be rented by the hour, month to month or long term. Each studio is soundproofed for rehearsal use, 
@@ -76,6 +80,26 @@ INSERT INTO studios (user_id, latitude, longitude, organization_name, about, des
 (7, 40.777795,  -73.9800744, 'Brooklyn Studios For Dance', 'Brooklyns Best Dance','Launched in May 2015, Brooklyn Studios for Dance is a newly renovated space inside the historic Cadman Congregational Church in Clinton Hill, Brooklyn. Inspired by a shared reverence for gathering space, the church congregation and the dance community entered a partnership to share a facility. The mission of BkSD is to serve the professional art community while at the same time building a culture of local engagement that responds to the interests of both communities..',
 '131 West 72nd Street','New York', 'New York', 10023,'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ',
  30,'{"212-799-5433"}', 'Wifi', 'No Smoking', 4,  'http://www.elegantsolutionsinternational.com/uploads/images/Gallery/Karen_Hardy_Dance_Studios_Project_Gallery/dance-studio-two-image-karen-hardy-dance-studios-case-studies-elegant-solutions-limited-south-london-project.jpg',
+'{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' , 99,  now() ),
+
+(8, 40.777795,  -73.9800744, 'NOCA', 'Art Studio Of Creativity','Launched in May 2015, Brooklyn Studios for Dance is a newly renovated space inside the historic Cadman Congregational Church in Clinton Hill, Brooklyn. Inspired by a shared reverence for gathering space, the church congregation and the dance community entered a partnership to share a facility. The mission of BkSD is to serve the professional art community while at the same time building a culture of local engagement that responds to the interests of both communities..',
+'131 West 72nd Street','New York', 'New York', 10023,'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ',
+ 30,'{"212-799-5433"}', 'Wifi', 'No Smoking', 4,  'https://farm6.staticflickr.com/5066/5675988939_249515af79_b.jpg',
+'{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' , 99,  now() ),
+
+(9, 40.777795,  -73.9800744, 'BOP Studio', 'Bring Your Beat','Launched in May 2015, Brooklyn Studios for Dance is a newly renovated space inside the historic Cadman Congregational Church in Clinton Hill, Brooklyn. Inspired by a shared reverence for gathering space, the church congregation and the dance community entered a partnership to share a facility. The mission of BkSD is to serve the professional art community while at the same time building a culture of local engagement that responds to the interests of both communities..',
+'131 West 72nd Street','New York', 'New York', 10023,'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ',
+ 30,'{"212-799-5433"}', 'Wifi', 'No Smoking', 4,  'https://dt7v1i9vyp3mf.cloudfront.net/styles/news_large/s3/imagelibrary/b/bop_01_1013-imDnhrkGVL8tyZiThNT6BXuv7Mk.KdNA.jpg',
+'{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' , 99,  now() ),
+
+(10, 40.777795,  -73.9800744, 'NY Art Conservatory', 'Space To Bring Your Thoughts To Canvas','Launched in May 2015, Brooklyn Studios for Dance is a newly renovated space inside the historic Cadman Congregational Church in Clinton Hill, Brooklyn. Inspired by a shared reverence for gathering space, the church congregation and the dance community entered a partnership to share a facility. The mission of BkSD is to serve the professional art community while at the same time building a culture of local engagement that responds to the interests of both communities..',
+'131 West 72nd Street','New York', 'New York', 10023,'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ',
+ 30,'{"212-799-5433"}', 'Wifi', 'No Smoking', 4,  'https://qikrg2ve4526wc3c3ntlhj1e-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/Music-Art-8-1024x680.jpg',
+'{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' , 99,  now() ),
+
+(11, 40.777795,  -73.9800744, 'Delight Studio', 'Delight all in one space','Launched in May 2015, Brooklyn Studios for Dance is a newly renovated space inside the historic Cadman Congregational Church in Clinton Hill, Brooklyn. Inspired by a shared reverence for gathering space, the church congregation and the dance community entered a partnership to share a facility. The mission of BkSD is to serve the professional art community while at the same time building a culture of local engagement that responds to the interests of both communities..',
+'131 West 72nd Street','New York', 'New York', 10023,'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ',
+ 30,'{"212-799-5433"}', 'Wifi', 'No Smoking', 4,  'https://www.delightstudios.com/thumbs/1200x600c/2017-07/1500894802_studio-2c.jpg',
 '{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' , 99,  now() );
 
 
@@ -97,12 +121,12 @@ CREATE TABLE rooms (
 ); 
 
 INSERT INTO rooms (user_id, studio_id, room_name, image_url, dimensions_summary,length, width, price_per_hour, permitted_uses, disciplines, capacity, created_at)
-  VALUES (5, 1, 'Penthouse 4','https://s3.amazonaws.com/pa-spaces.production/attachments/8277/PH4_3.thumb.jpg?1367959726','300.0 sqft', 20 , 15 , 30,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' , '{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
-(3, 1, 'Penthouse 5','https://s3.amazonaws.com/pa-spaces.production/attachments/8284/PH5_3.thumb.jpg?1367960177','238.0 sqft', 17 , 14 , 30,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-5' , now()),
-(3, 1, 'Penthouse 8','https://s3.amazonaws.com/pa-spaces.production/attachments/9750/PH8.thumb.jpg?1380552556','234.0 sqft', 18 , 13 , 30, '{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-5' , now()),
-(3, 1, 'Penthouse 6','https://s3.amazonaws.com/pa-spaces.production/attachments/8287/PH9-1.thumb.jpg?1367960333','112.0 sqft', 14 , 8 , 30, '{"Rehearsal", "Meeting"}' , '{"Music"}' ,'2' , now()),
-(3, 1, 'Penthouse 1','https://s3.amazonaws.com/pa-spaces.production/attachments/8287/PH9-1.thumb.jpg?1367960333','143.0 sqft', 13 , 11 , 30, '{"Rehearsal", "Meeting"}' , '{"Music"}','2', now()),
-(3, 1, 'Penthouse 7','https://s3.amazonaws.com/pa-spaces.production/attachments/9755/PH7.slide.jpg?1380554797','154.0 sqft', 14 , 11 , 30,'{"Rehearsal", "Meeting"}' , '{"Music"}','2', now()),
+  VALUES (5, 1, 'Studio A','https://s3.amazonaws.com/pa-spaces.production/attachments/8277/PH4_3.thumb.jpg?1367959726','300.0 sqft', 20 , 15 , 30,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' , '{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
+(3, 1, 'Studio B','https://s3.amazonaws.com/pa-spaces.production/attachments/8284/PH5_3.thumb.jpg?1367960177','238.0 sqft', 17 , 14 , 30,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-5' , now()),
+(3, 1, 'Studio C','https://s3.amazonaws.com/pa-spaces.production/attachments/9750/PH8.thumb.jpg?1380552556','234.0 sqft', 18 , 13 , 30, '{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-5' , now()),
+(3, 1, 'Studio D','https://s3.amazonaws.com/pa-spaces.production/attachments/8287/PH9-1.thumb.jpg?1367960333','112.0 sqft', 14 , 8 , 30, '{"Rehearsal", "Meeting"}' , '{"Music"}' ,'2' , now()),
+(3, 1, 'Studio E','https://s3.amazonaws.com/pa-spaces.production/attachments/8287/PH9-1.thumb.jpg?1367960333','143.0 sqft', 13 , 11 , 30, '{"Rehearsal", "Meeting"}' , '{"Music"}','2', now()),
+(3, 1, 'Studio F','https://s3.amazonaws.com/pa-spaces.production/attachments/9755/PH7.slide.jpg?1380554797','154.0 sqft', 14 , 11 , 30,'{"Rehearsal", "Meeting"}' , '{"Music"}','2', now()),
 (4, 2, 'Studio #28','https://s3.amazonaws.com/pa-spaces.production/attachments/9072/IMG_2180.slide.jpg?1373672830','400.0 sqft','None specified' ,'None specified' , 29 ,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' , '{"Dance","Theatre"}' ,'4-6' , now()),                                
 (4, 2, 'Studio #21','https://s3.amazonaws.com/pa-spaces.production/attachments/9078/Studio___21_window(1).slide.jpg?1373675230','375.0 sqft','None specified' ,'None specified' , 29,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Theatre"}' ,'4-6' , now()),                                
 (4, 2, 'Studio #34','None specified','264.0 sqft','None specified' ,'None specified' , 24,'{"Rehearsal","Class","Photo Shoot","Video/ Film Shoot","Audition"}' ,'{"Dance","Music","Theatre"}' ,'4-6' , now()),                                
@@ -322,7 +346,7 @@ INSERT INTO bookings (room_id, user_id, host_id, booking_date, booking_time, pri
 VALUES (2, 1, 3, 'March 2', '8:00AM - 9:00AM', 30, 30, 4, 'Booked', false, now()),
 (4, 1, 4, 'March 9', '7:00PM - 9:00PM', 30, 60, 3, 'Booked', false, now()),
 (5, 1, 5, 'March 20', '10:00AM - 11:00AM', 30, 30, 5, 'Booked', false, now()),
-(1, 1, 6, 'April 2', '11:00AM - 1:00PM', 30, 60, 2, 'Booked', false, now());
+(12, 1, 6, 'Feb 2', '11:00AM - 1:00PM', 30, 60, 2, 'Booked', false, now());
 
 CREATE TABLE reviews (
   review_id SERIAL PRIMARY KEY,

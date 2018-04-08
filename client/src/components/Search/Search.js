@@ -15,6 +15,7 @@ class Search extends React.Component {
         this.state = {
             input: this.props.name,
             address: this.props.address,
+            userloggedid: this.props.userloggedid,
             selected: "",
             sort: "",
             date: "",
@@ -117,27 +118,21 @@ class Search extends React.Component {
     
     postRequestBooking = () => {
         const { room, date, time, commentswritten } = this.state;
-        const { studioprice } = this.props.studioprice;
-        const { userloggedid } = this.props.userloggedid;
-        const { hostid } = this.props.hostid;
-        const roomID = this.props.match.params.id;
+        
             axios
           .post("/api/newbooking", {
-            roomID: roomID,
+            roomID: this.props.roomid,
             room: room,
             bookingDate: date,
             bookingTime: time,
-            price: studioprice,
-            total: studioprice,
-            userID: userloggedid,
-            hostID: hostid
+            price: this.props.studioprice,
+            total: this.props.studioprice,
+            userID: this.props.userloggedid,
+            hostID: this.props.hostid
           })
           .then(res => {
             this.setState({
               isBooked: true,
-              room: "",
-              date: "",
-              time: "",
               comments: commentswritten,
               message: "Booked a Room!"
             });
@@ -145,9 +140,6 @@ class Search extends React.Component {
           .catch(err => {
             this.setState({
               isBooked: false,
-              room: "",
-              date: "",
-              time: "",
               message: "Error Booking a Room!"
             });
           });
@@ -169,6 +161,7 @@ class Search extends React.Component {
         const { input, selected, sort, address } = this.state;
         console.log(input);
         console.log(address);
+        console.log(this.props.userloggedid)
         var array = [];
         if (this.props.studioSearch.join("") === "") {
             array = this.state.studioarr;

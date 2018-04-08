@@ -46,6 +46,7 @@ class App extends React.Component {
       studiocategory: [],
 
       singleroom: [],
+      roomid:"",
       hostid: "",
       monday: [],
       tuesday: [],
@@ -140,6 +141,7 @@ class App extends React.Component {
         console.log("Response Data: ", response.data);
         this.setState({
           singleroom: response.data.data[0],
+          roomid: response.data.data[0].room_id,
           hostid: response.data.data[0].user_id,
           monday: response.data.data[0].monday,
           tueday: response.data.data[0].tuesday,
@@ -273,7 +275,9 @@ class App extends React.Component {
               handleStudioSearch={this.handleStudioSearch}
               handleSingleStudio={this.handleSingleStudio}
               handleRoomInfo={this.handleRoomInfo}
+              userloggedid={this.state.userloggedid}
               hostid={this.state.hostid}
+              roomid={this.state.roomid}
               monday={this.state.monday}
               tuesday={this.state.tuesday}
               wednesday={this.state.wednesday}

@@ -10,21 +10,21 @@ class AddingBusiness extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      studio_Name: "",
-      about: "",
-      studio_Address: "",
-      city: "",
-      state: "",
-      zipcode: 0,
-      description: "",
-      hours: "",
-      price: "",
-      phone: "",
-      amenities: "",
-      rules: "",
-      category: "",
+      studio_Name: "Slic Studios",
+      about: "Experience Slic",
+      studio_Address: "21-07 Borden Avenue, 5th Floor",
+      city: "New York",
+      state: "New York",
+      zipcode: 10019,
+      description: "SLIC is a full service Film and Photography Studios located in the heart of trendy LIC, minutes away from Manhattan, 1 block away from the midtown tunnel and the 7 and G train. With 4 customizable studios with cyclorama walls up to 1,800sf, ample windows for natural lighting with blackout capabilities and access to the Rooftop we offer unique shooting & filming opportunities.",
+      hours: "9:00 AM to 6:00 PM Monday to Friday",
+      price: 60,
+      phone: "212-799-5433",
+      amenities: "Wifi",
+      rules: "No Smoking",
+      category: "Photography",
       rooms: "",
-      image: "",
+      image: "http://slicstudios.com/wp-content/uploads/2016/12/studio3-3.jpg",
       isLogin: false,
       monday: [],
       tuesday: [],
@@ -1951,6 +1951,12 @@ class AddingBusiness extends Component {
     const {
       studio_Name,
       studio_Address,
+      about,
+      rules,
+      hours,
+      amenities,
+      phone,
+      price,
       city,
       state,
       zipcode,
@@ -2010,33 +2016,33 @@ class AddingBusiness extends Component {
         <br />
         <form>
           <div id="addform">
-            <input id="name" name="" type="text" placeholder="Studio Name" onChange={this.handleName} />
+            <input id="name" name="" type="text" placeholder="Studio Name" value={studio_Name} onChange={this.handleName} />
             <br />
-            <input name="" type=" text" placeholder="Five Words To Summarize Studio" onChange={this.handleAbout} />
+            <input name="" type=" text" placeholder="Five Words To Summarize Studio" value={about} onChange={this.handleAbout} />
             <br />
-            <textarea name="" type="text" placeholder="Describe Your Business" onChange={this.handleDescription} />
+            <textarea name="" type="text" placeholder="Describe Your Business" value={description} onChange={this.handleDescription} />
             <br />
-            <input name="" type=" text" placeholder="Studio Address" onChange={this.handleAddress} />
+            <input name="" type=" text" placeholder="Studio Address" value={studio_Address} onChange={this.handleAddress} />
             <br />
-            <input name="" type="text" placeholder="City" onChange={this.handleCity} />
+            <input name="" type="text" placeholder="City" value={city} onChange={this.handleCity} />
             <br />
-            <input name="" type="text" placeholder="State" onChange={this.handleState} />
+            <input name="" type="text" placeholder="State" value={state} onChange={this.handleState} />
             <br />
-            <input name="" type="number" placeholder="Zip Code" onChange={this.handleZipcode} />
+            <input name="" type="number" placeholder="Zip Code" value={zipcode} onChange={this.handleZipcode} />
             <br />
-            <input name="" type="text" placeholder="Studio Phone Number" onChange={this.handlePhone} />
+            <input name="" type="text" placeholder="Studio Phone Number" value={phone} onChange={this.handlePhone} />
             <br />
-            <input name="" type="text" placeholder="Operation Hours" onChange={this.handleHours} />
+            <input name="" type="text" placeholder="Operation Hours" value={hours} onChange={this.handleHours} />
             <br />
-            <input name="" type="text" placeholder="Price Per Hour" onChange={this.handlePrice} />
+            <input name="" type="text" placeholder="Price Per Hour" value={price} onChange={this.handlePrice} />
             <br />
-            <input name="" type="text" placeholder="Amenities" onChange={this.handleAmenities} />
+            <input name="" type="text" placeholder="Amenities" value={amenities} onChange={this.handleAmenities} />
             <br />
-            <input name="" type="text" placeholder="Rules" onChange={this.handleRules} />
+            <input name="" type="text" placeholder="Rules" value={rules} onChange={this.handleRules} />
             <br />
-            <input name="" type="text" placeholder="Url Of Studio Image" onChange={this.handleImage} />
+            <input name="" type="text" placeholder="Url Of Studio Image" value={image} onChange={this.handleImage} />
             <br />
-            <input name="" type="text" placeholder="Category ex: Music, Art" onChange={this.handleCategory} />
+            <input name="" type="text" placeholder="Category ex: Music, Art" value={category} onChange={this.handleCategory} />
             <br />
             <input name="" type="text" placeholder="Rooms" onChange={this.handleRooms} />
             <br />
