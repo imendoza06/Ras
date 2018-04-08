@@ -10,6 +10,7 @@ class AddingBusiness extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      addedstudio: false,
       studio_Name: "Slic Studios",
       about: "Experience Slic",
       studio_Address: "21-07 Borden Avenue, 5th Floor",
@@ -1885,6 +1886,9 @@ class AddingBusiness extends Component {
   submitForm = e => {
     e.preventDefault();
     this.postRequestStudio();
+    this.setState({
+      addedstudio: true
+    })
   };
 
   postRequestStudio = () => {
@@ -1915,16 +1919,18 @@ class AddingBusiness extends Component {
       .then(res => {
         this.setState({
           studio_Name: "",
-          about:"",
-          description:"",
-          address_line_1: "",
+          about: "",
+          description: "",
+          studio_Address: "",
           city: "",
-          state:"",
-          zip_code:"",
-          price:"",
-          amenities:"",
-          rules:"",
-          hours:"",
+          state: "",
+          zipcode: "",
+          phone:"",
+          category:"",
+          price: "",
+          amenities: "",
+          rules: "",
+          hours: "",
           image: "",
           message: "Booked a Room!"
         });
@@ -1932,16 +1938,18 @@ class AddingBusiness extends Component {
       .catch(err => {
         this.setState({
           studio_Name: "",
-          about:"",
-          description:"",
-          address_line_1: "",
+          about: "",
+          description: "",
+          studio_Address: "",
           city: "",
-          state:"",
-          zip_code:"",
-          price:"",
-          amenities:"",
-          rules:"",
-          hours:"",
+          state: "",
+          zipcode: "",
+          phone:"",
+          category:"",
+          price: "",
+          amenities: "",
+          rules: "",
+          hours: "",
           image: "",
           message: "Error Booking a Room!"
         });
@@ -2012,7 +2020,9 @@ class AddingBusiness extends Component {
       </div>
       <div className="addcontent">
         <h1>Add Your Studio</h1>
-        <p>Scroll Down To Complete All Fields</p>
+        {this.state.addedstudio ? <p>You Have Successfully Added Your Studio</p> :
+          <p>Scroll Down To Complete All Fields</p>
+        }
         <br />
         <form>
           <div id="addform">
