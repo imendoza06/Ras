@@ -11,8 +11,10 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      password: "",
+      username: "deborahsmith@gmail.com",
+      password: "deborahsmith",
+      hostusername: "johnlopez@gmail.com",
+      hostpassword: "johnlopez",
       profile: "Choose Account Type",
       userData: [],
       isLoggedIn: false,
@@ -30,6 +32,18 @@ class Login extends React.Component {
       password: e.target.value
     });
   };
+
+  handleHostEmail = e => {
+    this.setState({
+      hostusername: e.target.value
+    });
+  };
+  handleHostPassword = e => {
+    this.setState({
+      hostpassword: e.target.value
+    });
+  };
+
   handleTypeChange = e => {
     this.setState({
       profile: e.target.value
@@ -114,7 +128,7 @@ class Login extends React.Component {
   };
 
   render() {
-    const { username, password, profile, isLoggedIn, message, userData } = this.state;
+    const { username, password, profile, isLoggedIn, message, userData, hostusername, hostpassword } = this.state;
     const types = ["Choose Account Type", "User", "Host"];
     console.log(`username: ${username},
         password: ${password},
@@ -187,6 +201,8 @@ class Login extends React.Component {
               {types.map(type => <option value={type}>{type}</option>)}
             </select>
             <br />
+            {profile!=="Host" ?
+            <div>
             <label>
               <input type="text" name="username" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Please give a valid username" value={username} onChange={this.handleEmail} />
             </label>
@@ -194,6 +210,18 @@ class Login extends React.Component {
             <label>
               <input type="password" name="password" placeholder="Password" pattern=".{8,}" title="Eight or more characters" value={password} onChange={this.handlePassword} />
             </label>
+            </div>
+            :
+            <div>
+            <label>
+              <input type="text" name="username" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Please give a valid username" value={hostusername} onChange={this.handleHostEmail} />
+            </label>
+            <br />
+            <label>
+              <input type="password" name="password" placeholder="Password" pattern=".{8,}" title="Eight or more characters" value={hostpassword} onChange={this.handleHostPassword} />
+            </label>
+            </div>
+            }
             <br />
             <input type="submit" value="Submit" />
           </form>

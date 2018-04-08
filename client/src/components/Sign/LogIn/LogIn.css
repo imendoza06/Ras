@@ -78,7 +78,7 @@
 #login {
     text-align: center;
     float: left;
-    margin-top: 90px;
+    margin-top: 95px;
     width: 30vw;
     height: 55vh;
     /* border: 1px solid black; */
@@ -87,6 +87,7 @@
 
 #login h1 {
     margin: 10px;
+    margin-top: 25px;
     font-size: 7vh;
     font-family: 'Phosphate-Inline';
     color: black;
@@ -108,7 +109,7 @@
     height: 5vh;
     width: 15vw;
     border-radius: 8px;
-    margin: 8px;
+    margin: 0px;
     background-color: black;
     color: white;
     border: none;

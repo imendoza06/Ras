@@ -125,7 +125,7 @@
     width: 500px;
     height: 500px;
     top: 220px;
-    left: 50%;
+    left: 50vw;
     transform: translate(-50%, -50%);
 }
 
@@ -167,7 +167,7 @@
 #subabout {
     position: absolute;
     right: -135px;
-    top: 470px;
+    top: 75vh;
     height: 10vh;
     font-family: 'Phosphate-Inline';
     font-size: 18px;

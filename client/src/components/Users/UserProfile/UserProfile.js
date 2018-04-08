@@ -13,15 +13,11 @@ const Account = e => {
     <div class="rightdiv">
       <div class="profileheads">
         <h3>Account Summary</h3>
-        <div id = "container">
+      </div>
+      <div id="usersummary">
         <img id="deborah" src={Deborah_image} />
-        <p>
-          <div id="welcome">
-            <strong>Welcome, Deborah!</strong>
-          </div>
-          <br />
-          <div id="profilebox">
-            <h3 className="h3divs">User Information</h3>
+          <div id="usersuminfo">
+            <h3>User Information</h3>
             <br />
             <strong>Username:</strong> DeborahSmith123
             <br />
@@ -38,9 +34,9 @@ const Account = e => {
             Studio for 2 hours at 5:00 pm
           </div>
           <br />
-          <div id="bottombox">
+          <div id="userbottominfo">
             <br />
-            <h3 className="h3divs">
+            <h3>
               {" "}
               <strong>Reviews of Deborah: </strong>
             </h3>
@@ -85,8 +81,6 @@ const Account = e => {
               </li>
             </ul>
           </div>
-        </p>
-        </div>
       </div>
     </div>
   );
