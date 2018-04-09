@@ -17,7 +17,7 @@
 
 .addcontent p {
     margin: 2px;
-    font-size: 13px;
+    font-size: 2vh;
 }
 
 .addcontent input {
@@ -28,6 +28,7 @@
     width: 60vh;
     outline: none;
     margin-bottom: 5px;
+    font-size: 2vh;
 }
 
 .addcontent textarea{
@@ -38,6 +39,7 @@
     width: 60vh;
     outline: none;
     margin-bottom: 2px;
+    font-size: 2vh;
 }
 
 .addcontent button[type=submit] {
@@ -48,6 +50,7 @@
     background-color: #6ba1a7;
     color: white;
     border: none;
+    font-size: 2vh;
 }
 
 .addcontent button[type=submit]:hover {

@@ -59,7 +59,7 @@ INSERT INTO studios (user_id, latitude, longitude, organization_name, about, des
   '21-07 Borden Avenue, 5th Floor','New York', 'New York', 10019, 'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ', 60,'{"212-799-5433"}', 'Wifi', 'No Smoking', 4,  'http://slicstudios.com/wp-content/uploads/2016/12/studio3-3.jpg',
   '{"Photography","Film"}', '{"Photo Shoot", "Video/Film Shoot"}' ,99, now() ),
 
-(4,40.7644682,-73.9835581,'Empire Rehearsal Studio','Music Studio For The Best','We have over 200 sound-proofed music rehearsal studios. Rooms can be rented by the hour, month to month or long term. Each studio is soundproofed for rehearsal use, 
+(4,40.7644682,-73.9835581,'Empire Rehearsal','Music Studio For The Best','We have over 200 sound-proofed music rehearsal studios. Rooms can be rented by the hour, month to month or long term. Each studio is soundproofed for rehearsal use, 
   features carpeting, heat, air conditioning, and free Wi-Fi. Some studios have windows and vocal booths. Check out the 4th floor build-out for higher end studios in Brooklyn, open now!',
   '244 West 54th Street, 13th Floor','New York','New York',10018,'http://www.empire-rehearsal-studios.com/','9:00 AM to 6:00 PM Monday to Friday',45,
   '{"212-246-6655"}', 'Wifi', 'No Smoking',9,'https://www.empirerecordingstudios.com/wp-content/uploads/2014/01/empire_recording_studio_8.jpg',
@@ -71,18 +71,18 @@ INSERT INTO studios (user_id, latitude, longitude, organization_name, about, des
 '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Special Event", "Reading", "Video/Film Shoot", "Meeting"}' , 99, now() ),
 
 
-(6, 40.753617,  -73.991904, 'Ripley-Grier Studios @RG520','Worlds Largest Studio','We are the "Worlds Largest" and voted #1 Rehearsal Studios for nine years in a row by Backstage Magazine.We offer the best SAME DAY rates in NYC.',
+(6, 40.753617,  -73.991904, 'Ripley-Grier Studios','Worlds Largest Studio','We are the "Worlds Largest" and voted #1 Rehearsal Studios for nine years in a row by Backstage Magazine.We offer the best SAME DAY rates in NYC.',
 '520 Eighth Avenue','New York', 'New York', 10018,'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ',50,'{"212-799-5433"}', 'Wifi', 'No Smoking',
 4, 'https://static1.squarespace.com/static/56d49499a3360c50fb6937fd/57168e732eeb81c770ead7e8/57bdaf4ce3df28e77a3d1df8/1472049267195/dance-studio.jpg?format=1500w',
 '{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' ,99, now() ),
 
 
-(7, 40.777795,  -73.9800744, 'Brooklyn Studios For Dance', 'Brooklyns Best Dance','Launched in May 2015, Brooklyn Studios for Dance is a newly renovated space inside the historic Cadman Congregational Church in Clinton Hill, Brooklyn. Inspired by a shared reverence for gathering space, the church congregation and the dance community entered a partnership to share a facility. The mission of BkSD is to serve the professional art community while at the same time building a culture of local engagement that responds to the interests of both communities..',
+(7, 40.777795,  -73.9800744, 'Brooklyn Dance', 'Brooklyns Best Dance','Launched in May 2015, Brooklyn Studios for Dance is a newly renovated space inside the historic Cadman Congregational Church in Clinton Hill, Brooklyn. Inspired by a shared reverence for gathering space, the church congregation and the dance community entered a partnership to share a facility. The mission of BkSD is to serve the professional art community while at the same time building a culture of local engagement that responds to the interests of both communities..',
 '131 West 72nd Street','New York', 'New York', 10023,'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ',
  30,'{"212-799-5433"}', 'Wifi', 'No Smoking', 4,  'http://www.elegantsolutionsinternational.com/uploads/images/Gallery/Karen_Hardy_Dance_Studios_Project_Gallery/dance-studio-two-image-karen-hardy-dance-studios-case-studies-elegant-solutions-limited-south-london-project.jpg',
 '{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' , 99,  now() ),
 
-(8, 40.777795,  -73.9800744, 'NOCA', 'Art Studio Of Creativity','Launched in May 2015, Brooklyn Studios for Dance is a newly renovated space inside the historic Cadman Congregational Church in Clinton Hill, Brooklyn. Inspired by a shared reverence for gathering space, the church congregation and the dance community entered a partnership to share a facility. The mission of BkSD is to serve the professional art community while at the same time building a culture of local engagement that responds to the interests of both communities..',
+(8, 40.777795,  -73.9800744, 'NOCA', 'Let Creativity Shine','Launched in May 2015, Brooklyn Studios for Dance is a newly renovated space inside the historic Cadman Congregational Church in Clinton Hill, Brooklyn. Inspired by a shared reverence for gathering space, the church congregation and the dance community entered a partnership to share a facility. The mission of BkSD is to serve the professional art community while at the same time building a culture of local engagement that responds to the interests of both communities..',
 '131 West 72nd Street','New York', 'New York', 10023,'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ',
  30,'{"212-799-5433"}', 'Wifi', 'No Smoking', 4,  'https://farm6.staticflickr.com/5066/5675988939_249515af79_b.jpg',
 '{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' , 99,  now() ),
@@ -92,7 +92,7 @@ INSERT INTO studios (user_id, latitude, longitude, organization_name, about, des
  30,'{"212-799-5433"}', 'Wifi', 'No Smoking', 4,  'https://dt7v1i9vyp3mf.cloudfront.net/styles/news_large/s3/imagelibrary/b/bop_01_1013-imDnhrkGVL8tyZiThNT6BXuv7Mk.KdNA.jpg',
 '{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' , 99,  now() ),
 
-(10, 40.777795,  -73.9800744, 'NY Art Conservatory', 'Space To Bring Your Thoughts To Canvas','Launched in May 2015, Brooklyn Studios for Dance is a newly renovated space inside the historic Cadman Congregational Church in Clinton Hill, Brooklyn. Inspired by a shared reverence for gathering space, the church congregation and the dance community entered a partnership to share a facility. The mission of BkSD is to serve the professional art community while at the same time building a culture of local engagement that responds to the interests of both communities..',
+(10, 40.777795,  -73.9800744, 'NY Art Conservatory', 'Place of Art','Launched in May 2015, Brooklyn Studios for Dance is a newly renovated space inside the historic Cadman Congregational Church in Clinton Hill, Brooklyn. Inspired by a shared reverence for gathering space, the church congregation and the dance community entered a partnership to share a facility. The mission of BkSD is to serve the professional art community while at the same time building a culture of local engagement that responds to the interests of both communities..',
 '131 West 72nd Street','New York', 'New York', 10023,'http://www.ripleygrier.com', '9:00 AM to 6:00 PM Monday to Friday ',
  30,'{"212-799-5433"}', 'Wifi', 'No Smoking', 4,  'https://qikrg2ve4526wc3c3ntlhj1e-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/Music-Art-8-1024x680.jpg',
 '{"Dance", "Music", "Theatre", "Film"}', '{"Rehearsal", "Class", "Audition", "Photo Shoot", "Video/Film Shoot"}' , 99,  now() ),

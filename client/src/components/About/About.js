@@ -178,13 +178,13 @@ class About extends React.Component {
                 <path class="path" stroke="#6ba1a7" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="500" stroke-dashoffset="500" fill="none" d="M475.8,635.3c19.2,0,33.9,0,33.9,0L376.4,498l12,137.3C388.4,635.3,439.9,635.3,475.8,635.3z" />
               </g>
             </svg>
-            <div id="subabout">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="900px" height="33vh" viewBox="0 0 400 150">
+            {/* <div id="subabout">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="1300px" height="33vh" viewBox="0 0 400 150">
                   <text transform="matrix(1 0 0 1 75.2403 66.4661)" class="pathsub" stroke="#92dce5" stroke-width="0.5" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="500" stroke-dashoffset="500" fill="black">
                   Your One Stop Shop Studio Marketplace{" "}
                   </text>
               </svg>
-            </div>
+            </div> */}
           </div>
         </section>
         <section class="section bg4" id="aboutpurpose">

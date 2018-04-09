@@ -58,10 +58,9 @@ class Login extends React.Component {
 
   submitForm = e => {
     e.preventDefault();
-    const { username, password, profile } = this.state;
+    const { username, password, profile, hostpassword, hostusername } = this.state;
     var newuser = username.replace(/"/g, "'");
     console.log(username) 
-    this.props.handleLoginInfo(username);
 
     if (profile === "User") {
       axios
@@ -95,16 +94,16 @@ class Login extends React.Component {
     } else if (profile === "Host") {
       axios
         .post("/auth/login", {
-          username: username,
-          password: password,
+          username: hostusername,
+          password: hostpassword,
           profile: profile,
           isBusiness: true
         })
         .then(res => {
           console.log("logged in: ", res);
           console.log("data : ", res.data);
-          this.props.handleLogin(username, profile);
-          this.props.handleLoginInfo(username);
+          this.props.handleLogin(hostusername, profile);
+          this.props.handleLoginInfo(hostusername);
           this.setState({
             userData: res.data,
             username: "",

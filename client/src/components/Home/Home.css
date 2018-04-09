@@ -49,7 +49,7 @@ button{
 #topbar a {
     float: right;
     margin-right: 10px;
-    font-size: 13px;
+    font-size: 2vh;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.658);
 }
@@ -79,7 +79,7 @@ button{
 #footer a {
     float: right;
     margin-right: 70px;
-    font-size: 13px;
+    font-size: 2vh;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.658);
 }
@@ -88,7 +88,7 @@ button{
     position: relative;
     bottom: 0px;
     color: rgba(255, 255, 255, 0.699);
-    font-size: 13px;
+    font-size: 2vh;
     padding: 0;
     margin: 0;
     margin-left: 40px;
@@ -331,6 +331,7 @@ button{
     margin: 20px;
     margin-top: 3vh;
     width: 45vh;
+    font-size: 2.5vh;
 }
 
 #slword h3 {

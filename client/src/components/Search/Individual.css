@@ -106,22 +106,31 @@
     /* border: 1px solid black; */
 }
 
+#studioinfo p {
+    font-size: 2.4vh;
+}
+
 #studioinfo h1 {
     color: #6ba1a7;
-    font-size: 45px;
+    font-size: 8vh;
     margin: 0px;
     font-family: 'Phosphate-Inline';
 }
 
+#studioinfo h3 {
+    font-size: 3vh;
+}
+
+
 #studiotopsub {
-    font-size: 12px;
+    font-size: 2vh;
     margin: 1px;
     color: grey;
     font-weight: 800;
 }
 
 #studioaddress {
-    font-size: 16px;
+    font-size: 2.5vh;
     margin: 3px;
     font-weight: 600;
 }
@@ -149,15 +158,18 @@
     margin: 0px;
     margin-left: 20px;
     margin-right: 20px;
+    font-size: 3vh;
 }
 
 #book select {
     width: 18vw;
     height: 6vh;
     border: lightgrey .5px solid;
+    font-size: 2vh;
 }
 
 #book button[type=submit] {
+    font-size: 2vh;
     width: 18vw;
     height: 6vh;
     border-radius: 8px;
@@ -174,7 +186,7 @@
 }
 
 #dateroom p {
-    font-size: 14px;
+    font-size: 2.2vh;
     margin-bottom: 4px;
 }
 
@@ -198,7 +210,7 @@
 
 #timesh {
     margin-bottom: 1px;
-    font-size: 14px;
+    font-size: 2.2vh;
 }
 
 #times button[type=submit] {
@@ -207,12 +219,18 @@
     height: 3.5vh;
     margin-top: 3px;
     border-radius: 5px;
+    font-size: 2vh;
+}
+
+#times p{
+    font-size: 2vh;
 }
 
 #bookinfo button[type=submit] {
     margin-top: -10px;
     width: 8vw;
     height: 4vh;
+    font-size: 1.6vh;
 }
 
 #bookcomments textarea{
@@ -220,9 +238,14 @@
    height: 22vh;
    border-radius: 5px;
    margin: 3px;
+   font-size: 2vh;
 }
 
 #bookcomments button[type=submit]{
     margin: 0px;
 
+}
+
+#bookinfo p{
+    font-size: 2.5vh;
 }

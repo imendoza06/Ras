@@ -80,7 +80,7 @@
     margin: 0;
     padding: 15px;
     font-family: 'Phosphate-Inline';
-    font-size: 23px;
+    font-size: 3.5vh;
 }
 
 /* Booking */
@@ -170,12 +170,13 @@ td {
 
 #hbar h3 {
     margin-left: 2vw;
+    font-size: 2.3vh;
 }
 
 #hbar a {
     text-decoration: none;
     color: white;
-    font-size: 15px;
+    font-size: 2.3vh;
     margin-right: 10px;
 }
 
@@ -228,10 +229,14 @@ td {
     margin-top: 120px;*/
 } 
 
+#payment a{
+    font-size: 2vh;
+}
 #payment h4 {
     margin: 0px;
     padding: 10px;
     text-align: center;
+    font-size: 2.3vh;
 }
 
 #hosting-summary {
@@ -243,10 +248,13 @@ td {
     border: 5px double grey;
     border-radius: 5px;
     padding: 10px;
+    font-size: 2vh;
 }
 
 #hosting-summary h4 {
     margin: 0px;
     padding: 10px;
     text-align: center;
+    font-size: 2.3vh;
 }
+

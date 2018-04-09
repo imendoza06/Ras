@@ -124,9 +124,19 @@
     position: absolute;
     width: 500px;
     height: 500px;
-    top: 220px;
-    left: 50vw;
-    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    /* border: 1px white solid; */
+}
+
+.aboutbg svg{
+    /* border: 1px white solid; */
+    margin:0px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
 
 #bottom {
@@ -166,15 +176,20 @@
 
 #subabout {
     position: absolute;
-    right: -135px;
-    top: 75vh;
+    left: 10vw;
+    top: 63vh;
     height: 10vh;
     font-family: 'Phosphate-Inline';
     font-size: 18px;
+    /* border: 1px red solid; */
 }
 
 #subabout svg {
     z-index: -1;
+    /* border: 1px white solid; */
+
+    margin: 0px;
+    padding: 0px;
 }
 
 /* Purpose */
@@ -196,9 +211,9 @@
 
 #purposelist {
     position: absolute;
-    font-size: 18px;
-    top: 230px;
-    width: 80vw;
+    font-size: 2.5vh;
+    top: 40vh;
+    width: 82vw;
     height: 50vh;
     /* border: 1px solid white; */
 }
@@ -213,7 +228,7 @@
 
 #purposelist h3 {
     font-family: 'Phosphate-Inline', cursive;
-    font-size: 25px;
+    font-size: 4vh;
 }
 
 #purposelist img {
