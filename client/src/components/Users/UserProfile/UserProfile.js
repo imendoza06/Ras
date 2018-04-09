@@ -19,9 +19,9 @@ const Account = e => {
           <div id="usersuminfo">
             <h3>User Information</h3>
             <br />
-            <strong>Username:</strong> DeborahSmith123
+            <strong>Username:</strong> Deborahsmith@gmail.com
             <br />
-            <br /> <strong>Password:</strong> *******
+            <br /> <strong>Password:</strong> ************
             <br />
             <br /> <strong>Last Login:</strong> Tuesday, 10:26pm
             <br />
@@ -30,7 +30,7 @@ const Account = e => {
             for 1 hour at 2:00 pm
             <br />
             <br />
-            <strong>Upmcoming:</strong> Friday 5/5/2018, booked Fred Astaire
+            <strong>Upcoming:</strong> Friday 5/5/2018, booked Fred Astaire
             Studio for 2 hours at 5:00 pm
           </div>
           <br />
@@ -381,10 +381,6 @@ class UserProfile extends React.Component {
                   </li>
                   <br />
                   <li>
-                    <Link to="/userprofile/settings">Settings</Link>
-                  </li>
-                  <br />
-                  <li>
                     <Link to="/userprofile/booking">Booking History</Link>
                   </li>
                   <li>
@@ -394,6 +390,10 @@ class UserProfile extends React.Component {
                   <br />
                   <li>
                     <Link to="/userprofile/reviews">Reviews</Link>
+                  </li>
+                  <br />
+                  <li>
+                    <Link to="/userprofile/settings">Settings</Link>
                   </li>
                   <br />
                 </ul>

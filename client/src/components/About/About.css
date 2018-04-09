@@ -139,6 +139,19 @@
     transform: translate(-50%,-50%);
 }
 
+.aboutbg h1{
+    margin-top: 75vh;
+    font-family: 'Phosphate-Inline', cursive;
+    color: #92dce5;
+    animation: FadeIn 5s linear alternate;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.aboutbg h1:hover{
+    animation: FadeIn 5s infinite;
+}
+
 #bottom {
     background-color: black;
     background-size: 100% 100%;

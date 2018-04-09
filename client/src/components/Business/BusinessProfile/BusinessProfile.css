@@ -200,10 +200,32 @@ td {
 }
 
 #accountcontent img{
-    width: 22vw;
-    height: 35vh;
-    margin: 30px;
+    width: 17vw;
+    margin-top: 20px;
+    margin-left: 20px;
+    justify-content: center;
+    border-radius: 10px;
+    border: 4px  lightgray solid;
 }
+
+#hostsuminfo{
+    /* border: 3px black double; */
+    width: 30vw;
+    position: absolute;
+    top: 3.4vh;
+    left: 21vw;
+    height: 33vh;
+ }
+ 
+ #hostsuminfo h3{
+   margin: 0px;
+   padding: 5px;
+   border-radius: 5px 5px 0px 0px;
+   background-color: lightgray;
+   border-bottom: 5px  #92dce5 solid;
+   width: 99%;
+ 
+  }
 
 #chart {
     width: 22vw;
@@ -217,8 +239,8 @@ td {
 
 #payment {
     position: absolute;
-    top: 5vh;
-    left: 27vw;
+    top: 3.4vh;
+    left: 54vw;
     width: 15vw;
     height: 12vh;
     border: 5px double grey;
@@ -241,8 +263,8 @@ td {
 
 #hosting-summary {
     position: absolute;
-    top: 23vh;
-    left: 27vw;
+    top: 25vh;
+    left: 54vw;
     width: 15vw;
     height: 12vh;
     border: 5px double grey;

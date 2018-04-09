@@ -80,3 +80,16 @@
     margin: 10px;
 }
 
+#successadd img{
+    width: 30vw;
+    /* border: 1px solid white; */
+    margin: 0px;
+}
+
+#successadd button{
+    margin: 0px;
+}
+
+#successadd h3{
+    margin-bottom: 0px;
+}

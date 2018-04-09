@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './AddBusiness.css'
 import Logowhite from "../../Images/LogoWhite.png";
-
+import Checkmark from "../../Images/checkmark.gif";
 import Api from "../../Api/Api";
 import axios from "axios";
 
@@ -1891,6 +1891,13 @@ class AddingBusiness extends Component {
     })
   };
 
+  submitReForm = e => {
+    e.preventDefault();
+    this.setState({
+      addedstudio: false
+    })
+  };
+
   postRequestStudio = () => {
     const { studio_Name, studio_Address, about, description, city, state, zipcode, price, hours, phone, amenities, rules, image } = this.state;
     console.log(this.props.userloggedid, studio_Name, studio_Address, about, description, city, state, zipcode, price, hours, phone, amenities, rules, image)
@@ -1925,8 +1932,8 @@ class AddingBusiness extends Component {
           city: "",
           state: "",
           zipcode: "",
-          phone:"",
-          category:"",
+          phone: "",
+          category: "",
           price: "",
           amenities: "",
           rules: "",
@@ -1944,8 +1951,8 @@ class AddingBusiness extends Component {
           city: "",
           state: "",
           zipcode: "",
-          phone:"",
-          category:"",
+          phone: "",
+          category: "",
           price: "",
           amenities: "",
           rules: "",
@@ -2020,396 +2027,404 @@ class AddingBusiness extends Component {
       </div>
       <div className="addcontent">
         <h1>Add Your Studio</h1>
-        {this.state.addedstudio ? <p>You Have Successfully Added Your Studio</p> :
-          <p>Scroll Down To Complete All Fields</p>
-        }
-        <br />
-        <form>
-          <div id="addform">
-            <input id="name" name="" type="text" placeholder="Studio Name" value={studio_Name} onChange={this.handleName} />
-            <br />
-            <input name="" type=" text" placeholder="Five Words To Summarize Studio" value={about} onChange={this.handleAbout} />
-            <br />
-            <textarea name="" type="text" placeholder="Describe Your Business" value={description} onChange={this.handleDescription} />
-            <br />
-            <input name="" type=" text" placeholder="Studio Address" value={studio_Address} onChange={this.handleAddress} />
-            <br />
-            <input name="" type="text" placeholder="City" value={city} onChange={this.handleCity} />
-            <br />
-            <input name="" type="text" placeholder="State" value={state} onChange={this.handleState} />
-            <br />
-            <input name="" type="number" placeholder="Zip Code" value={zipcode} onChange={this.handleZipcode} />
-            <br />
-            <input name="" type="text" placeholder="Studio Phone Number" value={phone} onChange={this.handlePhone} />
-            <br />
-            <input name="" type="text" placeholder="Operation Hours" value={hours} onChange={this.handleHours} />
-            <br />
-            <input name="" type="text" placeholder="Price Per Hour" value={price} onChange={this.handlePrice} />
-            <br />
-            <input name="" type="text" placeholder="Amenities" value={amenities} onChange={this.handleAmenities} />
-            <br />
-            <input name="" type="text" placeholder="Rules" value={rules} onChange={this.handleRules} />
-            <br />
-            <input name="" type="text" placeholder="Url Of Studio Image" value={image} onChange={this.handleImage} />
-            <br />
-            <input name="" type="text" placeholder="Category ex: Music, Art" value={category} onChange={this.handleCategory} />
-            <br />
-            <input name="" type="text" placeholder="Rooms" onChange={this.handleRooms} />
-            <br />
-            <p>Add Room Availabilty Below</p>
-            <table>
-              <tr>
-                <td></td>
-                <td>Monday</td>
-                <td>Tuesday</td>
-                <td>Wednesday</td>
-                <td>Thursday</td>
-                <td>Friday</td>
-                <td>Saturday</td>
-                <td>Sunday</td>
-              </tr>
-              <tr>
-                {times[0]}
-                {
-                  time1.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[1]}
-                {
-                  time2.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[2]}
-                {
-                  time3.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[3]}
-                {
-                  time4.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[4]}
-                {
-                  time5.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[5]}
-                {
-                  time6.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[6]}
-                {
-                  time7.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[7]}
-                {
-                  time8.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[8]}
-                {
-                  time9.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[9]}
-                {
-                  time10.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[10]}
-                {
-                  time11.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[11]}
-                {
-                  time12.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[12]}
-                {
-                  timep1.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[13]}
-                {
-                  timep2.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[14]}
-                {
-                  timep3.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[15]}
-                {
-                  timep4.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[16]}
-                {
-                  timep5.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[17]}
-                {
-                  timep6.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[18]}
-                {
-                  timep7.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[19]}
-                {
-                  timep8.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[20]}
-                {
-                  timep9.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[21]}
-                {
-                  timep10.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[22]}
-                {
-                  timep11.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-              <tr>
-                {times[23]}
-                {
-                  timep12.map(time => (
-                    <td><input
-                      name={time}
-                      type="checkbox"
-                      checked={this.state.time}
-                      onChange={this.handleCheckboxChange}
-                    /> </td>
-
-                  ))
-                }
-              </tr>
-            </table>
-          </div>
-          <button type="submit" onClick={this.submitForm}>
-            Add Studio
+        {this.state.addedstudio ? <div id="successadd">
+          <h3> You Have Successfully Added Your Studio To RAS!</h3>
+          <img src= {Checkmark}/>
+          <button type="submit" onClick={this.submitReForm}>
+            Add Another Studio
             </button>
-        </form>
+        </div> :
+          <div>
+            <p>Scroll Down To Complete All Fields</p>
+            <br />
+            <form>
+              <div id="addform">
+                <input id="name" name="" type="text" placeholder="Studio Name" value={studio_Name} onChange={this.handleName} />
+                <br />
+                <input name="" type=" text" placeholder="Five Words To Summarize Studio" value={about} onChange={this.handleAbout} />
+                <br />
+                <textarea name="" type="text" placeholder="Describe Your Business" value={description} onChange={this.handleDescription} />
+                <br />
+                <input name="" type=" text" placeholder="Studio Address" value={studio_Address} onChange={this.handleAddress} />
+                <br />
+                <input name="" type="text" placeholder="City" value={city} onChange={this.handleCity} />
+                <br />
+                <input name="" type="text" placeholder="State" value={state} onChange={this.handleState} />
+                <br />
+                <input name="" type="number" placeholder="Zip Code" value={zipcode} onChange={this.handleZipcode} />
+                <br />
+                <input name="" type="text" placeholder="Studio Phone Number" value={phone} onChange={this.handlePhone} />
+                <br />
+                <input name="" type="text" placeholder="Operation Hours" value={hours} onChange={this.handleHours} />
+                <br />
+                <input name="" type="text" placeholder="Price Per Hour" value={price} onChange={this.handlePrice} />
+                <br />
+                <input name="" type="text" placeholder="Amenities" value={amenities} onChange={this.handleAmenities} />
+                <br />
+                <input name="" type="text" placeholder="Rules" value={rules} onChange={this.handleRules} />
+                <br />
+                <input name="" type="text" placeholder="Url Of Studio Image" value={image} onChange={this.handleImage} />
+                <br />
+                <input name="" type="text" placeholder="Category ex: Music, Art" value={category} onChange={this.handleCategory} />
+                <br />
+                <input name="" type="text" placeholder="Rooms" onChange={this.handleRooms} />
+                <br />
+                <p>Add Room Availabilty Below</p>
+                <table>
+                  <tr>
+                    <td></td>
+                    <td>Monday</td>
+                    <td>Tuesday</td>
+                    <td>Wednesday</td>
+                    <td>Thursday</td>
+                    <td>Friday</td>
+                    <td>Saturday</td>
+                    <td>Sunday</td>
+                  </tr>
+                  <tr>
+                    {times[0]}
+                    {
+                      time1.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[1]}
+                    {
+                      time2.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[2]}
+                    {
+                      time3.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[3]}
+                    {
+                      time4.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[4]}
+                    {
+                      time5.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[5]}
+                    {
+                      time6.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[6]}
+                    {
+                      time7.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[7]}
+                    {
+                      time8.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[8]}
+                    {
+                      time9.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[9]}
+                    {
+                      time10.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[10]}
+                    {
+                      time11.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[11]}
+                    {
+                      time12.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[12]}
+                    {
+                      timep1.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[13]}
+                    {
+                      timep2.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[14]}
+                    {
+                      timep3.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[15]}
+                    {
+                      timep4.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[16]}
+                    {
+                      timep5.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[17]}
+                    {
+                      timep6.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[18]}
+                    {
+                      timep7.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[19]}
+                    {
+                      timep8.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[20]}
+                    {
+                      timep9.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[21]}
+                    {
+                      timep10.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[22]}
+                    {
+                      timep11.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                  <tr>
+                    {times[23]}
+                    {
+                      timep12.map(time => (
+                        <td><input
+                          name={time}
+                          type="checkbox"
+                          checked={this.state.time}
+                          onChange={this.handleCheckboxChange}
+                        /> </td>
+
+                      ))
+                    }
+                  </tr>
+                </table>
+              </div>
+              <button type="submit" onClick={this.submitForm}>
+                Add Studio
+            </button>
+            </form>
+          </div>
+        }
       </div>
       <div id="footer">
         <Link to={`/contact`}>
