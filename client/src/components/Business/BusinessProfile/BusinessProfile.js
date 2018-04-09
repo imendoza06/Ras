@@ -4,11 +4,11 @@ import "./BusinessProfile.css";
 import Logowhite from "../../Images/LogoWhite.png";
 import Logo from "../../Images/Logo.png";
 import Searchicon from "../../Images/Search.png";
-import Test from "../../Images/Test3.jpeg"
-import AddBusiness from "./AddBusiness"
-import Chart from "../../Images/ChartGo.png"
+import Test from "../../Images/Test3.jpeg";
+import AddBusiness from "./AddBusiness";
+import Chart from "../../Images/ChartGo.png";
 
-import Api from "../../Api/Api"
+import Api from "../../Api/Api";
 
 const Studios = ({ studios }) => {
   return (
@@ -22,13 +22,13 @@ const Studios = ({ studios }) => {
             <h3>{studio.organization_name}</h3>
             <table>
               <tr class="bookingsubs">
-                <td colspan="4" >About</td>
+                <td colspan="4">About</td>
               </tr>
               <tr>
                 <td colspan="4">{studio.about}</td>
               </tr>
               <tr class="bookingsubs">
-                <td colspan="4" >Description</td>
+                <td colspan="4">Description</td>
               </tr>
               <tr>
                 <td colspan="4">{studio.description_summary}</td>
@@ -66,8 +66,8 @@ const Studios = ({ studios }) => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Security = e => {
   return (
@@ -76,11 +76,11 @@ const Security = e => {
         <h3>Security</h3>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Booking = ({ bookings }) => {
-  console.log(bookings)
+  console.log(bookings);
   // console.log(bookings[0].first_name)
   return (
     <div class="rightdiv">
@@ -100,20 +100,21 @@ const Booking = ({ bookings }) => {
                 <td>Comments</td>
               </tr>
               <tr>
-                <td>{booking.first_name} {booking.last_name}</td>
+                <td>
+                  {booking.first_name} {booking.last_name}
+                </td>
                 <td>{booking.booking_date}</td>
                 <td>{booking.booking_time}</td>
                 <td>{booking.total}</td>
-                <td></td>
+                <td />
               </tr>
             </table>
-
           </div>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Account = e => {
   return (
@@ -122,25 +123,34 @@ const Account = e => {
         <h3>Account Summary</h3>
       </div>
       <div id="accountcontent">
-      <img id="image" src="https://static1.squarespace.com/static/528cfee3e4b0c3afb632d2fc/5988be3e4c0dbf6ffb661845/5988be7e59cc68e08f166280/1502133941077/Honoree_John-Gomez.jpg?format=1000w" />
-      <img id="chart" src={Chart} />
-      <div id="payment">
-        <h4>Payments</h4>
-        <Link id="i" to={`/invoices`}>Invoices</Link><br />
-        <Link id="p" to={`/payments`}>Add Payment Info</Link><br />
+        <img
+          id="image"
+          src="https://static1.squarespace.com/static/528cfee3e4b0c3afb632d2fc/5988be3e4c0dbf6ffb661845/5988be7e59cc68e08f166280/1502133941077/Honoree_John-Gomez.jpg?format=1000w"
+        />
+        <img id="chart" src={Chart} />
+        <div id="payment">
+          <h4>Payments</h4>
+          <Link id="i" to={`/invoices`}>
+            Invoices
+          </Link>
+          <br />
+          <Link id="p" to={`/payments`}>
+            Add Payment Info
+          </Link>
+          <br />
+        </div>
+        <div id="hosting-summary">
+          <h4>Hosting Summary</h4>
+          <span id="text">March Earnings</span>
+          <span id="amount">$150</span>
+          <br />
+          <span id="text">30-day views</span>
+          <span id="a">53</span>
+        </div>
       </div>
-      <div id="hosting-summary">
-        <h4>Hosting Summary</h4>
-        <span id="text">March Earnings</span>
-        <span id="amount">$150</span><br />
-        <span id="text">30-day views</span>
-        <span id="a">53</span>
-      </div>
-     </div>
-
     </div>
-  )
-}
+  );
+};
 
 const Reviews = e => {
   return (
@@ -149,8 +159,8 @@ const Reviews = e => {
         <h3>Reviews</h3>
       </div>
     </div>
-  )
-}
+  );
+};
 
 class BusProfile extends React.Component {
   constructor(props) {
@@ -159,13 +169,13 @@ class BusProfile extends React.Component {
       isLoggedIn: "",
       bookings: [],
       studios: []
-    }
-  };
+    };
+  }
 
   handleLogout = () => {
     Api.getLogout();
-    console.log("You have logout!")
-  }
+    console.log("You have logout!");
+  };
 
   handleStudios = id => {
     Api.getStudiosByUser(id)
@@ -173,7 +183,7 @@ class BusProfile extends React.Component {
         console.log("Response: ", response);
         console.log("Response Data: ", response.data);
         this.setState({
-          studios: response.data.data,
+          studios: response.data.data
         });
       })
       .catch(err => {
@@ -183,15 +193,14 @@ class BusProfile extends React.Component {
 
   componentWillMount() {
     this.props.handleLoginInfo(this.props.isLogged);
-    this.props.handleHostBookingInfo(this.props.userloggedid)
-    this.handleStudios(this.props.userloggedid)
+    this.props.handleHostBookingInfo(this.props.userloggedid);
+    this.handleStudios(this.props.userloggedid);
   }
 
-
   renderBusProfile = () => {
-    console.log(this.props.isLogged)
-    console.log(this.state.bookings)
-    console.log(this.state.studios)
+    console.log(this.props.isLogged);
+    console.log(this.state.bookings);
+    console.log(this.state.studios);
     return (
       <div id="hpbacker">
         <div id="topbar">
@@ -211,7 +220,11 @@ class BusProfile extends React.Component {
             <h3>Welcome Host {this.props.userloggedfname} !</h3>
             <div id="hbarcard">
               <Link to={`/add`}>+Add A Studio</Link>
-              <Link to={`/search`}><button type="submit"><img src={Searchicon}></img></button></Link>
+              <Link to={`/search`}>
+                <button type="submit">
+                  <img src={Searchicon} />
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -242,22 +255,50 @@ class BusProfile extends React.Component {
                   <br />
                 </ul>
               </div>
-              <Route exact path="/hostprofile/account" component={() => <Account />} />
-              <Route exact path="/hostprofile/studios" component={() => <Studios studios={this.state.studios} />} />
-              <Route exact path="/hostprofile/booking" component={() => <Booking bookings={this.props.hostbookings} />} />
-              <Route exact path="/hostprofile/reviews" component={() => <Reviews />} />
-              <Route exact path="/hostprofile/security" component={() => <Security />} />
+              <Route
+                exact
+                path="/hostprofile/account"
+                component={() => <Account />}
+              />
+              <Route
+                exact
+                path="/hostprofile/studios"
+                component={() => <Studios studios={this.state.studios} />}
+              />
+              <Route
+                exact
+                path="/hostprofile/booking"
+                component={() => <Booking bookings={this.props.hostbookings} />}
+              />
+              <Route
+                exact
+                path="/hostprofile/reviews"
+                component={() => <Reviews />}
+              />
+              <Route
+                exact
+                path="/hostprofile/security"
+                component={() => <Security />}
+              />
             </div>
           </div>
         </div>
         <div id="footer">
-          <Link to={`/contact`}><a class="hoverturn"><span data-title="Contact">Contact</span></a></Link>
-          <Link to={`/about`}><a class="hoverturn"><span data-title="About Us">About Us</span></a></Link>
+          <Link to={`/contact`}>
+            <a class="hoverturn">
+              <span data-title="Contact">Contact</span>
+            </a>
+          </Link>
+          <Link to={`/about`}>
+            <a class="hoverturn">
+              <span data-title="About Us">About Us</span>
+            </a>
+          </Link>
           <p>RAS @ 2018</p>
         </div>
       </div>
     );
-  }
+  };
 
   render() {
     return (
@@ -268,7 +309,6 @@ class BusProfile extends React.Component {
       </div>
     );
   }
-
 }
 
 export default BusProfile;
