@@ -536,3 +536,72 @@ button{
     animation: FadeIn 2s ease-in 2.7s forwards;
     animation-iteration-count: 1;
 }
+
+
+@media only screen and (max-width: 768px) {
+    #topbar {
+        position: fixed;
+        width: 100vw;
+        min-height: 2vh;
+        height: 4vh;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        z-index: 10;
+    }
+    
+    #topbar a {
+        margin-right: 5px;
+        font-size: 2vh;
+    }
+    .section {
+        width: 100vw;
+    }
+    
+    .halfsection {
+        height: 46vh;
+    }
+    
+    .msection {
+        height: 60vh;
+    }
+    #header svg {
+        width: 40vh;
+    }
+    #homesub {
+        top: 40vh;
+        min-width: 30vh;
+        font-size: 3vh;
+    }
+    
+    /* Searchbar */
+    
+    #search {
+        top: 49vh;
+        padding: 5px;
+        width: 50vh;
+    }
+    
+    #search input {
+        border: none;
+        height: 4vh;
+        width: 40vh;
+        padding-left: 10px;
+        outline: none;
+    }
+    
+    #search button {
+        height:4.6vh;
+        width: 10vh;
+        border-radius: 0px 3px 3px 0px;
+        background-color: black;
+        color: white;
+        border: none;
+    }
+    
+    #search button:hover {
+        background-color: #92dce5;
+        color: black;
+    }
+    
+
+}

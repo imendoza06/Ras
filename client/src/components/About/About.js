@@ -185,7 +185,7 @@ class About extends React.Component {
                   </text>
               </svg>
             </div> */}
-            <h1 class="pathsub"> Your One Stop Shop Studio Marketplace</h1>
+            <h1 class ="center"> Your One Stop Shop Studio Marketplace</h1>
           </div>
         </section>
         <section class="section bg4" id="aboutpurpose">
