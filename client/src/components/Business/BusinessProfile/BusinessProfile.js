@@ -97,14 +97,12 @@ const Booking = ({ bookings }) => {
                 <td>Date</td>
                 <td>Time</td>
                 <td>Total</td>
-                <td>Comments</td>
               </tr>
               <tr>
                 <td>{booking.first_name} {booking.last_name}</td>
                 <td>{booking.booking_date}</td>
                 <td>{booking.booking_time}</td>
                 <td>{booking.total}</td>
-                <td></td>
               </tr>
             </table>
 
