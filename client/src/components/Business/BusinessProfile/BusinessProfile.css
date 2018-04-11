@@ -280,3 +280,10 @@ td {
     font-size: 2.3vh;
 }
 
+#hosting-summary #amount{
+ margin-left: 60px;
+}
+
+#hosting-summary #a{
+    margin-left: 75px;
+   }

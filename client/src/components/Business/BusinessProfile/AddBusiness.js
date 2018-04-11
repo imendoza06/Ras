@@ -2030,6 +2030,8 @@ class AddingBusiness extends Component {
         {this.state.addedstudio ? <div id="successadd">
           <h3> You Have Successfully Added Your Studio To RAS!</h3>
           <img src= {Checkmark}/>
+          <br/>
+
           <button type="submit" onClick={this.submitReForm}>
             Add Another Studio
             </button>
