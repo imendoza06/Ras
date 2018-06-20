@@ -68,6 +68,5 @@ Open http://localhost:3000/ to view the app in a browser.
 * Messaging between users
 * Push Notifications
 * Cancellation 
-* ~~Modals for edit, followers, following~~ croo
 * More Filter and Sort By 
 
