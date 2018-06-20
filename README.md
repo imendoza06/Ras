@@ -1,6 +1,4 @@
-# RAS 
-
-## RAS brief description  
+## RAS 
 
 An online marketplace for rental creative spaces. Artists can find and book a space and rental businesses
 can list and make their spaces visible to the public.
@@ -47,10 +45,10 @@ Open http://localhost:3000/ to view the app in a browser.
 * CSS3 
 
 
-## Contributos 
-* [Stephanie Hou](https://github.com/)
+## Contributors 
+* [Stephanie Hou](https://github.com/stephaniehou)
 * [Angel Arias](https://github.com/) 
-* [Susan Tan](https://github.com/) 
+* [Susan Tan](https://github.com/stan129) 
 * [Ivan Mendoza](https://github.com/imendoza06)
 
 
